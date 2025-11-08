@@ -1,0 +1,50 @@
+[
+  {
+    "id": "mirante-aguada",
+    "lat": -27.0212,
+    "lng": -48.6489,
+    "title": {
+      "pt": "Mirante da Aguada",
+      "es": "Mirador de la Aguada"
+    },
+    "desc": {
+      "pt": "Ponto de observação com vista panorâmica do litoral.",
+      "es": "Punto de observación con vista panorámica del litoral."
+    },
+    "history": {
+      "pt": "O Mirante da Aguada é um ponto de observação tradicional, com vista para o mar e trilhas próximas. Antigamente era usado como ponto de referência por pescadores e hoje recebe visitantes para contemplar o pôr do sol.",
+      "es": "El Mirador de la Aguada es un punto de observación tradicional, con vista al mar y senderos cercanos. Antiguamente se usaba como referencia por pescadores y hoy recibe visitantes para contemplar la puesta de sol."
+    }
+  },
+  {
+    "id": "praia-central",
+    "lat": -27.0133,
+    "lng": -48.6336,
+    "title": {
+      "pt": "Praia Central",
+      "es": "Playa Central"
+    },
+    "desc": {
+      "pt": "Praia urbana com calçadão e atrações.",
+      "es": "Playa urbana con paseo y atracciones."
+    },
+    "history": {
+      "pt": "A Praia Central é o coração da cidade, conhecida pelo calçadão, quiosques e eventos. Ao longo do tempo recebeu melhorias para lazer e turismo, mantendo tradição pesqueira em áreas específicas.",
+      "es": "La Playa Central es el corazón de la ciudad, conocida por su paseo marítimo, quioscos y eventos. Con el tiempo recibió mejoras para el ocio y el turismo, manteniendo tradición pesquera en áreas específicas."
+    }
+  },
+  {
+    "id": "cristo-luz",
+    "lat": -27.0061,
+    "lng": -48.6478,
+    "title": { "pt": "Cristo Luz", "es": "Cristo Luz" },
+    "desc": {
+      "pt": "Monumento e mirante com iluminação noturna.",
+      "es": "Monumento y mirador con iluminación nocturna."
+    },
+    "history": {
+      "pt": "O Cristo Luz foi inaugurado em 1991 como atração turística simbólica da cidade; além da estátua, o local oferece mirantes com vista panorâmica da orla e eventos culturais noturnos com iluminação colorida.",
+      "es": "El Cristo Luz fue inaugurado en 1991 como una atracción turística simbólica de la ciudad; además de la estatua, el lugar ofrece miradores con vista panorámica de la costa y eventos culturales nocturnos con iluminación colorida."
+    }
+  }
+]

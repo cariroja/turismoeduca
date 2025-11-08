@@ -1,0 +1,572 @@
+﻿Instituto Federal Catarinense
+Curso de Bacharelado em Sistemas da Informação
+Campus Camboriú
+
+
+
+
+
+
+
+
+CARINA ANDREA HEREDIA
+
+
+
+
+
+
+
+
+
+
+
+
+TURISMO EDUCA : PLATAFORMA WEB INTERATIVA 
+PARA O TURISMO EDUCATIVO BILINGUE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                  Camboriú
+2025
+
+
+CARINA ANDREA HEREDIA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TURISMO EDUCA : PLATAFORMA WEB INTERATIVA 
+PARA O TURISMO EDUCATIVO BILINGUE
+
+
+Trabalho de Conclusão de Curso, submetido ao Curso de Sistemas da Informação do Instituto Federal Catarinense – Campus Camboriú para a obtenção do título de Bacharel em Sistemas da Informação. 
+Orientador: Prof. Joice Seleme Mota, Doutora.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Camboriú
+2025
+TURISMO EDUCA : PLATAFORMA WEB INTERATIVA 
+PARA O TURISMO EDUCATIVO BILINGUE
+
+
+
+
+Este Trabalho de Conclusão de Curso, foi julgado adequado para a obtenção do título de Bacharel em Sistemas da Informação, e aprovado em sua forma final pelo curso de Bacharelado em Sistemas de Informação do Instituto Federal Catarinense – Campus Camboriú.
+
+
+
+
+
+
+
+
+
+
+
+
+_____________________________________
+Prof.(ª) Joice Seleme Mota, Doutora
+Orientador – IFC Campus Camboriú
+
+
+
+
+
+
+BANCA EXAMINADORA
+_____________________________________
+Prof.(ª) Aujor Tadeu Cavalca Andrade, Doutor, IFC Campus Camboriú
+_____________________________________
+Prof.(ª) Daniel Fernando Anderle, Doutor, IFC Campus Camboriú
+
+
+
+
+
+
+
+
+Camboriú
+2025
+Este trabalho é dedicado à meus filhos Lucas por me ajudar e escutar minhas dúvidas de programação, a Abril por as vezes que tomamos mates enquanto estudávamos,  a Gonzalo  pela paciência, a meus pais Aurora e Luis pelos que estou sentada aqui aun fazendo o TCC, a Walter Javier Dominguez meu cabo a terra  e a Giselle Betbeder minha amiga que estudou comigo muitas noites prévias aos exames , pelos quais agradeço o apoio contínuo ao longo dos anos.
+________________
+
+
+AGRADECIMENTOS
+
+
+Agradeço aos profissionais do Instituto Federal Catarinense – Campus Camboriú e aos meus colegas, que me acolheram com carinho desde o primeiro dia. Por ser argentina, enfrentar o idioma era um grande desafio, mas a paciência e a companhia de vocês tornaram tudo mais leve. Obrigada por cada gesto de cuidado, por cada explicação e por estarem comigo nesta caminhada de crescimento.
+________________
+
+
+
+
+“Não é o mais forte que sobrevive, nem o mais inteligente, mas o que melhor se adapta às mudanças.” Charles Darwin
+
+
+________________
+
+
+RESUMO
+
+
+Com o avanço das tecnologias digitais aplicadas à educação e ao turismo, torna-se essencial desenvolver soluções que promovam inclusão, inovação e valorização territorial. O projeto TURISMO EDUCA propõe o desenvolvimento de uma plataforma web interativa voltada ao turismo educativo bilíngue (português-espanhol), com foco em estudantes e visitantes da região de Balneário Camboriú e Interpraias. A plataforma busca facilitar o aprendizado sobre pontos turísticos locais por meio de mapas interativos, atividades gamificadas e recursos multimídia, promovendo o engajamento dos usuários em experiências educativas significativas. O objetivo principal é contribuir com a comunidade escolar e turística, oferecendo uma ferramenta eficiente, acessível e interativa que estimule o conhecimento cultural e ambiental da região.
+
+
+Palavras-chave: turismo educativo; plataforma web; ensino bilíngue; mapas interativos; geotecnologias; educação territorial.
+
+
+
+
+
+
+
+
+________________
+
+
+ABSTRACT
+
+
+With the advancement of digital technologies applied to education and tourism, it has become essential to develop solutions that promote inclusion, innovation, and territorial appreciation. The TURISMO EDUCA project proposes the development of an interactive web platform focused on bilingual educational tourism (Portuguese-Spanish), targeting students and visitors in the region of Balneário Camboriú and Interpraias. The platform aims to facilitate learning about local tourist attractions through interactive maps, gamified activities, and multimedia resources, encouraging users to engage in meaningful educational experiences. The main goal is to contribute to both the educational and tourism communities by offering an efficient, accessible, and interactive tool that fosters cultural and environmental knowledge of the region.
+
+
+Keywords: educational tourism; web platform; bilingual education; interactive maps; geotechnologies; territorial education.
+________________
+
+
+
+
+LISTA DE ABREVIATURAS E SIGLAS
+
+
+GPS – Global Positioning System (Sistema de Posicionamento Global)
+JSON – JavaScript Object Notation (Objeto de Notação JavaScript)
+OSM – OpenStreetMap
+API – Application Programming Interface (Interface de Programação de Aplicações)
+URL – Uniform Resource Locator (Localizador Unitário de Recursos)
+QR Code – Quick Response Code (Código de Resposta Rápida)
+POI – Point of Interest (Ponto de Interesse)
+CSS – Cascading Style Sheets (Folhas de Estilo em Cascata)
+HTML – HyperText Markup Language (Linguagem de Marcação em Hipertexto)
+LBS – Location-Based Services (Serviços Baseados em Localização)
+TIC – Tecnologias da Informação e Comunicação
+TCC – Trabalho de Conclusão de Curso
+BC – Balneário Camboriú
+TEB – Turismo Educativo Bilíngue
+
+
+________________
+
+
+LISTA DE FIGURAS
+
+
+Figura 1 - 
+Figura 2 - 
+Figura 3 - 
+Figura 4 - 
+Figura 5 - 
+Figura 6 - 
+Figura 7 - 
+Figura 8 - 
+Figura 9 - 
+Figura 10 - 
+Figura 11 - 
+Figura 12 - 
+Figura 13 - 
+Figura 14 -                  
+Figura 15 - 
+Figura 16 - 
+
+
+
+
+
+
+________________
+
+
+SUMÁRIO
+1        INTRODUÇÃO        11
+1.1        OBJETIVOS        12
+1.1.1        Objetivo Geral        12
+1.1.2        Objetivos Específicos        12
+2        FUNDAMENTAÇÃO TEÓRICA        12
+2.1        TURISMO EDUCATIVO, GEOLOCALIZAÇÃO E EDUCAÇÃO BILÍNGUE COM TECNOLOGIAS DIGITAIS.        12
+2.2        TECNOLOGIAS UTILIZADAS        12
+2.2.1        Frontend e Interatividade        12
+2.2.2        Mapeamento e Geolocalização        12
+2.2.3        Armazenamento de Dados        12
+2.2.4        Design e Acessibilidade        12
+2.2.5        Android Studio        12
+2.3        TRABALHOS CORRELATOS        12
+2.3.1        Mapi         12
+2.3.2        TeachOSM         12
+2.3.3        Smart Campus Map (Mapas Inteligentes aos Campi)        12
+2.3.4           National Geographic MapMaker
+2.3.5           Projeto Turismo na Escola (Paraná)         
+3        METODOLOGIA        12
+3.1        APLICAÇÃO ONLINE  E JUSTIFICATIVA DA HOSPEDAGEM        12
+3.1.1        Front End        12
+3.1.2        Back End        12
+3.2        APLICAÇÃO OFFLINE        
+3.2.1  Integração de QR Codes em pontos turísticos físicos
+3.2.2   Criação de uma versão offline        
+3.2.3   Camadas personalizadas no mapa
+3.2.4   Serviço de rotas dinâmicas
+3.2.5   Cadastro e login de usuários
+3.2.6   Requisitos Funcionais e Não Funcionais
+4        RESULTADOS ESPERADOS        
+
+
+5        CONCLUSÃO        
+REFERÊNCIAS        
+
+
+1.  INTRODUÇÃO
+
+
+            A transformação digital tem impactado profundamente a forma como aprendemos, nos comunicamos e exploramos o mundo. No campo da educação e do turismo, essa revolução tecnológica abre caminhos para experiências mais interativas, acessíveis e significativas. Em especial, o uso de plataformas digitais com recursos geográficos e bilíngues tem se mostrado uma ferramenta poderosa para conectar estudantes ao território, à cultura e à história local.
+        A proposta deste trabalho surge da necessidade de integrar o ensino de línguas (português e espanhol) com o turismo educativo, utilizando tecnologias como mapas interativos, códigos QR e atividades gamificadas. A ideia é criar uma plataforma web que permita aos alunos e visitantes explorar pontos turísticos de Balneário Camboriú e Interpraias de forma autônoma, divertida e educativa, tanto em sala de aula quanto em passeios guiados.
+         Além de promover o aprendizado contextualizado, a plataforma busca ampliar a inclusão digital e social, oferecendo recursos acessíveis para diferentes perfis de usuários. Como destaca Getschko et al. (2020, p. 19), 
+“As tecnologias digitais oferecem oportunidades sem precedentes para apoiar a construção de sociedades do conhecimento inclusivas e alcançar os Objetivos de Desenvolvimento Sustentável. Elas representam um meio para que pessoas com deficiência e outras comunidades marginalizadas possam ter acesso à informação, empoderando-as a participarem ativamente do desenvolvimento social e econômico.” (GETSCHKO et al. 2020. p. 19).
+
+
+ A proposta surgiu da observação da carência de materiais didáticos digitais que  integrem o ensino de línguas com o conhecimento territorial e cultural da região. A diversidade dos perfis dos usuários, incluindo estudantes de diferentes níveis e turistas interessados em aprender sobre o espaço visitado, reforça a relevância de uma solução que promova inclusão, valorização cultural e educação ambiental.
+Além disso, a plataforma se alinha aos Objetivos de Desenvolvimento Sustentável (ODS), especialmente no que se refere à promoção da educação de qualidade, inovação e acesso inclusivo a espaços públicos e culturais.
+
+
+   1.   OBJETIVOS
+
+
+A seguir, estão descritos o objetivo geral e os objetivos específicos desta pesquisa.
+
+
+      1.  Objetivo Geral
+
+
+Desenvolver uma plataforma web interativa e bilíngue (português-espanhol) que auxilie estudantes e visitantes na exploração educativa de pontos turísticos de Balneário Camboriú e Interpraias, promovendo inclusão, autonomia e aprendizado contextualizado.
+
+
+      2.  Objetivos Específicos
+
+
+- Investigar boas práticas de acessibilidade digital aplicadas ao turismo educativo;
+- Integrar recursos de geolocalização, mapas interativos e QR codes em uma interface amigável;
+- Criar atividades bilíngues (português-espanhol) que estimulem o aprendizado durante passeios escolares;
+- Disponibilizar a plataforma em versão online para uso em salas de informática e em dispositivos móveis;
+- Garantir que a solução seja escalável e adaptável a outros destinos turísticos e contextos educacionais;
+- Contribuir para a valorização do território local como espaço de aprendizagem e inclusão.
+
+
+
+
+O trabalho está estruturado da seguinte maneira: no primeiro capítulo, apresentam-se os objetivos geral e específicos do estudo. O segundo capítulo aborda o referencial teórico do projeto, onde são explorados os principais conceitos que embasam o trabalho, como geolocalização, navegação interna e plataforma e os trabalhos correlatos. No capítulo 3 é detalhada a metodologia adotada, seguido pelo capítulo 4 com os resultados e discussões do trabalho. Por fim, o último capítulo apresenta as conclusões do estudo, sintetizando as contribuições e os potenciais desdobramentos da pesquisa.
+
+
+
+
+2.  FUNDAMENTAÇÃO TEÓRICA
+
+
+   2.  TURISMO EDUCATIVO, GEOLOCALIZAÇÃO E EDUCAÇÃO BILÍNGUE COM TECNOLOGIAS DIGITAIS.
+O turismo educativo tem se consolidado como uma prática pedagógica que conecta teoria e vivência, permitindo que os estudantes explorem o território como espaço de aprendizagem. Segundo Morais et al. (2020), essa abordagem promove o desenvolvimento de valores, cidadania e consciência ambiental, ao mesmo tempo em que estimula o protagonismo dos alunos em atividades fora da sala de aula. [institutoa...zul.org.br]
+
+
+A utilização de mapas interativos e QR codes em projetos escolares tem ampliado as possibilidades de ensino contextualizado. Fiori (2008) destaca que os mapas turísticos digitais, ao incorporar pictografia e animações, tornam-se mais acessíveis e atrativos para públicos não especializados, como estudantes e turistas. Essa abordagem facilita a leitura cartográfica e estimula a curiosidade sobre os locais visitados. [repositorio.usp.br]
+
+
+
+
+Além disso, o uso de tecnologias digitais no ensino de línguas tem se mostrado eficaz tanto para estudantes quanto para turistas que chegam ao Brasil sem domínio do idioma. Neves (2023) analisa como ferramentas como Canva, Kahoot! e plataformas multimodais contribuem para o desenvolvimento de habilidades linguísticas em espanhol, promovendo práticas de leitura, escrita e vocabulário em ambientes digitais. [anais.ueg.br]
+A proposta de uma plataforma web bilíngue voltada ao turismo educativo em Balneário Camboriú e Interpraias se fundamenta na convergência entre território, tecnologia e educação. Ao integrar mapas interativos, QR codes e atividades gamificadas em português e espanhol, busca-se oferecer uma experiência acessível, divertida e educativa para estudantes e visitantes, promovendo a valorização do espaço local e o aprendizado de línguas em contexto real.
+
+
+   3.  TECNOLOGIAS UTILIZADAS
+
+
+Após a definição dos objetivos da plataforma web bilíngue voltada ao turismo educativo, foram selecionadas tecnologias que favorecem a interatividade, a geolocalização e a acessibilidade digital. A escolha por ferramentas abertas e amplamente documentadas visa garantir a sustentabilidade e a possibilidade de expansão futura do projeto.
+
+
+      3.  Frontend e Interatividade
+
+
+A interface da plataforma foi concebida em JavaScript, utilizando o framework React, reconhecido por sua capacidade de criar aplicações web responsivas e dinâmicas. Essa combinação permite a construção de componentes reutilizáveis e uma navegação fluida entre os pontos turísticos mapeados, favorecendo a experiência do usuário (PRESCOTT, 2016; GACKENHEIMER, 2015).
+
+
+
+
+      4.  Mapeamento e Geolocalização
+
+
+Para a visualização dos mapas e dos pontos de interesse, foi utilizada a biblioteca Leaflet, integrada à base cartográfica do OpenStreetMap (OSM). Essa integração oferece dados geográficos abertos e atualizados, possibilitando o mapeamento colaborativo e a inclusão de informações multimídia sobre cada local (GOODCHILD, 2007; FITRI et al., 2022).
+
+
+      5.  Armazenamento de Dados
+Os dados referentes aos locais e às descrições bilíngues foram estruturados em arquivos JSON, formato leve e de fácil integração com sistemas web, permitindo o armazenamento de informações como coordenadas, textos e imagens (ROCHA, 1999).
+
+
+      6.  Design e Acessibilidade
+
+
+A plataforma prioriza a acessibilidade digital, adotando práticas como contraste adequado, ícones intuitivos e textos disponíveis em português e espanhol. Esses recursos ampliam a inclusão de diferentes públicos, como turistas estrangeiros e usuários com limitações visuais ou cognitivas leves (GETSCHKO et al., 2020).
+
+
+
+
+   4.  TRABALHOS CORRELATOS
+
+
+Diversas iniciativas educacionais e tecnológicas têm servido de inspiração para o desenvolvimento desta plataforma web bilíngue voltada ao turismo educativo. A seguir, são apresentados projetos e ferramentas que integram mapeamento digital, geolocalização, ensino de línguas e valorização do território como espaço pedagógico.
+
+
+2.3.1 MAPi (USP) – Desenvolvida pelo Centro de Estudos da Metrópole da Universidade de São Paulo, a plataforma MAPi é uma ferramenta gratuita e aberta para mapeamento interativo. Permite a criação de mapas temáticos com dados multimídia (fotos, vídeos, textos), visualização de dados espaciais e análises geográficas. Recentemente atualizada, o MAPi passou a permitir que usuários contribuam com dados colaborativos, como fotografias urbanas e informações locais, reforçando seu uso como recurso pedagógico em escolas.
+Site oficial: MAPi - USP [geocemplus...vercel.app]
+Artigo sobre atualizações: Jornal da USP [jornal.usp.br]
+Manual do usuário: PDF [ns1.editor...ize.com.br]
+  
+
+
+
+
+
+2.3.2 TeachOSM – O projeto TeachOSM é uma iniciativa internacional vinculada ao OpenStreetMap US, que oferece suporte a educadores para integrar mapeamento colaborativo em sala de aula. A plataforma disponibiliza conteúdos didáticos, treinamentos e ferramentas para que professores e alunos possam editar mapas e desenvolver projetos geográficos com dados reais.
+Site oficial: TeachOSM [teachosm.org]
+Recursos educacionais: Projetos e atividades [teachosm.org]
+  
+
+
+
+
+
+2.3.3 National Geographic MapMaker– O MapMaker é uma ferramenta digital criada pela National Geographic Society em parceria com a Esri. Voltada ao ensino básico, permite a criação de mapas interativos com dados geográficos, atividades educativas e visualizações temáticas. É gratuita, não exige login e funciona em dispositivos leves como tablets e laptops.
+Site oficial: MapMaker - National Geographic [education....raphic.org]
+Guia de uso: MapMaker Launch Guide [nationalge...raphic.org]
+  
+
+
+
+
+
+2.3.4 Genially –Genially é uma plataforma online que permite a criação de conteúdos interativos, como mapas, infográficos, quizzes e apresentações. É amplamente utilizada em contextos educacionais por sua facilidade de uso e por não exigir conhecimentos de programação. Permite incorporar vídeos, imagens, textos bilíngues e elementos clicáveis, sendo ideal para simular roteiros turísticos e atividades gamificadas.
+Criar mapas interativos: Genially - Criar Mapas [genially.com]
+Modelos gratuitos: Templates Genially
+  
+
+
+
+2.3.5  Projeto Turismo na Escola (Paraná)–Iniciativa da Secretaria de Turismo do Paraná em parceria com a Secretaria de Educação, o Projeto Turismo na Escolapromove a valorização do território local por meio de atividades interdisciplinares. Os alunos exploram o patrimônio cultural e natural de suas cidades, desenvolvendo senso de pertencimento e consciência turística.
+Site oficial: Turismo na Escola - Paraná [turismo.pr.gov.br]
+Cartilha do Professor: PDF oficial [turismo.pr.gov.br]
+  
+
+
+
+
+
+
+
+
+
+Esses trabalhos inspiraram a proposta deste TCC, que busca integrar o potencial educativo do mapeamento digital com o ensino de línguas e o turismo cultural local.
+
+
+
+
+
+
+
+
+3.  METODOLOGIA
+
+
+         O desenvolvimento da plataforma web bilíngue “Turismo Educativo Interativo” foi guiado por uma abordagem prática e criativa, com base em experiências reais de campo e necessidades observadas tanto no ambiente escolar quanto no contexto turístico. A proposta surgiu da vivência como guia de turismo e professora de espanhol, aliando o desejo de valorizar o patrimônio local à oportunidade de criar uma ferramenta educativa acessível e envolvente.
+
+
+A metodologia adotada é qualitativa, com caráter exploratório, e se fundamenta na observação direta de grupos turísticos, na análise de demandas escolares e na pesquisa de tecnologias digitais aplicadas à educação e ao turismo. A construção do protótipo priorizou a simplicidade de uso, a acessibilidade linguística e a integração com mapas interativos, permitindo que estudantes e visitantes explorem os pontos turísticos de Balneário Camboriú e região de forma autônoma e significativa.
+
+
+             Optou-se pelo desenvolvimento de uma plataforma web, acessível por computadores escolares e dispositivos móveis, considerando as restrições ao uso de celulares em sala de aula e a necessidade de uma solução funcional no curto prazo. O acesso será facilitado por códigos QR, que poderão ser utilizados em passeios educativos e, futuramente, instalados em pontos turísticos físicos como proposta de valorização cultural a ser apresentada à prefeitura.
+
+
+          A interface será bilíngue (português-espanhol), com conteúdos adaptados para diferentes públicos, incluindo estudantes, professores e turistas. A navegação será baseada em mapas interativos com tecnologia Leaflet e dados do OpenStreetMap, permitindo a visualização de rotas, curiosidades locais e atividades educativas. A metodologia também prevê a possibilidade de expansão para recursos de acessibilidade, como leitura por voz e comandos interativos, conforme o avanço do projeto.
+
+
+   5.  APLICAÇÃO ONLINE E JUSTIFICATIVA DA HOSPEDAGEM
+O protótipo da plataforma “Turismo Educativo Interativo” será disponibilizado como uma aplicação web, hospedada no GitHub Pages, serviço gratuito que permite publicar sites estáticos diretamente a partir de repositórios GitHub. Essa escolha se justifica pela simplicidade, ausência de custos e suporte a controle de versão, características que favorecem projetos acadêmicos e protótipos (GitHub, 2024). Além disso, o GitHub Pages possibilita replicabilidade, permitindo que outros desenvolvedores adaptem o código para diferentes contextos educacionais e turísticos.
+Como alternativa futura, considera-se a utilização do serviço Hostinger, já contratado, para hospedar versões mais robustas da aplicação, com suporte a backend e banco de dados dinâmico, caso seja necessário ampliar funcionalidades.
+
+
+3.1.1  Front End
+
+
+A interface será desenvolvida com React, biblioteca JavaScript criada pela Meta, que se destaca pela abordagem baseada em componentes reutilizáveis e pela eficiência na atualização da interface em tempo real. Essa característica favorece a escalabilidade e a manutenção do código, aspectos essenciais para sistemas que podem evoluir para novas funcionalidades (React, 2024). A modularidade do React permitirá organizar a plataforma em componentes como cabeçalho, mapa interativo e atividades educativas, garantindo clareza e flexibilidade.
+
+
+Para a exibição dos mapas, será utilizada a biblioteca Leaflet, projetada para simplicidade e alto desempenho em navegadores. Com apenas 42 KB, Leaflet oferece recursos robustos para criação de mapas interativos, incluindo suporte a camadas, marcadores e integração com dados geográficos, sendo amplamente utilizada em aplicações educacionais e turísticas (Agafonkin, 2011; ForestGIS, 2022). Essa escolha se alinha ao objetivo de apresentar pontos turísticos e rotas de forma dinâmica e acessível.
+   Como base cartográfica, será adotado o OpenStreetMap (OSM), projeto colaborativo global que disponibiliza dados geográficos livres sob licença aberta, permitindo personalização e atualização contínua. O OSM é reconhecido pela comunidade científica como uma alternativa confiável para aplicações que demandam dados geoespaciais acessíveis e adaptáveis (Grinberger et al., 2022).
+                Para armazenamento das informações bilíngues e coordenadas dos pontos turísticos, será utilizado o formato JSON (JavaScript Object Notation), amplamente empregado por sua leveza, legibilidade e interoperabilidade entre diferentes linguagens. Desde sua especificação por Douglas Crockford, o JSON tornou-se padrão para troca de dados em aplicações web (Barros, 2024).
+
+
+
+
+
+
+3.1.2 Back End
+
+
+O protótipo da plataforma não exigirá um back-end robusto nesta fase, considerando que o objetivo principal é disponibilizar informações turísticas e atividades educativas de forma acessível e rápida. Para isso, será adotada uma abordagem baseada em arquivos JSON estáticos, que armazenarão dados bilíngues (português e espanhol) sobre pontos turísticos, coordenadas geográficas e conteúdos educativos.
+
+
+              Essa escolha se justifica pela simplicidade e eficiência do formato JSON (JavaScript Object Notation), amplamente utilizado para troca de dados em aplicações web por sua leveza, legibilidade e interoperabilidade entre diferentes linguagens. Desde sua especificação por Douglas Crockford, o JSON tornou-se padrão para aplicações que não demandam estruturas complexas de banco de dados (Barros, 2024).
+
+
+              A ausência de um servidor dinâmico reduz custos e complexidade, mantendo a funcionalidade essencial para navegação e consulta. Essa arquitetura também favorece a replicabilidade do projeto, permitindo que outras instituições adaptem os arquivos JSON com seus próprios dados turísticos sem necessidade de infraestrutura adicional.
+
+
+   6.  APLICAÇÃO  OFFLINE. PROPOSTA FUTURA
+                   Durante o desenvolvimento do protótipo online, foram identificadas diversas possibilidades de expansão para tornar a plataforma mais completa e funcional, tanto para uso educacional quanto turístico. Entre as principais sugestões, destacam-se:
+3.2.1  Integração de QR Codes em pontos turísticos físicos
+                    Atualmente, para acessar conteúdos históricos sobre a construção do teleférico ou visualizar imagens do Morro da Aguada antes do empreendimento privado, é necessário subir ao teleférico e pagar um ingresso. Essa limitação reforça a importância de disponibilizar informações digitais acessíveis e gratuitas, democratizando o acesso ao patrimônio histórico e cultural.
+           A proposta é instalar QR Codes em pontos turísticos estratégicos, como a Roda Gigante, o Morro do Careca e os decks da Praia do Buraco. Ao escanear o código, o visitante poderá acessar conteúdos bilíngues (português e espanhol), incluindo fotos históricas, curiosidades culturais e atividades interativas. Essa funcionalidade amplia a experiência turística sem custos adicionais e contribui para a valorização do patrimônio local.
+              Exemplo prático: Um QR Code no mirante do Morro da Aguada pode direcionar o visitante para uma página com mapa interativo, imagens históricas da construção do teleférico e um quiz educativo sobre a fauna e flora da região.
+3.2.2  Criação de uma versão offline
+      Embora o protótipo atual seja online, considera-se como expansão futura o desenvolvimento de uma versão offline, que poderá ser implementada como aplicativo nativo para Android ou como Progressive Web App (PWA). Essa abordagem permitirá acesso aos conteúdos sem necessidade de conexão constante, ampliando a experiência do usuário em áreas com baixa cobertura de rede, como trilhas e mirantes.
+Recursos previstos:
+* Cache local para mapas e conteúdos bilíngues.
+* Leitura por voz para acessibilidade.
+* Comandos interativos para navegação.
+Exemplo prático: Um turista em uma trilha da Interpraias poderá acessar informações sobre pontos de observação mesmo sem sinal de internet.
+
+
+3.2.3 Camadas personalizadas no mapa
+           A plataforma poderá incorporar camadas adicionais com informações específicas, como trilhas ecológicas, pontos acessíveis para pessoas com mobilidade reduzida e locais de interesse histórico. Ferramentas como JOSM (para edição vetorial) e Maperitive (para conversão em MBTiles) poderão ser utilizadas para criar mapas otimizados para uso offline.
+Exemplo prático: Uma camada exclusiva destacando pontos com rampas e acessibilidade para cadeirantes em Balneário Camboriú.
+
+
+3.2.4  Serviço de rotas dinâmicas
+          Outra funcionalidade futura é a implementação de um serviço de rotas, permitindo ao usuário traçar caminhos entre pontos turísticos e aplicar filtros como distância, acessibilidade e tipo de trajeto (pedestre, ciclovia). Essa funcionalidade poderá ser integrada por meio de APIs que retornem dados em formato GeoJSON, renderizados no mapa via Leaflet.
+Exemplo prático: Um visitante poderá escolher a rota mais curta entre a Roda Gigante e a Igreja da Barra, com opção de incluir apenas caminhos acessíveis.
+
+
+3.2.5. Cadastro e login de usuários
+          A inclusão de um sistema de autenticação permitirá personalização da experiência, registro de locais visitados e acesso a conteúdos exclusivos. Essa funcionalidade poderá ser integrada a um banco de dados seguro, possibilitando também a criação de rankings e desafios educativos para estudantes.
+Exemplo prático: Um professor poderá criar uma conta para acompanhar o desempenho dos alunos em atividades realizadas durante passeios educativos.
+
+
+         Essas melhorias visam transformar a plataforma em uma ferramenta completa para turismo educativo, com potencial para ser adotada por escolas, agências e órgãos públicos, promovendo inclusão, acessibilidade e valorização cultural.
+
+
+3.2.6 Requisitos Funcionais e Não Funcionais
+Para orientar o desenvolvimento do protótipo da plataforma web voltada ao turismo educativo e ao ensino bilíngue em Balneário Camboriú e região, foram definidos requisitos funcionais e não funcionais que visam garantir a usabilidade, acessibilidade e eficiência do sistema proposto.
+Requisitos Funcionais
+Os requisitos funcionais descrevem as funcionalidades essenciais que o sistema deve oferecer aos usuários:
+* RF01: O sistema deve permitir o acesso por meio de QR Code, disponibilizado em ambientes escolares e pontos turísticos.
+* RF02: O sistema deve exibir mapas interativos com pontos turísticos georreferenciados.
+* RF03: O sistema deve apresentar atividades bilíngues em português e espanhol, relacionadas aos locais visitados.
+* RF04: O sistema deve permitir a navegação por roteiros turísticos previamente definidos.
+* RF05: O sistema deve possibilitar o cadastro e login de usuários, com diferentes perfis (aluno, professor, turista).
+Requisitos Não Funcionais
+Os requisitos não funcionais referem-se às características técnicas e operacionais do sistema:
+* RNF01: O sistema deve ser responsivo, adaptando-se a diferentes tamanhos de tela e dispositivos.
+* RNF02: O tempo de carregamento das páginas não deve exceder três segundos, garantindo uma experiência fluida.
+* RNF03: O sistema deve estar disponível em português e espanhol, respeitando a proposta bilíngue do projeto.
+* RNF04: O sistema deve ser acessível em navegadores modernos, sem necessidade de instalação ou plugins adicionais.
+* RNF05: O sistema deve garantir segurança básica de dados, especialmente nas áreas de login e cadastro.
+Esses requisitos foram definidos com base nas necessidades dos usuários-alvo e nas limitações técnicas observadas no ambiente escolar, servindo como base para o desenvolvimento do protótipo e para futuras expansões da plataforma.
+
+
+
+
+4.  RESULTADOS ESPERADOS
+
+
+          Espera-se que a plataforma “Turismo Educativo Interativo” gere impactos significativos no contexto educacional e turístico da região de Balneário Camboriú e Interpraias. No âmbito educacional, o sistema deverá promover a aprendizagem bilíngue de forma contextualizada, integrando conteúdos culturais e geográficos em uma interface interativa. Essa abordagem permitirá que estudantes desenvolvam competências linguísticas e conhecimentos sobre patrimônio local, utilizando recursos digitais acessíveis em ambientes escolares.
+
+
+          No contexto turístico, a plataforma deverá facilitar a exploração dos pontos de interesse por meio de mapas interativos e informações bilíngues, contribuindo para a valorização cultural e histórica da região. A integração de QR Codes em passeios educativos e, futuramente, em pontos turísticos físicos, ampliará a acessibilidade às informações, democratizando o acesso a conteúdos que atualmente estão restritos a espaços pagos, como ocorre com imagens históricas do teleférico e do Morro da Aguada.
+         Além disso, espera-se que a plataforma estimule a inclusão digital, oferecendo às escolas um recurso pedagógico inovador para disciplinas como geografia, história e língua estrangeira. A proposta também visa fortalecer parcerias institucionais com prefeituras e agências de turismo, criando oportunidades para expansão do projeto e implementação de funcionalidades adicionais, como rotas dinâmicas e camadas personalizadas no mapa. Como resultado, prevê-se que a ferramenta seja utilizada tanto em contextos formais de ensino quanto como apoio à experiência turística, consolidando-se como um instrumento de promoção da educação e do turismo sustentável.
+
+
+5.  CONCLUSÃO
+
+
+
+
+
+
+
+
+________________
+
+
+
+
+REFERÊNCIAS
+* GITHUB. Referencing and citing content. Disponível em: <https://docs.github.com>. Acesso em: 30 out. 2025.
+* REACT. Documentação oficial. Disponível em: <https://pt-br.react.dev>. Acesso em: 30 out. 2025.
+* AGAFONKIN, V. Leaflet: a JavaScript library for interactive maps. Disponível em: <https://leafletjs.com>. Acesso em: 30 out. 2025.
+* GRINBERGER, A.; et al. OSM Science—The Academic Study of the OpenStreetMap Project. ISPRS International Journal of Geo-Information, v. 11, n. 4, 2022.
+* BARROS, S. JSON: Uma visão abrangente sobre o formato de dados interchange. DEV Community, 2024.
+* ARAUJO, F. S. QR Codes na educação escolar: possibilidades de aprendizagem na língua inglesa em tempos de cultura digital. 2021. Dissertação (Mestrado em Educação) – Universidade Estadual Paulista “Júlio de Mesquita Filho” (UNESP), São Paulo, 2021.
+* RIBAS, A. C.; et al. O uso do aplicativo QR Code como recurso pedagógico no processo de ensino e aprendizagem. Revista Pedagogia, Opet, 2020.
+
+
+
+
+
+
+.

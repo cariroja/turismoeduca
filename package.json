@@ -1,0 +1,14 @@
+{
+  "name": "turismo-educa-prototipo",
+  "version": "0.1.0",
+  "description": "Prototipo inicial para TURISMO EDUCA",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node index.js --test"
+  },
+  "engines": {
+    "node": ">=24.11.0"
+  },
+  "license": "MIT"
+}
