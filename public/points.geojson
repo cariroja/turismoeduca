@@ -4,7 +4,7 @@
     {
       "type": "Feature",
       "id": "mirante-aguada",
-      "geometry": { "type": "Point", "coordinates": [-48.6489, -27.0212] },
+      "geometry": { "type": "Point", "coordinates": [-48.59991, -26.99513] },
       "properties": {
         "id": "mirante-aguada",
         "title": { "pt": "Mirante da Aguada", "es": "Mirador de la Aguada" },
@@ -21,7 +21,7 @@
     {
       "type": "Feature",
       "id": "praia-central",
-      "geometry": { "type": "Point", "coordinates": [-48.6336, -27.0133] },
+      "geometry": { "type": "Point", "coordinates": [-48.62978, -26.98848] },
       "properties": {
         "id": "praia-central",
         "title": { "pt": "Praia Central", "es": "Playa Central" },
@@ -38,7 +38,7 @@
     {
       "type": "Feature",
       "id": "cristo-luz",
-      "geometry": { "type": "Point", "coordinates": [-48.6478, -27.0061] },
+      "geometry": { "type": "Point", "coordinates": [-48.64532, -26.98572] },
       "properties": {
         "id": "cristo-luz",
         "title": { "pt": "Cristo Luz", "es": "Cristo Luz" },
