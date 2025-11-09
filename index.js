@@ -2,6 +2,7 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 const { execSync } = require("child_process");
+const os = require('os');
 
 if (process.argv.includes("--test")) {
   console.log("Node version:", process.version);
@@ -56,6 +57,28 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(port, () => {
-  console.log(`Servidor estático en http://localhost:${port}`);
+function getLocalIPs() {
+  const nets = os.networkInterfaces();
+  const results = [];
+  for (const name of Object.keys(nets)) {
+    for (const net of nets[name]) {
+      // prefer IPv4 and skip internal addresses
+      if (net.family === 'IPv4' && !net.internal) {
+        results.push(net.address);
+      }
+    }
+  }
+  return results;
+}
+
+// Bind explicitly to all interfaces so other devices on the LAN can connect.
+server.listen(port, '0.0.0.0', () => {
+  const ips = getLocalIPs();
+  console.log(`Servidor estático disponible en:`);
+  console.log(`  http://localhost:${port}`);
+  if (ips.length) {
+    for (const ip of ips) console.log(`  http://${ip}:${port}`);
+  } else {
+    console.log('  (no se detectaron IPs LAN automáticamente)');
+  }
 });
