@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TURISMO EDUCA — Projeto Piloto</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>TURISMO EDUCA — Projeto Piloto</h1>
+      <div id="lang">
+        <label>Idioma: </label>
+        <select id="langSelect">
+          <option value="pt">Português</option>
+          <option value="es">Español</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- Toolbar: acciones rápidas -->
+    <nav class="toolbar" role="navigation" aria-label="Acciones">
+      <input
+        id="poiSearch"
+        type="search"
+        placeholder="Buscar punto (ej. Cristo)"
+        aria-label="Buscar punto"
+      />
+      <button class="btn" id="btnSearch">Buscar</button>
+      <button class="btn" id="btnQuiz">Quiz</button>
+      <button class="btn" id="btnHistoria">Historia</button>
+      <button class="btn" id="btnActividades">Actividades</button>
+      <button class="btn" id="btnPerfil">Perfil</button>
+      <button class="btn" id="btnLogout">Salir</button>
+    </nav>
+
+    <main>
+      <div id="map"></div>
+      <div id="info">Marca un marcador para ver información bilingüe.</div>
+    </main>
+
+    <!-- Welcome / login overlay -->
+    <div id="welcome" class="overlay" aria-hidden="true">
+      <div class="panel">
+        <h2 id="welcomeTitle">Bienvenida a TURISMO EDUCA</h2>
+        <p id="welcomeText">
+          Antes de empezar, dinos quién sos para personalizar la experiencia.
+        </p>
+        <!-- idioma dentro de la bienvenida: permite elegir antes de entrar -->
+        <div style="margin-bottom: 12px">
+          <label for="welcomeLangSelect">Idioma: </label>
+          <select id="welcomeLangSelect">
+            <option value="pt">Português</option>
+            <option value="es">Español</option>
+          </select>
+        </div>
+        <form id="welcomeForm">
+          <label id="labelName"
+            >Nombre<br /><input
+              type="text"
+              id="userName"
+              required
+              placeholder="Tu nombre"
+          /></label>
+          <!-- Se removió el campo Profesión / Curso según requerimiento -->
+          <label id="labelRole"
+            >Rol
+            <select id="userRole">
+              <option value="alumno" id="roleAlumno">Alumno</option>
+              <option value="profesor" id="roleProfesor">Profesor</option>
+              <option value="turista" id="roleTurista">Turista</option>
+            </select>
+          </label>
+          <div class="actions">
+            <button type="submit" class="btn primary" id="welcomeEnter">
+              Entrar
+            </button>
+            <button type="button" id="skipWelcome" class="btn">
+              Entrar sin perfil
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal/placeholder for content panels (quiz, historia, actividades) -->
+    <div id="modal" class="overlay" aria-hidden="true">
+      <div class="panel">
+        <button id="modalClose" class="btn">Cerrar</button>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
