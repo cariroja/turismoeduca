@@ -37,7 +37,7 @@
   // Translations for UI strings (pt = Portuguese, es = Spanish)
   const T = {
     pt: {
-      header: "TURISMO EDUCA — Protótipo",
+      header: "TURISMO EDUCA — Projeto Piloto",
       welcomeTitle: "Bem-vinda ao TURISMO EDUCA",
       welcomeText:
         "Antes de começar, diga quem você é para personalizar a experiência.",
@@ -65,7 +65,7 @@
         "Listado de atividades/retos para o passeio educativo (demo).",
     },
     es: {
-      header: "TURISMO EDUCA — Prototipo",
+      header: "TURISMO EDUCA — Proyecto Piloto",
       welcomeTitle: "Bienvenida a TURISMO EDUCA",
       welcomeText:
         "Antes de empezar, dinos quién sos para personalizar la experiencia.",
