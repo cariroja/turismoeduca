@@ -138,6 +138,56 @@ main {
   }
 }
 
+/* Splash screen styles */
+.splash {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.55);
+  z-index: 1100;
+  transition: opacity 300ms ease, visibility 300ms;
+}
+.splash[aria-hidden="true"] {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.splash-inner {
+  text-align: center;
+  color: #fff;
+}
+.splash-logo {
+  max-width: 260px;
+  width: 45vw;
+  height: auto;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.6));
+}
+.splash-title {
+  margin: 0 0 8px 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+}
+.splash-sub {
+  margin: 0 0 16px 0;
+  color: #fff;
+  opacity: 1;
+  font-size: 1rem;
+}
+.splash-actions .btn {
+  font-size: 1rem;
+  padding: 8px 14px;
+}
+
+/* ensure overlay panels remain on top of splash when active */
+.overlay {
+  z-index: 1200;
+}
+
 /* Marker bounce effect used when a search finds a marker */
 .marker-bounce {
   animation: marker-bounce 0.7s ease;

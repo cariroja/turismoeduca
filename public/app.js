@@ -1,6 +1,8 @@
 // Minimal app: carga puntos desde points.json y muestra en Leaflet con popup bilingüe
 (function () {
   // UI elements
+  const splash = document.getElementById("splash");
+  const splashStart = document.getElementById("splashStart");
   const welcome = document.getElementById("welcome");
   const welcomeForm = document.getElementById("welcomeForm");
   const userNameInput = document.getElementById("userName");
@@ -186,6 +188,34 @@
   // If no user, show welcome overlay
   if (!getUser()) welcome.setAttribute("aria-hidden", "false");
   else welcome.setAttribute("aria-hidden", "true");
+
+  // Splash handlers: hide splash when user clicks Comenzar or when they search
+  function hideSplash() {
+    try {
+      if (splash) splash.setAttribute("aria-hidden", "true");
+      // remember that user dismissed splash so it won't show again
+      try {
+        localStorage.setItem('seenSplash', '1');
+      } catch (e) {}
+    } catch (e) {}
+  }
+  if (splashStart) {
+    splashStart.addEventListener("click", (e) => {
+      e.preventDefault();
+      hideSplash();
+      // focus the search input so they can search immediately
+      try {
+        poiSearch && poiSearch.focus();
+      } catch (err) {}
+    });
+  }
+
+  // If user already dismissed splash earlier, hide it immediately
+  try {
+    if (localStorage.getItem('seenSplash') === '1') {
+      if (splash) splash.setAttribute('aria-hidden', 'true');
+    }
+  } catch (e) {}
 
   // Toolbar buttons
   btnQuiz.addEventListener("click", () => {
@@ -502,6 +532,8 @@
 
   // Search function: find by id or title substring (current language)
   function searchAndFocus(query) {
+    // hide splash if visible so map is visible behind
+    hideSplash();
     if (!query) return showModal("<p>Ingrese un término de búsqueda.</p>");
     const raw = query.trim();
     if (!raw) return showModal("<p>Ingrese un término de búsqueda.</p>");
