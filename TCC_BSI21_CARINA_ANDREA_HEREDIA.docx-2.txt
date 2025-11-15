@@ -140,7 +140,7 @@ Prof.(ª) Daniel Fernando Anderle, Doutor, IFC Campus Camboriú
 
 Camboriú
 2025
-Este trabalho é dedicado à meus filhos Lucas por me ajudar e escutar minhas dúvidas de programação, a Abril por as vezes que tomamos mates enquanto estudávamos,  a Gonzalo  pela paciência, a meus pais Aurora e Luis pelos que estou sentada aqui aun fazendo o TCC, a Walter Javier Dominguez meu cabo a terra  e a Giselle Betbeder minha amiga que estudou comigo muitas noites prévias aos exames , pelos quais agradeço o apoio contínuo ao longo dos anos.
+Este trabalho é dedicado aos meus filhos, Lucas, Abril e Gonzalo  pelo apoio e pela companhia durante o período de elaboração deste trabalho; aos meus pais, Aurora e Luís, pelo incentivo incondicional; a Walter Javier Dominguez, pelo apoio emocional; e a Giselle Betbeder, amiga e companheira de estudos em muitas noites prévias aos exames. A todos, registro meu profundo agradecimento pelo suporte constante.
 ________________
 
 
@@ -329,6 +329,11 @@ O turismo educativo tem se consolidado como uma prática pedagógica que conecta
 A utilização de mapas interativos e QR codes em projetos escolares tem ampliado as possibilidades de ensino contextualizado. Fiori (2008) destaca que os mapas turísticos digitais, ao incorporar pictografia e animações, tornam-se mais acessíveis e atrativos para públicos não especializados, como estudantes e turistas. Essa abordagem facilita a leitura cartográfica e estimula a curiosidade sobre os locais visitados. [repositorio.usp.br]
 
 
+2.1.1  Conceitos de Turismo Educativo
+
+O turismo educativo refere-se a práticas que articulam experiências de visitação com objetivos pedagógicos, promovendo a construção de conhecimento a partir do contato direto com o território. Essas atividades valorizam a aprendizagem ativa, a observação do patrimônio natural e cultural e a integração entre conteúdos escolares e contextos locais, favorecendo a interdisciplinaridade e o desenvolvimento de competências socioambientais.
+
+
 
 
 Além disso, o uso de tecnologias digitais no ensino de línguas tem se mostrado eficaz tanto para estudantes quanto para turistas que chegam ao Brasil sem domínio do idioma. Neves (2023) analisa como ferramentas como Canva, Kahoot! e plataformas multimodais contribuem para o desenvolvimento de habilidades linguísticas em espanhol, promovendo práticas de leitura, escrita e vocabulário em ambientes digitais. [anais.ueg.br]
@@ -344,7 +349,7 @@ Após a definição dos objetivos da plataforma web bilíngue voltada ao turismo
       3.  Frontend e Interatividade
 
 
-A interface da plataforma foi concebida em JavaScript, utilizando o framework React, reconhecido por sua capacidade de criar aplicações web responsivas e dinâmicas. Essa combinação permite a construção de componentes reutilizáveis e uma navegação fluida entre os pontos turísticos mapeados, favorecendo a experiência do usuário (PRESCOTT, 2016; GACKENHEIMER, 2015).
+A interface da plataforma foi desenvolvida utilizando as tecnologias web padrão: HTML5 para a estrutura, CSS3 para a estilização e JavaScript (Vanilla JS) para toda a lógica de interatividade. O uso de JavaScript puro permitiu criar um protótipo leve e eficiente para manipulação do DOM e gestão de eventos do usuário. Essa escolha priorizou a simplicidade, minimizou dependências externas e garantiu desempenho adequado para a renderização cartográfica com a biblioteca Leaflet.
 
 
 
@@ -440,9 +445,13 @@ A metodologia adotada é qualitativa, com caráter exploratório, e se fundament
 
 
              Optou-se pelo desenvolvimento de uma plataforma web, acessível por computadores escolares e dispositivos móveis, considerando as restrições ao uso de celulares em sala de aula e a necessidade de uma solução funcional no curto prazo. O acesso será facilitado por códigos QR, que poderão ser utilizados em passeios educativos e, futuramente, instalados em pontos turísticos físicos como proposta de valorização cultural a ser apresentada à prefeitura.
+                   
 
 
           A interface será bilíngue (português-espanhol), com conteúdos adaptados para diferentes públicos, incluindo estudantes, professores e turistas. A navegação será baseada em mapas interativos com tecnologia Leaflet e dados do OpenStreetMap, permitindo a visualização de rotas, curiosidades locais e atividades educativas. A metodologia também prevê a possibilidade de expansão para recursos de acessibilidade, como leitura por voz e comandos interativos, conforme o avanço do projeto.
+     
+  
+
 
 
    5.  APLICAÇÃO ONLINE E JUSTIFICATIVA DA HOSPEDAGEM
@@ -450,31 +459,39 @@ O protótipo da plataforma “Turismo Educativo Interativo” será disponibiliz
 Como alternativa futura, considera-se a utilização do serviço Hostinger, já contratado, para hospedar versões mais robustas da aplicação, com suporte a backend e banco de dados dinâmico, caso seja necessário ampliar funcionalidades.
 
 
-3.1.1  Front End
+3.1.1  Front-end
 
 
-A interface será desenvolvida com React, biblioteca JavaScript criada pela Meta, que se destaca pela abordagem baseada em componentes reutilizáveis e pela eficiência na atualização da interface em tempo real. Essa característica favorece a escalabilidade e a manutenção do código, aspectos essenciais para sistemas que podem evoluir para novas funcionalidades (React, 2024). A modularidade do React permitirá organizar a plataforma em componentes como cabeçalho, mapa interativo e atividades educativas, garantindo clareza e flexibilidade.
-
-
-Para a exibição dos mapas, será utilizada a biblioteca Leaflet, projetada para simplicidade e alto desempenho em navegadores. Com apenas 42 KB, Leaflet oferece recursos robustos para criação de mapas interativos, incluindo suporte a camadas, marcadores e integração com dados geográficos, sendo amplamente utilizada em aplicações educacionais e turísticas (Agafonkin, 2011; ForestGIS, 2022). Essa escolha se alinha ao objetivo de apresentar pontos turísticos e rotas de forma dinâmica e acessível.
-   Como base cartográfica, será adotado o OpenStreetMap (OSM), projeto colaborativo global que disponibiliza dados geográficos livres sob licença aberta, permitindo personalização e atualização contínua. O OSM é reconhecido pela comunidade científica como uma alternativa confiável para aplicações que demandam dados geoespaciais acessíveis e adaptáveis (Grinberger et al., 2022).
-                Para armazenamento das informações bilíngues e coordenadas dos pontos turísticos, será utilizado o formato JSON (JavaScript Object Notation), amplamente empregado por sua leveza, legibilidade e interoperabilidade entre diferentes linguagens. Desde sua especificação por Douglas Crockford, o JSON tornou-se padrão para troca de dados em aplicações web (Barros, 2024).
-
-
-
+O desenvolvimento do front-end baseou-se em HTML5, CSS3 e JavaScript (Vanilla JS). Essa escolha técnica favoreceu a criação de uma aplicação leve e de alto desempenho, apropriada para um protótipo centrado em mapeamento interativo. O script cliente principal (`public/app.js`) é responsável por:
+- inicializar e gerenciar o mapa por meio da biblioteca Leaflet;
+- recuperar (fetch) os dados geográficos e textuais a partir dos arquivos GeoJSON/JSON armazenados em `public/` (por exemplo `points.geojson` e `points.json`);
+- implementar a lógica de internacionalização, atualizando as strings da interface e o conteúdo dos popups dos pontos de interesse (POIs) conforme a seleção de idioma (Português/Espanhol);
+- gerir o estado da interface e o armazenamento local de preferências via `localStorage` (perfil do usuário, correções de coordenadas, etc.);
+- construir um índice de busca simples para localizar POIs por id ou por termos de título/descrição (busca normalizada sem diacríticos).
 
 
 
-3.1.2 Back End
 
 
-O protótipo da plataforma não exigirá um back-end robusto nesta fase, considerando que o objetivo principal é disponibilizar informações turísticas e atividades educativas de forma acessível e rápida. Para isso, será adotada uma abordagem baseada em arquivos JSON estáticos, que armazenarão dados bilíngues (português e espanhol) sobre pontos turísticos, coordenadas geográficas e conteúdos educativos.
 
 
-              Essa escolha se justifica pela simplicidade e eficiência do formato JSON (JavaScript Object Notation), amplamente utilizado para troca de dados em aplicações web por sua leveza, legibilidade e interoperabilidade entre diferentes linguagens. Desde sua especificação por Douglas Crockford, o JSON tornou-se padrão para aplicações que não demandam estruturas complexas de banco de dados (Barros, 2024).
+
+3.1.2 Back-end
 
 
-              A ausência de um servidor dinâmico reduz custos e complexidade, mantendo a funcionalidade essencial para navegação e consulta. Essa arquitetura também favorece a replicabilidade do projeto, permitindo que outras instituições adaptem os arquivos JSON com seus próprios dados turísticos sem necessidade de infraestrutura adicional.
+Embora o protótipo da plataforma seja essencialmente estático em sua lógica de negócio — com os dados mantidos em arquivos JSON/GeoJSON — a aplicação utiliza o ambiente de execução Node.js como servidor de desenvolvimento para servir os arquivos estáticos durante testes locais. O back‑end é implementado por um servidor minimalista que emprega o módulo nativo `http` do Node.js (`index.js`). Suas funções principais são:
+- servir os recursos estáticos (HTML, CSS, JavaScript e os arquivos de dados JSON/GeoJSON) a partir do diretório `public/`;
+- definir os Content‑Type apropriados por extensão e responder com os ficheiros requisitados;
+- permitir testes locais e acesso pela rede local (o servidor escuta por padrão em `0.0.0.0:3000`) e evitar limitações do `fetch` ao abrir arquivos via `file://`.
+ - permitir testes locais e acesso pela rede local (o servidor escuta por padrão em `0.0.0.0:3000`) e evitar limitações do `fetch` ao abrir arquivos via `file://`.
+
+Para executar o protótipo localmente, no diretório raiz do projeto, recomenda‑se executar o comando:
+
+      npm start
+
+Esse comando inicia o servidor estático (`index.js`) conforme definido em `package.json` (requer Node.js versão compatível; no projeto foi utilizada a versão mínima indicada em `.nvmrc`).
+
+Essa arquitetura segue a filosofia de prototipagem de baixo custo: toda a lógica de interatividade e internacionalização é executada no cliente, enquanto o servidor tem um papel simples de distribuição de recursos estáticos, sem lógica de negócio ou persistência centralizada.
 
 
    6.  APLICAÇÃO  OFFLINE. PROPOSTA FUTURA
@@ -556,13 +573,20 @@ ________________
 
 
 REFERÊNCIAS
-* GITHUB. Referencing and citing content. Disponível em: <https://docs.github.com>. Acesso em: 30 out. 2025.
-* REACT. Documentação oficial. Disponível em: <https://pt-br.react.dev>. Acesso em: 30 out. 2025.
-* AGAFONKIN, V. Leaflet: a JavaScript library for interactive maps. Disponível em: <https://leafletjs.com>. Acesso em: 30 out. 2025.
-* GRINBERGER, A.; et al. OSM Science—The Academic Study of the OpenStreetMap Project. ISPRS International Journal of Geo-Information, v. 11, n. 4, 2022.
-* BARROS, S. JSON: Uma visão abrangente sobre o formato de dados interchange. DEV Community, 2024.
-* ARAUJO, F. S. QR Codes na educação escolar: possibilidades de aprendizagem na língua inglesa em tempos de cultura digital. 2021. Dissertação (Mestrado em Educação) – Universidade Estadual Paulista “Júlio de Mesquita Filho” (UNESP), São Paulo, 2021.
-* RIBAS, A. C.; et al. O uso do aplicativo QR Code como recurso pedagógico no processo de ensino e aprendizagem. Revista Pedagogia, Opet, 2020.
+
+
+GITHUB. Referencing and citing content. Disponível em: <https://docs.github.com/>. Acesso em: 30 out. 2025.
+
+AGAFONKIN, V. Leaflet: a JavaScript library for interactive maps. Disponível em: <https://leafletjs.com/>. Acesso em: 30 out. 2025.
+
+GRINBERGER, A.; et al. OSM Science — The Academic Study of the OpenStreetMap Project. ISPRS International Journal of Geo-Information, v. 11, n. 4, 2022.
+
+BARROS, S. JSON: uma visão abrangente sobre o formato de dados. DEV Community, 2024. Disponível em: <https://dev.to/>. Acesso em: 30 out. 2025.
+
+ARAÚJO, F. S. QR Codes na educação escolar: possibilidades de aprendizagem na língua inglesa em tempos de cultura digital. 2021. Dissertação (Mestrado em Educação) — Universidade Estadual Paulista “Júlio de Mesquita Filho” (UNESP), São Paulo, 2021.
+
+RIBAS, A. C.; et al. O uso do aplicativo QR Code como recurso pedagógico no processo de ensino e aprendizagem. Revista Pedagogia, Opet, 2020.
+
 
 
 

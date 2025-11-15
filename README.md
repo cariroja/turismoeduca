@@ -4,7 +4,7 @@ Instrucciones rápidas para empezar a desarrollar con Node en este proyecto.
 
 Requisitos:
 
-- Tener nvm instalado (ya lo configuramos).
+- Tener nvm instalado .
 - Terminal con zsh (recomendado).
 
 Pasos iniciales:

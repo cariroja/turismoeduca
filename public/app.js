@@ -40,7 +40,7 @@
   const T = {
     pt: {
       header: "TURISMO EDUCA — Projeto Piloto",
-      welcomeTitle: "Bem-vinda ao TURISMO EDUCA",
+      welcomeTitle: "Bem-vinda/o ao TURISMO EDUCA",
       welcomeText:
         "Antes de começar, diga quem você é para personalizar a experiência.",
       labelName: "Nome",
@@ -68,9 +68,9 @@
     },
     es: {
       header: "TURISMO EDUCA — Proyecto Piloto",
-      welcomeTitle: "Bienvenida a TURISMO EDUCA",
+      welcomeTitle: "Bienvenida/o a TURISMO EDUCA",
       welcomeText:
-        "Antes de empezar, dinos quién sos para personalizar la experiencia.",
+        "Antes de empezar, dinos quién eres  para personalizar la experiencia.",
       labelName: "Nombre",
       namePlaceholder: "Tu nombre",
       labelProf: "Profesión / Curso",
@@ -150,6 +150,14 @@
     if (modalClose) modalClose.textContent = t.modalClose;
   }
 
+  function getRoleDisplay(role, lang) {
+    const t = T[lang] || T.pt;
+    if (role === "alumno") return t.roleAlumno;
+    if (role === "profesor") return t.roleProfesor;
+    // fallback for 'turista' or other roles
+    return role;
+  }
+
   /* translations listener moved below after langSelect is defined to avoid
     referencing DOM element before it's available (was causing a runtime
     ReferenceError that stopped the script). */
@@ -177,7 +185,8 @@
       " — "
     )[0];
     if (u) {
-      header.textContent = `${baseHeader} — ${u.name} (${u.role})`;
+      const roleDisplay = getRoleDisplay(u.role, lang);
+      header.textContent = `${baseHeader} — ${u.name} (${roleDisplay})`;
       welcome.setAttribute("aria-hidden", "true");
     } else {
       header.textContent = (T[lang] || T.es).header;

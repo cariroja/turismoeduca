@@ -51,6 +51,57 @@
           "es": "El Cristo Luz fue inaugurado en 1991 como una atracción turística simbólica de la ciudad; además de la estatua, el lugar ofrece miradores con vista panorámica de la costa y eventos culturales nocturnos con iluminación colorida."
         }
       }
+    },
+    {
+      "type": "Feature",
+      "id": "parque-unipraias",
+      "geometry": { "type": "Point", "coordinates": [-48.60334, -27.00538] },
+      "properties": {
+        "id": "parque-unipraias",
+        "title": { "pt": "Parque Unipraias", "es": "Parque Unipraias" },
+        "desc": {
+          "pt": "Parque temático com teleféricos,jogos e atrações naturais.",
+          "es": "Parque temático con teleféricos,juegos y atracciones naturales."
+        },
+        "history": {
+          "pt": "O Parque Unipraias foi inaugurado em 1995 como uma das principais atrações turísticas da região, oferecendo teleféricos que conectam a Praia Central à Praia de Laranjeiras, além de trilhas ecológicas e atividades de aventura.",
+          "es": "El Parque Unipraias fue inaugurado en 1995 como una de las principales atracciones turísticas de la región, ofreciendo teleféricos que conectan la Playa Central con la Playa de Laranjeiras, además de senderos ecológicos y actividades de aventura."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ilha-das-cabras",
+      "geometry": { "type": "Point", "coordinates": [-48.62377, -26.98664] },
+      "properties": {
+        "id": "ilha-das-cabras",
+        "title": { "pt": "Ilha das Cabras", "es": "Isla de las Cabras" },
+        "desc": {
+          "pt": "Pequena ilha próxima à costa, ideal para mergulho e observação marinha.",
+          "es": "Pequeña isla cercana a la costa, ideal para el buceo y la observación marina."
+        },
+        "history": {
+          "pt": "A Ilha das Cabras é conhecida por sua biodiversidade marinha e é um ponto popular para mergulhadores. Historicamente, a ilha serviu como refúgio para pescadores locais e hoje é protegida como área de conservação ambiental.",
+          "es": "La Isla de las Cabras es conocida por su biodiversidad marina y es un punto popular para buceadores. Históricamente, la isla sirvió como refugio para pescadores locales y hoy está protegida como área de conservación ambiental."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "morro-do-careca",
+      "geometry": { "type": "Point", "coordinates": [-48.62635, -26.96262] },
+      "properties": {
+        "id": "morro-do-careca",
+        "title": { "pt": "Morro do Careca", "es": "Cerro del Calvo" },
+        "desc": {
+          "pt": "Mirante natural com vista panorâmica da Praia Central e Praia Brava. É um famoso ponto para ver o nascer/pôr do sol.",
+          "es": "Mirador natural con vista panorámica de Praia Central y Praia Brava. Es un famoso punto para ver el amanecer y el atardecer."
+        },
+        "history": {
+          "pt": "Elevação de 100 metros entre Balneário Camboriú e Itajaí, conhecido pelo topo de grama (daí o nome 'Careca'). Foi um ponto tradicional de voo livre (parapente). (Nota: Há planos e obras em andamento para um novo complexo turístico com passarela de vidro e teleférico, renovando o atrativo).",
+          "es": "Elevación de 100 metros entre Balneário Camboriú e Itajaí, famoso por su cima cubierta de hierba (de ahí el nombre 'Calvo'). Fue un punto tradicional para el vuelo libre (parapente). (Nota: Hay planes y obras en curso para un nuevo complejo turístico con pasarela de vidrio y teleférico, renovando el atractivo)."
+        }
+      }
     }
   ]
 }
