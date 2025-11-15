@@ -24,6 +24,19 @@ header h1 {
   font-size: 1.1rem;
   color: #fff;
 }
+
+/* PROFESOR: AÑADIDO - Media Query para hacer el HEADER responsivo en pantallas pequeñas */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column; /* Apila el título y el selector de idioma */
+  }
+
+  .toolbar{ /* También incluye tu antiguo .toolbar para apilarlo verticalmente */
+    flex-direction: column;
+  }
+}
+/* FIN PROFESOR: AÑADIDO */
+
 #map {
   flex: 1;
 }
@@ -53,7 +66,7 @@ main {
   width: 100%;
 }
 
-/* Toolbar */
+/* Toolbar (Estilos de tu viejo toolbar) */
 .toolbar {
   display: flex;
   gap: 8px;
@@ -66,6 +79,75 @@ main {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+/* PROFESOR: AÑADIDO - INICIO de estilos para el nuevo menú RESPONSIVO (.topnav) */
+
+/* toolbar responsive - Estilos base para el nuevo menú */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.topnav .icon {
+  display: none; /* Esconde el ícono de hamburguesa por defecto en escritorio */
+}
+
+.topnav .divSearch {
+  padding: 14px 16px;
+  float: left;
+  display: inline-flex;
+}
+
+/* PROFESOR: AÑADIDO - Media Query 1 (Modo móvil: esconde enlaces, muestra ícono) */
+@media screen and (max-width: 600px) {
+  /* Esconde todos los enlaces (excepto el bloque de búsqueda) en móvil */
+  .topnav a:not(:first-child) {display: none;}
+  /* Muestra el ícono de hamburguesa */
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* PROFESOR: AÑADIDO - Media Query 2 (Menú desplegado al hacer click en el ícono) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  /* Muestra y apila los enlaces, llenando el espacio */
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+/* PROFESOR: AÑADIDO - FIN de estilos para el nuevo menú RESPONSIVO */
+
+
+/* Continuación de tus estilos originales */
 .btn {
   background: #fff;
   border: 1px solid #ccc;

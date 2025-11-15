@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>TURISMO EDUCA — Projeto Piloto</title>
@@ -9,41 +10,40 @@
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <header>
-      <h1>TURISMO EDUCA — Projeto Piloto</h1>
+      <h1>TURISMO EDUCA — Visitante (turista)</h1>
       <div id="lang">
         <label>Idioma: </label>
         <select id="langSelect">
-          <option value="pt">Português</option>
+          <option value="pt" selected="selected">Português</option> 
           <option value="es">Español</option>
         </select>
       </div>
     </header>
 
-    <!-- Toolbar: acciones rápidas -->
-    <nav class="toolbar" role="navigation" aria-label="Acciones">
-      <input
-        id="poiSearch"
-        type="search"
-        placeholder="Buscar punto (ej. Cristo)"
-        aria-label="Buscar punto"
-      />
-      <button class="btn" id="btnSearch">Buscar</button>
-      <button class="btn" id="btnQuiz">Quiz</button>
-      <button class="btn" id="btnHistoria">Historia</button>
-      <button class="btn" id="btnActividades">Actividades</button>
-      <button class="btn" id="btnPerfil">Perfil</button>
-      <button class="btn" id="btnLogout">Salir</button>
-    </nav>
+    <div class="topnav" id="myTopnav" aria-label="Acciones">
+      <div class="divSearch">
+        <input id="poiSearch" type="search" placeholder="Buscar punto (ej. Cristo)" aria-label="Buscar punto">
+        <button class="btn" id="btnSearch">Buscar</button>
+      </div>
+      <a href="#" id="btnQuiz">Quiz</a>
+      <a href="#" id="btnHistoria">História</a> 
+      <a href="#" id="btnActividades">Atividades</a>
+      <a href="#" id="btnPerfil">Perfil</a>
+      <a href="#" id="btnLogout">Salir</a>
+      <a href="javascript:void(0);" class="icon" onclick="botaoMenu()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
 
     <main>
       <div id="map"></div>
       <div id="info">Marca un marcador para ver información bilingüe.</div>
     </main>
 
-    <!-- Splash: cartel de bienvenida con logo (Designer-2.png) -->
     <div id="splash" class="splash" aria-hidden="false">
       <div class="splash-inner">
         <img src="Designer-2.png" alt="Logo TURISMO EDUCA" class="splash-logo" />
@@ -55,18 +55,16 @@
       </div>
     </div>
 
-    <!-- Welcome / login overlay -->
     <div id="welcome" class="overlay" aria-hidden="true">
       <div class="panel">
         <h2 id="welcomeTitle">Bienvenida/o a TURISMO EDUCA</h2>
         <p id="welcomeText">
           Antes de empezar, dinos quién sos para personalizar la experiencia.
         </p>
-        <!-- idioma dentro de la bienvenida: permite elegir antes de entrar -->
         <div style="margin-bottom: 12px">
           <label for="welcomeLangSelect">Idioma: </label>
           <select id="welcomeLangSelect">
-            <option value="pt">Português</option>
+            <option value="pt" selected="selected">Português</option>
             <option value="es">Español</option>
           </select>
         </div>
@@ -78,11 +76,10 @@
               required
               placeholder="Tu nombre"
           /></label>
-          <!-- Se removió el campo Profesión / Curso según requerimiento -->
           <label id="labelRole"
             >Rol
             <select id="userRole">
-              <option value="alumno" id="roleAlumno">Alumno</option>
+              <option value="alumno" id="roleAlumno" selected="selected">Alumno</option>
               <option value="profesor" id="roleProfesor">Profesor</option>
               <option value="turista" id="roleTurista">Turista</option>
             </select>
@@ -99,7 +96,6 @@
       </div>
     </div>
 
-    <!-- Modal/placeholder for content panels (quiz, historia, actividades) -->
     <div id="modal" class="overlay" aria-hidden="true">
       <div class="panel">
         <button id="modalClose" class="btn">Cerrar</button>
@@ -109,5 +105,18 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="app.js"></script>
-  </body>
+
+    <script>
+    //responsive menu button
+      function botaoMenu() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    //responsive menu button
+    </script>
+    </body>
 </html>
