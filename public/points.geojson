@@ -7,6 +7,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.59991, -26.99513] },
       "properties": {
         "id": "mirante-aguada",
+        "image": "imagenes/mirante-aguada.jpeg",
         "title": { "pt": "Mirante da Aguada", "es": "Mirador de la Aguada" },
         "desc": {
           "pt": "Ponto de observação com vista panorâmica do litoral.",
@@ -24,6 +25,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.62978, -26.98848] },
       "properties": {
         "id": "praia-central",
+        "image": "imagenes/praia-central.jpg",
         "title": { "pt": "Praia Central", "es": "Playa Central" },
         "desc": {
           "pt": "Praia urbana com calçadão e atrações.",
@@ -41,6 +43,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.64532, -26.98572] },
       "properties": {
         "id": "cristo-luz",
+        "image": "imagenes/cristo-luz.jpg",
         "title": { "pt": "Cristo Luz", "es": "Cristo Luz" },
         "desc": {
           "pt": "Monumento e mirante com iluminação noturna.",
@@ -58,6 +61,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.60334, -27.00538] },
       "properties": {
         "id": "parque-unipraias",
+        "image": "imagenes/parque-unipraias.jpg",
         "title": { "pt": "Parque Unipraias", "es": "Parque Unipraias" },
         "desc": {
           "pt": "Parque temático com teleféricos,jogos e atrações naturais.",
@@ -75,6 +79,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.62377, -26.98664] },
       "properties": {
         "id": "ilha-das-cabras",
+        "image": "imagenes/ilha-das-cabras.jpg",
         "title": { "pt": "Ilha das Cabras", "es": "Isla de las Cabras" },
         "desc": {
           "pt": "Pequena ilha próxima à costa, ideal para mergulho e observação marinha.",
@@ -92,6 +97,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.62635, -26.96262] },
       "properties": {
         "id": "morro-do-careca",
+        "image": "imagenes/morro-do-careca.jpg",
         "title": { "pt": "Morro do Careca", "es": "Cerro del Calvo" },
         "desc": {
           "pt": "Mirante natural com vista panorâmica da Praia Central e Praia Brava. É um famoso ponto para ver o nascer/pôr do sol.",

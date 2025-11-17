@@ -391,6 +391,7 @@
           title: props.title || {},
           desc: props.desc || {},
           history: props.history || {},
+          image: props.image || null,
         };
       });
     }
@@ -433,7 +434,8 @@
           if (marker.dragging) marker.dragging.disable();
         } catch (err) {}
         markersById[p.id] = marker;
-        const popupContent = `<div><strong>${p.title.pt}</strong><br>${
+        const imageHtml = p.image ? `<img src="${p.image}" alt="${p.title.pt}" style="width:100%;height:auto;margin-bottom:8px;"/>` : '';
+        const popupContent = `<div>${imageHtml}<strong>${p.title.pt}</strong><br>${
           p.desc.pt
         }<br><a href="#" class="history-link" data-id="${
           p.id
@@ -457,7 +459,8 @@
           const descNow = p.desc[langNow] || p.desc.pt;
           const curLat = overrides[p.id] ? overrides[p.id].lat : p.lat;
           const curLng = overrides[p.id] ? overrides[p.id].lng : p.lng;
-          const contentNow = `<div><strong>${titleNow}</strong><br>${descNow}<br><a href="#" class="history-link" data-id="${
+          const imageHtmlNow = p.image ? `<img src="${p.image}" alt="${titleNow}" style="width:100%;height:auto;margin-bottom:8px;"/>` : '';
+          const contentNow = `<div>${imageHtmlNow}<strong>${titleNow}</strong><br>${descNow}<br><a href="#" class="history-link" data-id="${
             p.id
           }">Ver historia</a><div style="margin-top:8px;font-size:0.9em">Coords: ${curLat.toFixed(
             5
@@ -503,7 +506,8 @@
                   try {
                     if (marker.dragging) marker.dragging.disable();
                   } catch (err) {}
-                  const updated = `<div><strong>${titleNow}</strong><br>${descNow}<br><a href=\"#\" class=\"history-link\" data-id=\"${
+                  const imageHtmlUpdated = p.image ? `<img src="${p.image}" alt="${titleNow}" style="width:100%;height:auto;margin-bottom:8px;"/>` : '';
+                  const updated = `<div>${imageHtmlUpdated}<strong>${titleNow}</strong><br>${descNow}<br><a href=\"#\" class=\"history-link\" data-id=\"${
                     p.id
                   }\">Ver historia</a><div style=\"margin-top:8px;font-size:0.9em\">Coords: ${nl.lat.toFixed(
                     5
