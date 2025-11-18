@@ -630,4 +630,184 @@
 
   // render header if user already exists
   renderUser();
+  // --- Nuevas Funciones para Contenido (Quiz, Historia, Actividades) ---
+
+function showQuiz() {
+  // Obtenemos el idioma actual para las traducciones
+  const lang = (langSelect && langSelect.value) || "pt";
+  const quizTitle = lang === 'es' ? 'Quiz de Turismo y Cultura' : 'Quiz de Turismo e Cultura';
+  
+  // Contenido del Quiz: 2 preguntas (fácil de ampliar)
+  const quizContent = `
+    <h2>${quizTitle}</h2>
+    <p>${lang === 'es' ? '¡Pon a prueba tus conocimientos sobre la región!' : 'Teste seus conhecimentos sobre a região!'}</p>
+
+    <form id="quizForm">
+      
+      <h3>1. ${lang === 'es' ? '¿Qué atrae al Parque Unipraias el título de ser el único teleférico del mundo de su tipo?' : 'O que faz o Parque Unipraias ser o único teleférico do mundo do seu tipo?'}</h3>
+      <label><input type="radio" name="q1" value="a"> ${lang === 'es' ? 'Interconecta 3 playas' : 'Interliga 3 praias'}</label><br>
+      <label><input type="radio" name="q1" value="b"> ${lang === 'es' ? 'Es el único que sube un morro' : 'É o único que sobe um morro'}</label><br>
+      <label><input type="radio" name="q1" value="c"> ${lang === 'es' ? 'Interconecta dos playas (Barra Sul y Laranjeiras)' : 'Interliga duas praias (Barra Sul e Laranjeiras)'}</label><br>
+      
+      <br>
+      
+      <h3>2. ${lang === 'es' ? 'El programa "Parque Escola" se enfoca en la conservación de...' : 'O programa "Parque Escola" se foca na conservação da...'}</h3>
+      <label><input type="radio" name="q2" value="a"> ${lang === 'es' ? 'La Fauna marina' : 'A Fauna marinha'}</label><br>
+      <label><input type="radio" name="q2" value="b"> ${lang === 'es' ? 'La Mata Atlântica' : 'A Mata Atlântica'}</label><br>
+      <label><input type="radio" name="q2" value="c"> ${lang === 'es' ? 'Las dunas de arena' : 'As dunas de areia'}</label><br>
+
+      <br>
+      
+      <button type="submit" class="btn primary">${lang === 'es' ? 'Verificar Respuestas' : 'Verificar Respostas'}</button>
+    </form>
+
+    <div id="quizResult" style="margin-top: 15px; font-weight: bold;"></div>
+  `;
+
+  showModal(quizContent);
+
+  // Lógica de validación de respuestas
+  const quizForm = document.getElementById("quizForm");
+  if (quizForm) {
+    quizForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const resultDiv = document.getElementById("quizResult");
+      const q1 = document.querySelector('input[name="q1"]:checked');
+      const q2 = document.querySelector('input[name="q2"]:checked');
+      
+      let feedback = [];
+      
+      // Respuestas Correctas: Q1: c, Q2: b
+      
+      if (q1 && q1.value === 'c') {
+        feedback.push(lang === 'es' ? 'Pregunta 1: Correcta (Conecta dos playas).' : 'Pergunta 1: Correta (Conecta duas praias).');
+      } else {
+        feedback.push(lang === 'es' ? 'Pregunta 1: Incorrecta.' : 'Pergunta 1: Incorreta.');
+      }
+
+      if (q2 && q2.value === 'b') {
+        feedback.push(lang === 'es' ? 'Pregunta 2: Correcta (La Mata Atlântica).' : 'Pergunta 2: Correta (A Mata Atlântica).');
+      } else {
+        feedback.push(lang === 'es' ? 'Pregunta 2: Incorrecta.' : 'Pergunta 2: Incorreta.');
+      }
+
+      // Muestra solo el feedback (sin score)
+      resultDiv.innerHTML = `<p>${lang === 'es' ? 'Resultados de tu intento:' : 'Resultados da sua tentativa:'}</p><ul><li>${feedback.join('</li><li>')}</li></ul>`;
+    });
+  }
+}
+
+function showActivities() {
+  const lang = (langSelect && langSelect.value) || "pt";
+  const title = lang === 'es' ? 'Actividades en Parque Unipraias' : 'Atividades no Parque Unipraias';
+  
+  // 1. Actividad Principal: El Paseo en Bondinho y el Recorrido por la Mata Atlántica
+  const mainActivityTitle = lang === 'es' 
+    ? '1. ¿En qué consiste el paseo en Parque Unipraias?' 
+    : '1. Em que consiste o passeio no Parque Unipraias?';
+  const mainActivityDesc = lang === 'es' 
+    ? `
+      <p>El paseo principal se realiza en el Bondinho Aéreo, que interconecta tres estaciones, siendo el único teleférico en el mundo que une dos playas: la Estación Barra Sul y la Estación Laranjeiras.</p>
+      <p>La estación intermedia,Estación Mata Atlântica (en el Morro da Aguada), es el corazón educativo. Aquí se puede realizar un sendero ecológico guiado (parte del programa "Parque Escola"), donde monitores explican la fauna y flora de la Mata Atlântica, uno de los biomas más amenazados de Brasil.</p>
+    `
+    : `
+      <p>O passeio principal é feito pelo Bondinho Aéreo, que interliga três estações, sendo o único teleférico no mundo a ligar duas praias: a Estação Barra Sul e a Estação Laranjeiras.</p>
+      <p>A estação intermediária, Estação Mata Atlântica (no Morro da Aguada), é o coração educativo. Aqui é possível fazer uma trilha ecológica guiada (parte do programa "Parque Escola"), onde monitores explicam a fauna e flora da Mata Atlântica, um dos biomas mais ameaçados do Brasil.</p>
+    `;
+    
+  // Listado de otras actividades
+  const otherActivitiesTitle = lang === 'es' ? 'Otras Atracciones Destacadas (Listado):' : 'Outras Atrações de Destaque (Listagem):';
+  const otherActivitiesList = lang === 'es' 
+    ? `
+      <ul>
+        <li>El Youhooo! es un trineo de montaña que se encuentra ubicado en la Estación Mata Atlântica, en la cima del morro. El único acceso es a través del Bondinho (teleférico).
+
+Realiza un recorrido de 710 metros en medio de la Mata Atlântica (ida y vuelta en el mismo lugar). El trineo puede alcanzar hasta 60 km/h, y todos los carritos poseen frenos, lo que permite al aventurero elegir a qué velocidad descender.
+
+Puede realizarse en pareja o individualmente.
+
+Es un equipo de fabricación alemana. En total, son 30 trineos los que te llevarán a una aventura increíble.</li>
+        <li>La ZipRider es una mega tirolesa ubicada en la Estación Mata Atlântica, en la cima del morro, y cuyo único acceso es mediante el Bondinho (teleférico).
+
+Desciende desde la Estación Mata Atlântica hasta la Estación Laranjeiras. Son 240 metros de altura y 750 metros de distancia que se recorren en un tiempo de 45 segundos a 1 minuto, alcanzando una velocidad de hasta 60 km/h.
+
+El equipo cuenta con una tecnología americana que permite el descenso de hasta 4 personas a la vez, con un sistema de freno automático que hace que el aterrizaje sea más tranquilo.
+
+Al descender en ZipRider, tienes derecho a un viaje de regreso en el Bondinho hasta la Estación Mata Atlântica para continuar el paseo.</li>
+        <li>La Fantástica Floresta: Viaja en el mágico tren suspendido a cerca de 3 metros y sorpréndete con la Casa del Chocolate y el Mirador Laranjeiras. Con tres vagones y capacidad para 14 personas, recorre un trayecto de aprox. 400 metros a una velocidad que puede alcanzar hasta 10 km/h.</li>
+        <li>Super Gyro Tower: Ubicada en el punto más alto del Morro da Aguada, la Super Gyro Tower ofrece una experiencia inolvidable al proporcionar vistas panorámicas de la deslumbrante belleza natural de Balneário Camboriú.
+
+Elevándose a unos impresionantes 59 metros de altura y alcanzando casi 300 metros sobre el nivel del mar, la torre ofrece una imagen inigualable del litoral catarinense. Con capacidad para albergar hasta 50 personas simultáneamente, la Super Gyro Tower es un espacio de contemplación y conexión con la naturaleza.</li>
+      </ul>
+    `
+    : `
+      <ul>
+        <li>O Youhooo! é um trenó de montanha que fica localizado na Estação Mata Atlântica, no topo do morro, o único acesso é pelo Bondinho. Faz um percurso de 710 metros em meio a Mata Atlântica (vai e volta no mesmo local). O trenó pode atingir até 60km/h, todo os carrinhos possuem freios fazendo com que a aventureira escolha em que velocidade descer.
+Pode ser realizado em dupla ou individualmente.
+Equipamento de fabricação alemã. Ao todo são 30 trenós que vão te levar a uma aventura incrível. .</li>
+        <li>A ZipRider é uma mega tirolesa localizada na Estação Mata Atlântica, no topo do morro, o único acesso é pelo Bondinho. Desce da Estação Mata Atlântica até a Estação Laranjeiras. São 240m de altura e 750m de distância que são percorridos de 45s a 1 minuto, atingindo uma velocidade de até 60km/h.
+O equipamento possui uma tecnologia americana permite a descida de até 4 pessoas por vez, com um sistema de freio automático fazendo com que a aterrissagem seja mais tranquila.
+
+Descendo de ZipRider você tem direito a um retorno de bondinho até a Estação Mata Atlântica para das sequência ao passeio.</li>
+        <li>A Fantástica Floresta: Viaje pelo mágico trem suspenso a cerca de 3m e se surpreenda-se com a Casa do Chocolate e o Mirante Laranjeiras. Com três vagões e capacidade para 14 pessoas, percorre um trajeto de aprox. 400m a uma velocidade que pode chegar até 10km/h.</li>
+        <li>Super Gyro Tower: Localizada no ponto mais alto do Morro da Aguada, a Super Gyro Tower oferece uma experiência inesquecível ao proporcionar vistas panorâmicas da deslumbrante beleza natural de Balneário Camboriú.
+​​​​​​​
+Elevando-se a impressionantes 59 metros de altura e atingindo quase 300 metros acima do nível do mar, a torre oferece uma imagem inigualável do litoral catarinense. Com capacidade para acomodar até 50 pessoas simultaneamente, a Super Gyro Tower é um espaço de contemplação e conexão com a natureza..</li>
+      </ul>
+    `;
+
+  const activitiesContent = `
+    <h2>${title}</h2>
+    <h3>${mainActivityTitle}</h3>
+    ${mainActivityDesc}
+    <hr>
+    <h3>${otherActivitiesTitle}</h3>
+    ${otherActivitiesList}
+  `;
+
+  showModal(activitiesContent);
+}
+
+function showCityHistory() {
+  const lang = (langSelect && langSelect.value) || "pt";
+  const title = lang === 'es' ? 'Historia de Balneário Camboriú' : 'História de Balneário Camboriú';
+  const historyContent = lang === 'es' 
+    ? `
+      <h2>${title}</h2>
+      <p>La región de Balneário Camboriú fue originalmente habitada por indígenas Guaranís. Sin embargo, la ciudad como municipio se emancipó y fue oficialmente fundada en 1964.</p>
+      
+      <h3>El Crecimiento Turístico</h3>
+      <p>A partir de los años 60 y 70, la ciudad pasó de ser una pequeña villa de pescadores a un gran centro turístico. El rápido desarrollo urbano se caracterizó por la construcción de los famosos rascacielos a lo largo de la orla.</p>
+      
+      <h3>Hitos Recientes</h3>
+      <p>Un hito reciente y fundamental para la ciudad fue el proyecto de alargamiento de la Praia Central (ampliación de la franja de arena), que impulsó aún más el turismo y la economía local.</p>
+    `
+    : `
+      <h2>${title}</h2>
+      <p>A região de Balneário Camboriú foi originalmente habitada por indígenas Guaranis. No entanto, a cidade como município se emancipou e foi oficialmente fundada em 1964.</p>
+      
+      <h3>O Crescimento Turístico</h3>
+      <p>A partir dos anos 60 e 70, a cidade passou de uma pequena vila de pescadores a um grande centro turístico. O rápido desenvolvimento urbano foi marcado pela construção dos famosos arranha-céus ao longo da orla.</p>
+      
+      <h3>Marcos Recentes</h3>
+      <p>Um marco recente e fundamental para a cidade foi o projeto de alargamento da Praia Central (ampliação da faixa de areia), que impulsionou ainda mais o turismo e a economia local.</p>
+    `;
+
+  showModal(historyContent);
+}
+
+// --- Conexión de Botones (Event Listeners) ---
+
+// La variable langSelect ya está definida al inicio de app.js (const langSelect = document.getElementById("langSelect");)
+// Las variables btnQuiz, btnHistoria, y btnActividades también están definidas al inicio.
+
+if (btnQuiz) {
+  btnQuiz.addEventListener("click", showQuiz);
+}
+if (btnHistoria) {
+  btnHistoria.addEventListener("click", showCityHistory);
+}
+if (btnActividades) {
+  btnActividades.addEventListener("click", showActivities);
+}
 })();

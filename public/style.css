@@ -183,6 +183,8 @@ main {
   border-radius: 8px;
   width: min(540px, 96%);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  max-height: 90vh;
+  overflow-y: auto;
 }
 .panel h2 {
   margin-top: 0;
