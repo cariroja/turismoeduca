@@ -202,9 +202,9 @@
   function hideSplash() {
     try {
       if (splash) splash.setAttribute("aria-hidden", "true");
-      // remember that user dismissed splash so it won't show again
+      // remember that user dismissed splash for this session only
       try {
-        localStorage.setItem('seenSplash', '1');
+        sessionStorage.setItem('seenSplash', '1');
       } catch (e) {}
     } catch (e) {}
   }
@@ -219,9 +219,9 @@
     });
   }
 
-  // If user already dismissed splash earlier, hide it immediately
+  // If user already dismissed splash in this session, hide it immediately
   try {
-    if (localStorage.getItem('seenSplash') === '1') {
+    if (sessionStorage.getItem('seenSplash') === '1') {
       if (splash) splash.setAttribute('aria-hidden', 'true');
     }
   } catch (e) {}

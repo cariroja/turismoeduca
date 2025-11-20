@@ -46,23 +46,67 @@
 
     <div id="splash" class="splash" aria-hidden="false">
       <div class="splash-inner">
-        <img src="Designer-2.png" alt="Logo TURISMO EDUCA" class="splash-logo" />
-        <h2 class="splash-title">Bienvenido/a — Bem‑vinda/o a TURISMO EDUCA</h2>
-        <p class="splash-sub">Explora los puntos de interés / Explore os pontos de interesse</p>
+        <!-- Hero Section -->
+        <div class="hero-section">
+          <img src="Designer-2.png" alt="Logo TURISMO EDUCA" class="splash-logo" />
+          <h2 class="splash-title">¡Descubre el Mundo! <i class="fa fa-map"></i><br>Bem-vindo ao TURISMO EDUCA</h2>
+          <p class="splash-sub">Aprende explorando lugares increíbles<br>Aprenda explorando lugares incríveis</p>
+        </div>
+
+        <!-- Feature Cards -->
+        <div class="feature-cards">
+          <div class="feature-card">
+            <div class="card-icon"><i class="fa fa-map-marker"></i></div>
+            <h3>Explora / Explore</h3>
+            <p>Descubre puntos turísticos fascinantes<br>Descubra pontos turísticos fascinantes</p>
+          </div>
+          <div class="feature-card">
+            <div class="card-icon"><i class="fa fa-graduation-cap"></i></div>
+            <h3>Aprende / Aprenda</h3>
+            <p>Información en español y portugués<br>Informação em espanhol e português</p>
+          </div>
+          <div class="feature-card">
+            <div class="card-icon"><i class="fa fa-trophy"></i></div>
+            <h3>Diviértete / Divirta-se</h3>
+            <p>Completa quizzes y actividades<br>Complete quizzes e atividades</p>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
         <div class="splash-actions">
-          <button id="splashStart" class="btn primary">Comenzar / Iniciar</button>
+          <button id="splashStart" class="btn primary pulse"><i class="fa fa-rocket"></i> ¡Comenzar Aventura! / Iniciar Aventura!</button>
+        </div>
+        
+        <!-- Steps Section -->
+        <div class="steps-section">
+          <h3>¿Cómo funciona? / Como funciona?</h3>
+          <div class="steps">
+            <div class="step">
+              <span class="step-number">1</span>
+              <p>Elige tu idioma<br>Escolha seu idioma</p>
+            </div>
+            <div class="step">
+              <span class="step-number">2</span>
+              <p>Explora el mapa<br>Explore o mapa</p>
+            </div>
+            <div class="step">
+              <span class="step-number">3</span>
+              <p>Aprende jugando<br>Aprenda jogando</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <div id="welcome" class="overlay" aria-hidden="true">
-      <div class="panel">
+      <div class="panel welcome-panel">
+        <div class="panel-icon"><i class="fa fa-hand-paper-o"></i></div>
         <h2 id="welcomeTitle">Bienvenida/o a TURISMO EDUCA</h2>
         <p id="welcomeText">
           Antes de empezar, dinos quién sos para personalizar la experiencia.
         </p>
         <div style="margin-bottom: 12px">
-          <label for="welcomeLangSelect">Idioma: </label>
+          <label for="welcomeLangSelect"><i class="fa fa-globe"></i> Idioma: </label>
           <select id="welcomeLangSelect">
             <option value="pt" selected="selected">Português</option>
             <option value="es">Español</option>
@@ -70,14 +114,14 @@
         </div>
         <form id="welcomeForm">
           <label id="labelName"
-            >Nombre<br /><input
+            ><i class="fa fa-pencil"></i> Nombre<br /><input
               type="text"
               id="userName"
               required
               placeholder="Tu nombre"
           /></label>
           <label id="labelRole"
-            >Rol
+            ><i class="fa fa-user"></i> Rol
             <select id="userRole">
               <option value="alumno" id="roleAlumno" selected="selected">Alumno</option>
               <option value="profesor" id="roleProfesor">Profesor</option>
