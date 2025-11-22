@@ -720,70 +720,244 @@ function showQuiz() {
 
 function showActivities() {
   const lang = (langSelect && langSelect.value) || "pt";
-  const title = lang === 'es' ? 'Actividades en Parque Unipraias' : 'Atividades no Parque Unipraias';
+  const title = lang === 'es' ? 'Actividades en Balneário Camboriú' : 'Atividades em Balneário Camboriú';
   
-  // 1. Actividad Principal: El Paseo en Bondinho y el Recorrido por la Mata Atlántica
-  const mainActivityTitle = lang === 'es' 
-    ? '1. ¿En qué consiste el paseo en Parque Unipraias?' 
-    : '1. Em que consiste o passeio no Parque Unipraias?';
-  const mainActivityDesc = lang === 'es' 
-    ? `
-      <p>El paseo principal se realiza en el Bondinho Aéreo, que interconecta tres estaciones, siendo el único teleférico en el mundo que une dos playas: la Estación Barra Sul y la Estación Laranjeiras.</p>
-      <p>La estación intermedia,Estación Mata Atlântica (en el Morro da Aguada), es el corazón educativo. Aquí se puede realizar un sendero ecológico guiado (parte del programa "Parque Escola"), donde monitores explican la fauna y flora de la Mata Atlântica, uno de los biomas más amenazados de Brasil.</p>
-    `
-    : `
-      <p>O passeio principal é feito pelo Bondinho Aéreo, que interliga três estações, sendo o único teleférico no mundo a ligar duas praias: a Estação Barra Sul e a Estação Laranjeiras.</p>
-      <p>A estação intermediária, Estação Mata Atlântica (no Morro da Aguada), é o coração educativo. Aqui é possível fazer uma trilha ecológica guiada (parte do programa "Parque Escola"), onde monitores explicam a fauna e flora da Mata Atlântica, um dos biomas mais ameaçados do Brasil.</p>
-    `;
-    
-  // Listado de otras actividades
-  const otherActivitiesTitle = lang === 'es' ? 'Otras Atracciones Destacadas (Listado):' : 'Outras Atrações de Destaque (Listagem):';
-  const otherActivitiesList = lang === 'es' 
-    ? `
-      <ul>
-        <li>El Youhooo! es un trineo de montaña que se encuentra ubicado en la Estación Mata Atlântica, en la cima del morro. El único acceso es a través del Bondinho (teleférico).
-
-Realiza un recorrido de 710 metros en medio de la Mata Atlântica (ida y vuelta en el mismo lugar). El trineo puede alcanzar hasta 60 km/h, y todos los carritos poseen frenos, lo que permite al aventurero elegir a qué velocidad descender.
-
-Puede realizarse en pareja o individualmente.
-
-Es un equipo de fabricación alemana. En total, son 30 trineos los que te llevarán a una aventura increíble.</li>
-        <li>La ZipRider es una mega tirolesa ubicada en la Estación Mata Atlântica, en la cima del morro, y cuyo único acceso es mediante el Bondinho (teleférico).
-
-Desciende desde la Estación Mata Atlântica hasta la Estación Laranjeiras. Son 240 metros de altura y 750 metros de distancia que se recorren en un tiempo de 45 segundos a 1 minuto, alcanzando una velocidad de hasta 60 km/h.
-
-El equipo cuenta con una tecnología americana que permite el descenso de hasta 4 personas a la vez, con un sistema de freno automático que hace que el aterrizaje sea más tranquilo.
-
-Al descender en ZipRider, tienes derecho a un viaje de regreso en el Bondinho hasta la Estación Mata Atlântica para continuar el paseo.</li>
-        <li>La Fantástica Floresta: Viaja en el mágico tren suspendido a cerca de 3 metros y sorpréndete con la Casa del Chocolate y el Mirador Laranjeiras. Con tres vagones y capacidad para 14 personas, recorre un trayecto de aprox. 400 metros a una velocidad que puede alcanzar hasta 10 km/h.</li>
-        <li>Super Gyro Tower: Ubicada en el punto más alto del Morro da Aguada, la Super Gyro Tower ofrece una experiencia inolvidable al proporcionar vistas panorámicas de la deslumbrante belleza natural de Balneário Camboriú.
-
-Elevándose a unos impresionantes 59 metros de altura y alcanzando casi 300 metros sobre el nivel del mar, la torre ofrece una imagen inigualable del litoral catarinense. Con capacidad para albergar hasta 50 personas simultáneamente, la Super Gyro Tower es un espacio de contemplación y conexión con la naturaleza.</li>
-      </ul>
-    `
-    : `
-      <ul>
-        <li>O Youhooo! é um trenó de montanha que fica localizado na Estação Mata Atlântica, no topo do morro, o único acesso é pelo Bondinho. Faz um percurso de 710 metros em meio a Mata Atlântica (vai e volta no mesmo local). O trenó pode atingir até 60km/h, todo os carrinhos possuem freios fazendo com que a aventureira escolha em que velocidade descer.
-Pode ser realizado em dupla ou individualmente.
-Equipamento de fabricação alemã. Ao todo são 30 trenós que vão te levar a uma aventura incrível. .</li>
-        <li>A ZipRider é uma mega tirolesa localizada na Estação Mata Atlântica, no topo do morro, o único acesso é pelo Bondinho. Desce da Estação Mata Atlântica até a Estação Laranjeiras. São 240m de altura e 750m de distância que são percorridos de 45s a 1 minuto, atingindo uma velocidade de até 60km/h.
-O equipamento possui uma tecnologia americana permite a descida de até 4 pessoas por vez, com um sistema de freio automático fazendo com que a aterrissagem seja mais tranquila.
-
-Descendo de ZipRider você tem direito a um retorno de bondinho até a Estação Mata Atlântica para das sequência ao passeio.</li>
-        <li>A Fantástica Floresta: Viaje pelo mágico trem suspenso a cerca de 3m e se surpreenda-se com a Casa do Chocolate e o Mirante Laranjeiras. Com três vagões e capacidade para 14 pessoas, percorre um trajeto de aprox. 400m a uma velocidade que pode chegar até 10km/h.</li>
-        <li>Super Gyro Tower: Localizada no ponto mais alto do Morro da Aguada, a Super Gyro Tower oferece uma experiência inesquecível ao proporcionar vistas panorâmicas da deslumbrante beleza natural de Balneário Camboriú.
-​​​​​​​
-Elevando-se a impressionantes 59 metros de altura e atingindo quase 300 metros acima do nível do mar, a torre oferece uma imagem inigualável do litoral catarinense. Com capacidade para acomodar até 50 pessoas simultaneamente, a Super Gyro Tower é um espaço de contemplação e conexão com a natureza..</li>
-      </ul>
-    `;
-
   const activitiesContent = `
     <h2>${title}</h2>
-    <h3>${mainActivityTitle}</h3>
-    ${mainActivityDesc}
-    <hr>
-    <h3>${otherActivitiesTitle}</h3>
-    ${otherActivitiesList}
+    <div class="activities-tree">
+      
+      <!-- 1. Parque Unipraias -->
+      <div class="tree-item">
+        <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+          <i class="fa fa-chevron-right"></i>
+          <strong>1. Parque Unipraias</strong>
+        </div>
+        <div class="tree-content">
+          <p>${lang === 'es' 
+            ? 'El paseo principal se realiza en el Bondinho Aéreo, que interconecta tres estaciones, siendo el único teleférico en el mundo que une dos playas: la Estación Barra Sul y la Estación Laranjeiras.'
+            : 'O passeio principal é feito pelo Bondinho Aéreo, que interliga três estações, sendo o único teleférico no mundo a ligar duas praias: a Estação Barra Sul e a Estação Laranjeiras.'}</p>
+          <p>${lang === 'es'
+            ? 'La estación intermedia, Estación Mata Atlântica (en el Morro da Aguada), es el corazón educativo. Aquí se puede realizar un sendero ecológico guiado (parte del programa "Parque Escola"), donde monitores explican la fauna y flora de la Mata Atlântica, uno de los biomas más amenazados de Brasil.'
+            : 'A estação intermediária, Estação Mata Atlântica (no Morro da Aguada), é o coração educativo. Aqui é possível fazer uma trilha ecológica guiada (parte do programa "Parque Escola"), onde monitores explicam a fauna e flora da Mata Atlântica, um dos biomas mais ameaçados do Brasil.'}</p>
+          
+          <h4>${lang === 'es' ? 'Atracciones en el Parque:' : 'Atrações no Parque:'}</h4>
+          <ul>
+            <li><strong>Youhooo!</strong> ${lang === 'es' 
+              ? 'Es un trineo de montaña ubicado en la Estación Mata Atlântica. Realiza un recorrido de 710 metros en medio de la Mata Atlântica (ida y vuelta). El trineo puede alcanzar hasta 60 km/h, y todos los carritos poseen frenos, lo que permite al aventurero elegir a qué velocidad descender. Puede realizarse en pareja o individualmente. Equipo de fabricación alemana. En total, son 30 trenós.'
+              : 'É um trenó de montanha localizado na Estação Mata Atlântica. Faz um percurso de 710 metros em meio a Mata Atlântica (vai e volta no mesmo local). O trenó pode atingir até 60km/h, todos os carrinhos possuem freios fazendo com que o aventureiro escolha em que velocidade descer. Pode ser realizado em dupla ou individualmente. Equipamento de fabricação alemã. Ao todo são 30 trenós.'}</li>
+            
+            <li><strong>ZipRider</strong> ${lang === 'es'
+              ? 'Es una mega tirolesa ubicada en la Estación Mata Atlântica. Desciende desde la Estación Mata Atlântica hasta la Estación Laranjeiras. Son 240 metros de altura y 750 metros de distancia que se recorren en 45 segundos a 1 minuto, alcanzando una velocidad de hasta 60 km/h. El equipo permite el descenso de hasta 4 personas a la vez, con sistema de freno automático. Al descender en ZipRider, tienes derecho a un viaje de regreso en el Bondinho.'
+              : 'É uma mega tirolesa localizada na Estação Mata Atlântica. Desce da Estação Mata Atlântica até a Estação Laranjeiras. São 240m de altura e 750m de distância percorridos de 45s a 1 minuto, atingindo velocidade de até 60km/h. O equipamento permite a descida de até 4 pessoas por vez, com sistema de freio automático. Descendo de ZipRider você tem direito a retorno de bondinho.'}</li>
+            
+            <li><strong>Fantástica Floresta</strong> ${lang === 'es'
+              ? 'Viaja en el mágico tren suspendido a cerca de 3 metros y sorpréndete con la Casa del Chocolate y el Mirador Laranjeiras. Con tres vagones y capacidad para 14 personas, recorre un trayecto de aprox. 400 metros a una velocidad que puede alcanzar hasta 10 km/h.'
+              : 'Viaje pelo mágico trem suspenso a cerca de 3m e se surpreenda com a Casa do Chocolate e o Mirante Laranjeiras. Com três vagões e capacidade para 14 pessoas, percorre um trajeto de aprox. 400m a uma velocidade que pode chegar até 10km/h.'}</li>
+            
+            <li><strong>Super Gyro Tower</strong> ${lang === 'es'
+              ? 'Ubicada en el punto más alto del Morro da Aguada, ofrece una experiencia inolvidable con vistas panorámicas de la deslumbrante belleza natural de Balneário Camboriú. Elevándose a 59 metros de altura y alcanzando casi 300 metros sobre el nivel del mar, la torre ofrece una imagen inigualable del litoral catarinense. Capacidad para 50 personas simultáneamente.'
+              : 'Localizada no ponto mais alto do Morro da Aguada, oferece uma experiência inesquecível com vistas panorâmicas da deslumbrante beleza natural de Balneário Camboriú. Elevando-se a 59 metros de altura e atingindo quase 300 metros acima do nível do mar, a torre oferece uma imagem inigualável do litoral catarinense. Capacidade para 50 pessoas simultaneamente.'}</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 2. Barco Pirata -->
+      <div class="tree-item">
+        <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+          <i class="fa fa-chevron-right"></i>
+          <strong>2. Barco Pirata</strong>
+        </div>
+        <div class="tree-content">
+          <p><em>${lang === 'es' ? '(en desarrollo)' : '(em desenvolvimento)'}</em></p>
+        </div>
+      </div>
+
+      <!-- 3. Catamarã do Barco Pirata -->
+      <div class="tree-item">
+        <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+          <i class="fa fa-chevron-right"></i>
+          <strong>3. ${lang === 'es' ? 'Catamarán a Portobelo' : 'Catamarã do Barco Pirata'}</strong>
+        </div>
+        <div class="tree-content">
+          <p><em>${lang === 'es' ? '(en desarrollo)' : '(em desenvolvimento)'}</em></p>
+        </div>
+      </div>
+
+      <!-- 4. Píer da Barra Sul -->
+      <div class="tree-item">
+        <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+          <i class="fa fa-chevron-right"></i>
+          <strong>4. ${lang === 'es' ? 'Muelle de Barra Sul' : 'Píer da Barra Sul'}</strong>
+        </div>
+        <div class="tree-content">
+          <p><em>${lang === 'es' ? '(en desarrollo)' : '(em desenvolvimento)'}</em></p>
+        </div>
+      </div>
+
+      <!-- 5. Passarela da Barra -->
+      <div class="tree-item">
+        <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+          <i class="fa fa-chevron-right"></i>
+          <strong>5. ${lang === 'es' ? 'Pasarela da Barra' : 'Passarela da Barra'}</strong>
+        </div>
+        <div class="tree-content">
+          <p><em>${lang === 'es' ? '(en desarrollo)' : '(em desenvolvimento)'}</em></p>
+        </div>
+      </div>
+
+      <!-- 6. Classic Car Show -->
+      <div class="tree-item">
+        <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+          <i class="fa fa-chevron-right"></i>
+          <strong>6. Classic Car Show</strong>
+        </div>
+        <div class="tree-content">
+          <p><em>${lang === 'es' ? '(en desarrollo)' : '(em desenvolvimento)'}</em></p>
+        </div>
+      </div>
+
+      <!-- 7. Oceanic Aquarium -->
+      <div class="tree-item">
+        <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+          <i class="fa fa-chevron-right"></i>
+          <strong>7. Oceanic Aquarium</strong>
+        </div>
+        <div class="tree-content">
+          <p><em>${lang === 'es' ? '(en desarrollo)' : '(em desenvolvimento)'}</em></p>
+        </div>
+      </div>
+
+      <!-- 8. Cinema 3D -->
+      <div class="tree-item">
+        <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+          <i class="fa fa-chevron-right"></i>
+          <strong>8. ${lang === 'es' ? 'Cine 3D' : 'Cinema 3D'}</strong>
+        </div>
+        <div class="tree-content">
+          <p><em>${lang === 'es' ? '(en desarrollo)' : '(em desenvolvimento)'}</em></p>
+        </div>
+      </div>
+
+      <!-- 9. Aventura Pirata -->
+      <div class="tree-item">
+        <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+          <i class="fa fa-chevron-right"></i>
+          <strong>9. ${lang === 'es' ? 'Aventura Pirata' : 'Aventura Pirata'}</strong>
+        </div>
+        <div class="tree-content">
+          <p><em>${lang === 'es' ? '(en desarrollo)' : '(em desenvolvimento)'}</em></p>
+        </div>
+      </div>
+
+      <!-- 10. Summit BC -->
+      <div class="tree-item">
+        <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+          <i class="fa fa-chevron-right"></i>
+          <strong>10. Summit BC</strong>
+        </div>
+        <div class="tree-content">
+          <p><em>${lang === 'es' ? '(en desarrollo)' : '(em desenvolvimento)'}</em></p>
+        </div>
+      </div>
+
+      <!-- 11. City Tour -->
+      <div class="tree-item">
+        <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+          <i class="fa fa-chevron-right"></i>
+          <strong>11. City Tour Balneário Camboriú</strong>
+        </div>
+        <div class="tree-content">
+          <ul>
+            <li>${lang === 'es' ? 'Camelódromo' : 'Camelódromo'}</li>
+            <li>${lang === 'es' ? 'Iglesia Santa Inés' : 'Igreja Santa Inês'}</li>
+            <li>${lang === 'es' ? 'Peatonal Central - Playa Central' : 'Calçadão Central - Praia Central'}</li>
+            <li>${lang === 'es' ? 'Plaza Tamandaré' : 'Praça Tamandaré'}</li>
+            <li>${lang === 'es' ? 'Paseo Alvin Baur' : 'Passeio Alvin Baur'}</li>
+            <li>Show Atlântico</li>
+            <li>${lang === 'es' ? 'Artesanos' : 'Artesãos'}</li>
+          </ul>
+          <p><em>${lang === 'es' ? '(en desarrollo)' : '(em desenvolvimento)'}</em></p>
+        </div>
+      </div>
+
+      <!-- 12. FG Big Wheel -->
+      <div class="tree-item">
+        <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+          <i class="fa fa-chevron-right"></i>
+          <strong>12. FG Big Wheel</strong>
+        </div>
+        <div class="tree-content">
+          <p><em>${lang === 'es' ? '(en desarrollo)' : '(em desenvolvimento)'}</em></p>
+        </div>
+      </div>
+
+      <!-- 13. Píer Norte -->
+      <div class="tree-item">
+        <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+          <i class="fa fa-chevron-right"></i>
+          <strong>13. ${lang === 'es' ? 'Muelle Norte' : 'Píer Norte'}</strong>
+        </div>
+        <div class="tree-content">
+          <p><em>${lang === 'es' ? '(en desarrollo)' : '(em desenvolvimento)'}</em></p>
+        </div>
+      </div>
+
+      <!-- 14. Praia do Buraco -->
+      <div class="tree-item">
+        <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+          <i class="fa fa-chevron-right"></i>
+          <strong>14. Praia do Buraco</strong>
+        </div>
+        <div class="tree-content">
+          <p><em>${lang === 'es' ? '(en desarrollo)' : '(em desenvolvimento)'}</em></p>
+        </div>
+      </div>
+
+      <!-- 15. Morro Careca -->
+      <div class="tree-item">
+        <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+          <i class="fa fa-chevron-right"></i>
+          <strong>15. Morro Careca</strong>
+        </div>
+        <div class="tree-content">
+          <p><em>${lang === 'es' ? '(en desarrollo)' : '(em desenvolvimento)'}</em></p>
+        </div>
+      </div>
+
+      <!-- 16. Complexo Turístico Cristo Luz -->
+      <div class="tree-item">
+        <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+          <i class="fa fa-chevron-right"></i>
+          <strong>16. ${lang === 'es' ? 'Complejo Turístico Cristo Luz' : 'Complexo Turístico Cristo Luz'}</strong>
+        </div>
+        <div class="tree-content">
+          <p><em>${lang === 'es' ? '(en desarrollo)' : '(em desenvolvimento)'}</em></p>
+        </div>
+      </div>
+
+      <!-- 17. Aventura Jurássica -->
+      <div class="tree-item">
+        <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+          <i class="fa fa-chevron-right"></i>
+          <strong>17. ${lang === 'es' ? 'Aventura Jurásica' : 'Aventura Jurássica'}</strong>
+        </div>
+        <div class="tree-content">
+          <p><em>${lang === 'es' ? '(en desarrollo)' : '(em desenvolvimento)'}</em></p>
+        </div>
+      </div>
+
+      <!-- 18. Space Adventure Balneário Camboriú - Parque NASA -->
+      <div class="tree-item">
+        <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+          <i class="fa fa-chevron-right"></i>
+          <strong>18. Space Adventure Balneário Camboriú - Parque NASA</strong>
+        </div>
+        <div class="tree-content">
+          <p><em>${lang === 'es' ? '(en desarrollo)' : '(em desenvolvimento)'}</em></p>
+        </div>
+      </div>
+
+    </div>
   `;
 
   showModal(activitiesContent);

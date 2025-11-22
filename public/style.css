@@ -660,6 +660,91 @@ main {
   z-index: 1200;
 }
 
+/* Estilos para el menú de árbol expandible de Actividades */
+.activities-tree {
+  margin-top: 20px;
+}
+
+.tree-item {
+  margin-bottom: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.tree-item:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.tree-header {
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  user-select: none;
+}
+
+.tree-header:hover {
+  background: linear-gradient(135deg, #e0e7ff 0%, #b8c9f0 100%);
+}
+
+.tree-header i {
+  transition: transform 0.3s ease;
+  color: #667eea;
+}
+
+.tree-item.open .tree-header i {
+  transform: rotate(90deg);
+}
+
+.tree-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 16px;
+  background: #fff;
+}
+
+.tree-item.open .tree-content {
+  max-height: 2000px;
+  padding: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.tree-content p {
+  margin: 8px 0;
+  line-height: 1.6;
+  color: #555;
+}
+
+.tree-content h4 {
+  margin-top: 12px;
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 1.05rem;
+}
+
+.tree-content ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.tree-content ul li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.tree-content em {
+  color: #999;
+  font-style: italic;
+}
+
 /* Efecto de rebote para marcadores */
 .marker-bounce {
   animation: marker-bounce 0.7s ease;
