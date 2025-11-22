@@ -1,6 +1,6 @@
-// Minimal app: carga puntos desde points.json y muestra en Leaflet con popup bilingüe
+// Aplicación mínima: carga puntos desde points.json y muestra en Leaflet con popup bilingüe
 (function () {
-  // UI elements
+  // Elementos de UI
   const splash = document.getElementById("splash");
   const splashStart = document.getElementById("splashStart");
   const welcome = document.getElementById("welcome");
@@ -20,10 +20,10 @@
   const poiSearch = document.getElementById("poiSearch");
   const btnSearch = document.getElementById("btnSearch");
 
-  // hold points and markers globally for search / focus
+  // Mantiene los puntos y marcadores globalmente para búsqueda / enfoque
   let pointsById = {};
   let markersById = {};
-  // simple search index: id -> searchable string (lowercase, sin diacríticos)
+  // Índice de búsqueda simple: id -> cadena buscable (minúsculas, sin diacríticos)
   let searchIndex = {};
 
   function showModal(html) {
@@ -50,13 +50,15 @@
       roleLabel: "Papel",
       roleAlumno: "Aluno",
       roleProfesor: "Professor",
+      roleTurista: "Turista",//Añadido
       enter: "Entrar",
       skip: "Entrar sem perfil",
       infoDefault: "Marque um marcador para ver informação bilíngue.",
       btnQuiz: "Quiz",
       btnHistoria: "História",
       btnActividades: "Atividades",
-      btnPerfil: "Perfil",
+      btnPerfil: "Ver Perfil",// Corregido
+      btnLogout: "Sair",//Añadido
       modalClose: "Fechar",
       historyTitle: "História",
       quizText:
@@ -65,6 +67,11 @@
         "Texto histórico e fotos da região. Aqui vai um resumo introdutório.",
       actividadesText:
         "Listado de atividades/retos para o passeio educativo (demo).",
+        // Traducción para el diálogo de Salida em portugués
+        logoutTitle: "Confirmar saída", 
+        logoutText: "Você deseja sair do seu perfil e voltar à tela de boas-vindas?",
+        logoutConfirm: "Sim, sair",
+        logoutCancel: "Cancelar",
     },
     es: {
       header: "TURISMO EDUCA — Proyecto Piloto",
@@ -78,13 +85,15 @@
       roleLabel: "Rol",
       roleAlumno: "Alumno",
       roleProfesor: "Profesor",
+      roleTurista: "Turista",//Añadido
       enter: "Entrar",
       skip: "Entrar sin perfil",
       infoDefault: "Marca un marcador para ver información bilingüe.",
       btnQuiz: "Quiz",
       btnHistoria: "Historia",
       btnActividades: "Actividades",
-      btnPerfil: "Perfil",
+      btnPerfil: "Ver Perfil",// Corregido
+      btnLogout: "Salir",//Añadido  
       modalClose: "Cerrar",
       historyTitle: "Historia",
       quizText:
@@ -93,22 +102,27 @@
         "Texto histórico y fotos de la región. Aquí un resumen introductorio.",
       actividadesText:
         "Listado de actividades/retos para el paseo educativo (demo).",
+        // Traducción para el diálogo de Salida em español
+        logoutTitle: "Confirmar salida", 
+        logoutText: "¿Deseas salir de tu perfil y volver a la pantalla de bienvenida?",
+        logoutConfirm: "Sí, salir",
+        logoutCancel: "Cancelar",
     },
   };
 
   function applyTranslations(lang) {
     const t = T[lang] || T.pt;
-    // header (only set generic header when no user)
+    // cabecera (solo establece la cabecera genérica cuando no hay usuario)
     const header = document.querySelector("header h1");
     if (!getUser()) header.textContent = t.header;
 
-    // Welcome panel
+    // Panel de Bienvenida
     const welcomeTitleEl = document.getElementById("welcomeTitle");
     if (welcomeTitleEl) welcomeTitleEl.textContent = t.welcomeTitle;
     const welcomeTextEl = document.getElementById("welcomeText");
     if (welcomeTextEl) welcomeTextEl.textContent = t.welcomeText;
 
-    // labelName: preserve input element when changing label
+    // labelName: preservar el elemento input al cambiar la etiqueta
     const labelNameEl = document.getElementById("labelName");
     if (labelNameEl) {
       const input = labelNameEl.querySelector("input");
@@ -119,7 +133,7 @@
       }
     }
 
-    // role label: preserve select element
+    // Etiqueta de rol: preservar el elemento select
     const labelRoleEl = document.getElementById("labelRole");
     if (labelRoleEl) {
       const select = labelRoleEl.querySelector("select");
@@ -135,17 +149,18 @@
       document.getElementById("roleTurista").textContent =
         t.roleTurista || "Turista";
 
-    // Skip button and info default
+    // Botón Omitir e información por defecto
     const skipBtn = document.getElementById("skipWelcome");
     if (skipBtn) skipBtn.textContent = t.skip;
     const infoEl = document.getElementById("info");
     if (infoEl) infoEl.textContent = t.infoDefault;
 
-    // toolbar buttons
+    // botones de la barra de herramientas (toolbar)
     if (btnQuiz) btnQuiz.textContent = t.btnQuiz;
     if (btnHistoria) btnHistoria.textContent = t.btnHistoria;
     if (btnActividades) btnActividades.textContent = t.btnActividades;
     if (btnPerfil) btnPerfil.textContent = t.btnPerfil;
+    if (btnLogout) btnLogout.textContent = t.btnLogout; // Asegurada la traducción de "Salir"!
     // modal close
     if (modalClose) modalClose.textContent = t.modalClose;
   }
@@ -154,13 +169,15 @@
     const t = T[lang] || T.pt;
     if (role === "alumno") return t.roleAlumno;
     if (role === "profesor") return t.roleProfesor;
-    // fallback for 'turista' or other roles
+    if (role === "turista") return t.roleTurista;
+    // Fallback para cualquier otro rol
     return role;
   }
 
-  /* translations listener moved below after langSelect is defined to avoid
-    referencing DOM element before it's available (was causing a runtime
-    ReferenceError that stopped the script). */
+  /* El event listener de traducciones fue movido más abajo, después de que
+     'langSelect' esté definido. Esto evita intentar referenciar el elemento DOM
+     antes de que esté disponible (lo cual causaba un ReferenceError en tiempo
+     de ejecución que detenía el script). */
 
   function getUser() {
     try {
@@ -176,7 +193,7 @@
   function renderUser() {
     const u = getUser();
     const header = document.querySelector("header h1");
-    // determine language to choose localized header prefix
+    // Determinar el idioma para elegir el prefijo de cabecera localizado
     const lang =
       (langSelect && langSelect.value) ||
       (welcomeLangSelect && welcomeLangSelect.value) ||
@@ -194,15 +211,15 @@
     }
   }
 
-  // If no user, show welcome overlay
+  // Si no hay usuario, mostrar el overlay de bienvenida
   if (!getUser()) welcome.setAttribute("aria-hidden", "false");
   else welcome.setAttribute("aria-hidden", "true");
 
-  // Splash handlers: hide splash when user clicks Comenzar or when they search
+  // Manejadores de splash: ocultar splash cuando el usuario hace clic en Comenzar o cuando buscan
   function hideSplash() {
     try {
       if (splash) splash.setAttribute("aria-hidden", "true");
-      // remember that user dismissed splash for this session only
+      // Recordar que el usuario descartó el splash solo para esta sesión
       try {
         sessionStorage.setItem('seenSplash', '1');
       } catch (e) {}
@@ -212,14 +229,14 @@
     splashStart.addEventListener("click", (e) => {
       e.preventDefault();
       hideSplash();
-      // focus the search input so they can search immediately
+      // Enfocar el input de búsqueda para que puedan buscar inmediatamente
       try {
         poiSearch && poiSearch.focus();
       } catch (err) {}
     });
   }
 
-  // If user already dismissed splash in this session, hide it immediately
+  // Si el usuario ya descartó el splash en esta sesión, ocultarlo inmediatamente
   try {
     if (sessionStorage.getItem('seenSplash') === '1') {
       if (splash) splash.setAttribute('aria-hidden', 'true');
@@ -260,15 +277,17 @@
       return showModal(
         "<p>No hay usuario. Usa el formulario de bienvenida para crear un perfil.</p>"
       );
-    const html = `<h3>Perfil</h3><p>Nombre: ${u.name}</p><p>Rol: ${u.role}</p><div style="margin-top:12px"><button id="editProfile" class="btn">Editar perfil</button></div>`;
+    const lang = (langSelect && langSelect.value) || "es";
+    const roleDisplay = getRoleDisplay(u.role, lang);
+    const html = `<h3>Perfil</h3><p>Nombre: ${u.name}</p><p>Rol: ${roleDisplay}</p><div style="margin-top:12px"><button id="editProfile" class="btn">Editar perfil</button></div>`;
     showModal(html);
-    // attach handler after modal shown
+    // Adjuntar manejador después de mostrar el modal
     setTimeout(() => {
       const edit = document.getElementById("editProfile");
       if (edit) {
         edit.addEventListener("click", () => {
           closeModal();
-          // prefill welcome form and show
+          // Prellenar formulario de bienvenida y mostrar
           const user = getUser() || {};
           userNameInput.value = user.name || "";
           userRoleSelect.value =
@@ -279,17 +298,19 @@
     }, 50);
   });
 
-  // logout button: show confirmation modal, then clear user and show welcome
+  // Botón logout: mostrar modal de confirmación, luego limpiar usuario y mostrar bienvenida
   if (btnLogout)
     btnLogout.addEventListener("click", () => {
-      const html = `<h3>Confirmar salida</h3>
-      <p>¿Deseas salir de tu perfil y volver a la pantalla de bienvenida?</p>
+      const lang = (langSelect && langSelect.value) || "es";
+      const t = T[lang] || T.es;
+      const html = `<h3>${t.logoutTitle}</h3>
+      <p>${t.logoutText}</p>
       <div style="margin-top:12px">
-        <button id="confirmLogout" class="btn primary">Sí, salir</button>
-        <button id="cancelLogout" class="btn">Cancelar</button>
+        <button id="confirmLogout" class="btn primary">${t.logoutConfirm}</button>
+        <button id="cancelLogout" class="btn">${t.logoutCancel}</button>
       </div>`;
       showModal(html);
-      // attach handlers after modal is rendered
+      // Adjuntar manejadores después de renderizar el modal
       setTimeout(() => {
         const confirmBtn = document.getElementById("confirmLogout");
         const cancelBtn = document.getElementById("cancelLogout");
@@ -298,7 +319,7 @@
             localStorage.removeItem("turismoUser");
             closeModal();
             renderUser();
-            // ensure welcome overlay visible
+            // Asegurar que la capa de bienvenida sea visible
             if (welcome) welcome.setAttribute("aria-hidden", "false");
           });
         }
@@ -319,7 +340,7 @@
     closeModal();
   });
   skipWelcome.addEventListener("click", () => {
-    // use 'turista' role for anonymous visitor
+    // Usar rol 'turista' para visitante anónimo
     setUser({ name: "Visitante", role: "turista" });
     closeModal();
   });
@@ -332,34 +353,34 @@
   const info = document.getElementById("info");
   const langSelect = document.getElementById("langSelect");
 
-  // Apply translations now that langSelect exists
+  // Aplicar traducciones ahora que langSelect existe
   applyTranslations(langSelect.value || "es");
-  // ensure header shows personalized text if user exists
+  // Asegurar que el encabezado muestre texto personalizado si el usuario existe
   renderUser();
-  // Update translations and info when language changes
+  // Actualizar traducciones e info cuando cambie el idioma
   langSelect.addEventListener("change", () => {
     const lang = langSelect.value || "es";
     applyTranslations(lang);
     info.textContent = (T[lang] || T.es).infoDefault;
-    // re-render user header so name/role are preserved with localized prefix
+    // Re-renderizar encabezado de usuario para que nombre/rol se preserven con prefijo localizado
     renderUser();
   });
 
-  // If welcome language selector exists, sync with main selector and allow
-  // selecting language before entering
+  // Si existe selector de idioma de bienvenida, sincronizar con selector principal y permitir
+  // seleccionar idioma antes de entrar
   if (welcomeLangSelect) {
-    // start with same value as header selector
+    // Empezar con el mismo valor que el selector del encabezado
     welcomeLangSelect.value = langSelect.value || "es";
     welcomeLangSelect.addEventListener("change", () => {
       const lang = welcomeLangSelect.value || "es";
-      // update main selector and trigger its change handler
+      // Actualizar selector principal y disparar su manejador de cambio
       langSelect.value = lang;
       langSelect.dispatchEvent(new Event("change"));
     });
   }
 
   function loadPoints() {
-    // Try to load a standard GeoJSON file first; fallback to legacy points.json
+    // Intentar cargar primero un archivo GeoJSON estándar; fallback a legacy points.json
     function fetchGeoJSON() {
       return fetch("points.geojson").then((r) => {
         if (!r.ok) throw new Error("no-geojson");
@@ -397,14 +418,14 @@
     }
 
     function processPoints(points) {
-      // index points by id for quick access
+      // Indexar puntos por id para acceso rápido
       pointsById = {};
       markersById = {};
       points.forEach((p) => {
         pointsById[p.id] = p;
       });
 
-      // build search index: include id and all title variations
+      // Construir índice de búsqueda: incluir id y todas las variaciones de título
       searchIndex = {};
       points.forEach((p) => {
         const pieces = [p.id];
@@ -412,14 +433,14 @@
           Object.keys(p.title).forEach((k) => pieces.push(p.title[k]));
         }
         const joined = pieces.join(" ").toLowerCase();
-        // normalize to remove diacritics for more robust search
+        // Normalizar para eliminar diacríticos y tener búsqueda más robusta
         const normalized = joined
           .normalize("NFD")
           .replace(/[\u0300-\u036f]/g, "");
         searchIndex[p.id] = normalized;
       });
 
-      // load overrides from localStorage (id -> {lat,lng})
+      // Cargar sobreescrituras desde localStorage (id -> {lat,lng})
       const overrides = JSON.parse(
         localStorage.getItem("pointOverrides") || "{}"
       );
@@ -530,11 +551,11 @@
       });
     }
 
-    // Attempt GeoJSON then fallback
+    // Intentar GeoJSON y luego fallback
     fetchGeoJSON()
       .then((geo) => processPoints(toPointsArrayFromGeo(geo)))
       .catch(() => {
-        // fallback to legacy format
+        // Fallback a formato legacy
         fetchLegacy()
           .then((points) => processPoints(points))
           .catch((e) => {
@@ -543,9 +564,9 @@
       });
   }
 
-  // Search function: find by id or title substring (current language)
+  // Función de búsqueda: encontrar por id o substring de título (idioma actual)
   function searchAndFocus(query) {
-    // hide splash if visible so map is visible behind
+    // Ocultar splash si está visible para que el mapa sea visible detrás
     hideSplash();
     if (!query) return showModal("<p>Ingrese un término de búsqueda.</p>");
     const raw = query.trim();
@@ -555,12 +576,12 @@
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "");
     let found = null;
-    // prefer exact id match first
+    // Preferir coincidencia exacta de id primero
     const idCandidate = Object.keys(pointsById).find(
       (id) => id.toLowerCase() === q
     );
     if (idCandidate) found = pointsById[idCandidate];
-    // otherwise search the index for substring match
+    // De lo contrario, buscar en el índice coincidencia de substring
     if (!found) {
       for (const id in searchIndex) {
         if (searchIndex[id].includes(q)) {
@@ -571,19 +592,19 @@
     }
     if (!found)
       return showModal("<p>No se encontró ningún punto que coincida.</p>");
-    // Focus map
+    // Enfocar mapa
     const marker = markersById[found.id];
     if (marker) {
-      // use the marker's current coordinates (which may include overrides) to center
+      // Usar las coordenadas actuales del marcador (que pueden incluir sobreescrituras) para centrar
       try {
         const ll = marker.getLatLng();
         map.setView([ll.lat, ll.lng], 15, { animate: true });
       } catch (err) {
-        // fallback to original
+        // Fallback a coordenadas originales
         map.setView([found.lat, found.lng], 15, { animate: true });
       }
       marker.openPopup();
-      // small visual bounce to draw la atención: delay a bit so DOM se actualice
+      // Pequeño rebote visual para llamar la atención: retrasar un poco para que el DOM se actualice
       setTimeout(() => {
         try {
           const icon = marker.getElement ? marker.getElement() : marker._icon;
@@ -594,7 +615,7 @@
         } catch (err) {}
       }, 150);
     }
-    // also show history or info
+    // También mostrar historia o info
     const lang = (langSelect && langSelect.value) || "es";
     const title = found.title[lang] || found.title.pt;
     const desc = found.desc[lang] || found.desc.pt;
@@ -624,11 +645,11 @@
     showModal(html);
   }
 
-  // language change handled above (applyTranslations)
+  // Cambio de idioma manejado arriba (applyTranslations)
 
   loadPoints();
 
-  // render header if user already exists
+  // Renderizar encabezado si el usuario ya existe
   renderUser();
   // --- Nuevas Funciones para Contenido (Quiz, Historia, Actividades) ---
 
