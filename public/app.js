@@ -966,27 +966,217 @@ function showActivities() {
 function showCityHistory() {
   const lang = (langSelect && langSelect.value) || "pt";
   const title = lang === 'es' ? 'Historia de Balneário Camboriú' : 'História de Balneário Camboriú';
-  const historyContent = lang === 'es' 
-    ? `
-      <h2>${title}</h2>
-      <p>La región de Balneário Camboriú fue originalmente habitada por indígenas Guaranís. Sin embargo, la ciudad como municipio se emancipó y fue oficialmente fundada en 1964.</p>
+  
+  const historyContent = `
+    <h2>${title}</h2>
+    <div class="history-tree">
       
-      <h3>El Crecimiento Turístico</h3>
-      <p>A partir de los años 60 y 70, la ciudad pasó de ser una pequeña villa de pescadores a un gran centro turístico. El rápido desarrollo urbano se caracterizó por la construcción de los famosos rascacielos a lo largo de la orla.</p>
-      
-      <h3>Hitos Recientes</h3>
-      <p>Un hito reciente y fundamental para la ciudad fue el proyecto de alargamiento de la Praia Central (ampliación de la franja de arena), que impulsó aún más el turismo y la economía local.</p>
-    `
-    : `
-      <h2>${title}</h2>
-      <p>A região de Balneário Camboriú foi originalmente habitada por indígenas Guaranis. No entanto, a cidade como município se emancipou e foi oficialmente fundada em 1964.</p>
-      
-      <h3>O Crescimento Turístico</h3>
-      <p>A partir dos anos 60 e 70, a cidade passou de uma pequena vila de pescadores a um grande centro turístico. O rápido desenvolvimento urbano foi marcado pela construção dos famosos arranha-céus ao longo da orla.</p>
-      
-      <h3>Marcos Recentes</h3>
-      <p>Um marco recente e fundamental para a cidade foi o projeto de alargamento da Praia Central (ampliação da faixa de areia), que impulsionou ainda mais o turismo e a economia local.</p>
-    `;
+      <!-- 1. Los Primeros Habitantes -->
+      <div class="tree-item history-period">
+        <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+          <i class="fa fa-chevron-right"></i>
+          <strong>🏹 1. ${lang === 'es' ? 'Los Primeros Habitantes: Sambaquis y Carijós' : 'Os Primeiros Habitantes: Sambaquis e Carijós'}</strong>
+        </div>
+        <div class="tree-content">
+          <p>${lang === 'es' 
+            ? 'La historia de la región de Camboriú es milenaria, mucho anterior a la llegada de los europeos. El territorio que hoy ocupa Balneário Camboriú fue el hogar de dos importantes grupos precoloniales:'
+            : 'A história da região de Camboriú é milenar, muito anterior à chegada dos europeus. O território que hoje ocupa Balneário Camboriú foi o lar de dois importantes grupos pré-coloniais:'
+          }</p>
+          
+          <h4>🐚 ${lang === 'es' ? 'A. Los Constructores de los Sambaquis' : 'A. Os Construtores dos Sambaquis'}</h4>
+          <p><strong>${lang === 'es' ? 'Período:' : 'Período:'}</strong> ${lang === 'es' ? 'Desde hace aproximadamente 4.000 a 5.000 años.' : 'Desde aproximadamente 4.000 a 5.000 anos atrás.'}</p>
+          <p><strong>${lang === 'es' ? 'Descripción:' : 'Descrição:'}</strong> ${lang === 'es' 
+            ? 'Eran pueblos seminómadas que vivían de la pesca y la recolección de moluscos.'
+            : 'Eram povos seminômadas que viviam da pesca e da coleta de moluscos.'
+          }</p>
+          <p><strong>${lang === 'es' ? 'Evidencia Arqueológica:' : 'Evidência Arqueológica:'}</strong> ${lang === 'es' 
+            ? 'Su legado más importante son los <em>Sambaquis</em> (del tupí-guaraní: <em>tamba</em> = concha; <em>ki</em> = acumulación), grandes montículos artificiales de conchas, huesos de animales, herramientas y restos humanos. Estos montículos funcionaban como basureros, viviendas y, principalmente, cementerios. Demuestran la primera presencia humana organizada en la costa.'
+            : 'Seu legado mais importante são os <em>Sambaquis</em> (do tupi-guarani: <em>tamba</em> = concha; <em>ki</em> = acumulação), grandes montes artificiais de conchas, ossos de animais, ferramentas e restos humanos. Esses montes funcionavam como depósitos de lixo, moradias e, principalmente, cemitérios. Demonstram a primeira presença humana organizada no litoral.'
+          }</p>
+          
+          <h4>🌿 ${lang === 'es' ? 'B. El Pueblo Guaraní-Carijó' : 'B. O Povo Guarani-Carijó'}</h4>
+          <p><strong>${lang === 'es' ? 'Período:' : 'Período:'}</strong> ${lang === 'es' 
+            ? 'Dominaron la costa antes de la colonización (desde aproximadamente el año 1000 d.C.).'
+            : 'Dominaram o litoral antes da colonização (desde aproximadamente o ano 1000 d.C.).'
+          }</p>
+          <p><strong>${lang === 'es' ? 'Modo de Vida:' : 'Modo de Vida:'}</strong> ${lang === 'es' 
+            ? 'Eran agricultores, alfareros y pescadores, con una estructura social más compleja que los pueblos del sambaqui.'
+            : 'Eram agricultores, ceramistas e pescadores, com uma estrutura social mais complexa que os povos do sambaqui.'
+          }</p>
+          <p><strong>${lang === 'es' ? 'Impacto Inicial:' : 'Impacto Inicial:'}</strong> ${lang === 'es' 
+            ? 'El contacto con los colonos europeos fue inicialmente a través de la actividad de la esclavización indígena (tráfico de indios para mano de obra en el sur y sureste de Brasil), lo que diezmó rápidamente a la población Carijó de la costa en el siglo XVI.'
+            : 'O contato com os colonos europeus foi inicialmente através da atividade de escravização indígena (tráfico de índios para mão de obra no sul e sudeste do Brasil), o que dizimou rapidamente a população Carijó do litoral no século XVI.'
+          }</p>
+        </div>
+      </div>
+
+      <!-- 2. Raíces Portuguesas -->
+      <div class="tree-item history-period">
+        <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+          <i class="fa fa-chevron-right"></i>
+          <strong>🇵🇹 2. ${lang === 'es' ? 'Raíces Portuguesas: La Colonización de Camboriú' : 'Raízes Portuguesas: A Colonização de Camboriú'}</strong>
+        </div>
+        <div class="tree-content">
+          <p>${lang === 'es' 
+            ? 'La ocupación europea de la región se consolidó tardíamente, a partir del siglo XVIII.'
+            : 'A ocupação europeia da região consolidou-se tardiamente, a partir do século XVIII.'
+          }</p>
+          
+          <p><strong>${lang === 'es' ? 'Pioneros:' : 'Pioneiros:'}</strong> ${lang === 'es' 
+            ? 'La mayoría de los colonos provenían de las Islas Azores (Portugal), buscando tierras fértiles para la agricultura.'
+            : 'A maioria dos colonos provinha das Ilhas Açores (Portugal), buscando terras férteis para a agricultura.'
+          }</p>
+          
+          <p><strong>${lang === 'es' ? 'La Freguesia Madre:' : 'A Freguesia Mãe:'}</strong> ${lang === 'es' 
+            ? 'El núcleo poblacional se estableció originalmente en el interior, a orillas del río Camboriú. Esto dio lugar a la fundación de la <em>Freguesia do Santíssimo Sacramento de Camboriú</em> alrededor de 1845 (hoy la ciudad vecina de Camboriú).'
+            : 'O núcleo populacional se estabeleceu originalmente no interior, às margens do rio Camboriú. Isso deu origem à fundação da <em>Freguesia do Santíssimo Sacramento de Camboriú</em> por volta de 1845 (hoje a cidade vizinha de Camboriú).'
+          }</p>
+          
+          <p><strong>${lang === 'es' ? 'División Geográfica:' : 'Divisão Geográfica:'}</strong> ${lang === 'es' 
+            ? 'La vida económica giraba en torno a la agricultura (caña de azúcar y mandioca) y la ganadería en el interior (Sertão), mientras que la zona costera (Barra) se mantuvo poco desarrollada.'
+            : 'A vida econômica girava em torno da agricultura (cana-de-açúcar e mandioca) e da pecuária no interior (Sertão), enquanto a zona costeira (Barra) permaneceu pouco desenvolvida.'
+          }</p>
+        </div>
+      </div>
+
+      <!-- 3. Nacimiento del Balneario -->
+      <div class="tree-item history-period">
+        <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+          <i class="fa fa-chevron-right"></i>
+          <strong>🏖️ 3. ${lang === 'es' ? 'Nacimiento del Balneario y Emancipación (1919-1964)' : 'Nascimento do Balneário e Emancipação (1919-1964)'}</strong>
+        </div>
+        <div class="tree-content">
+          <p>${lang === 'es' 
+            ? 'El siglo XX marcó el cambio fundamental en la historia de la costa. Familias adineradas de la región del Valle de Itajaí (principalmente de Blumenau e Itajaí) comenzaron a buscar la tranquilidad de la playa de Camboriú para pasar el verano, naciendo así el concepto de balneario.'
+            : 'O século XX marcou a mudança fundamental na história do litoral. Famílias abastadas da região do Vale do Itajaí (principalmente de Blumenau e Itajaí) começaram a buscar a tranquilidade da praia de Camboriú para passar o verão, nascendo assim o conceito de balneário.'
+          }</p>
+          
+          <h4>🏠 ${lang === 'es' ? 'A. La Creación del Distrito (1919)' : 'A. A Criação do Distrito (1919)'}</h4>
+          <p><strong>${lang === 'es' ? 'Primeras Estructuras:' : 'Primeiras Estruturas:'}</strong> ${lang === 'es' 
+            ? 'A principios de siglo, la Barra era conocida simplemente como "Praia de Camboriú". Con el aumento de visitantes, se construyeron los primeros chalets de veraneo y modestas posadas.'
+            : 'No início do século, a Barra era conhecida simplesmente como "Praia de Camboriú". Com o aumento de visitantes, foram construídos os primeiros chalés de veraneio e modestas pousadas.'
+          }</p>
+          
+          <p><strong>${lang === 'es' ? 'Hito Administrativo:' : 'Marco Administrativo:'}</strong> ${lang === 'es' 
+            ? 'En 1919, la Asamblea Legislativa de Santa Catarina reconoció el crecimiento de la costa y creó el <strong>Distrito de Balneário de Camboriú</strong>. Este acto marcó el reconocimiento oficial de la zona como una entidad separada de la Camboriú rural.'
+            : 'Em 1919, a Assembleia Legislativa de Santa Catarina reconheceu o crescimento do litoral e criou o <strong>Distrito de Balneário de Camboriú</strong>. Este ato marcou o reconhecimento oficial da zona como uma entidade separada da Camboriú rural.'
+          }</p>
+          
+          <h4>🌊 ${lang === 'es' ? 'B. El Impulso Turístico (1930s-1950s)' : 'B. O Impulso Turístico (1930s-1950s)'}</h4>
+          <p>${lang === 'es' 
+            ? 'La mejora de los accesos viales y el desarrollo de la infraestructura de alojamiento aceleraron la transformación. La identidad de la costa se consolidó como un destino exclusivamente turístico, mientras que la ciudad madre (Camboriú) mantuvo su enfoque agrícola. Esta diferencia en el desarrollo, las necesidades administrativas y la recaudación de impuestos generó un fuerte movimiento cívico.'
+            : 'A melhoria dos acessos rodoviários e o desenvolvimento da infraestrutura de hospedagem aceleraram a transformação. A identidade do litoral consolidou-se como um destino exclusivamente turístico, enquanto a cidade-mãe (Camboriú) manteve seu foco agrícola. Esta diferença no desenvolvimento, as necessidades administrativas e a arrecadação de impostos gerou um forte movimento cívico.'
+          }</p>
+          
+          <h4>🎉 ${lang === 'es' ? 'C. La Emancipación (1964)' : 'C. A Emancipação (1964)'}</h4>
+          <p><strong>${lang === 'es' ? 'Objetivo:' : 'Objetivo:'}</strong> ${lang === 'es' 
+            ? 'Los líderes y residentes del Balneário buscaban el autogobierno para poder invertir directamente en infraestructura turística (calles, saneamiento, energía), lo que la administración de Camboriú priorizaba para el interior.'
+            : 'Os líderes e residentes do Balneário buscavam o autogoverno para poder investir diretamente em infraestrutura turística (ruas, saneamento, energia), o que a administração de Camboriú priorizava para o interior.'
+          }</p>
+          
+          <p><strong>${lang === 'es' ? 'Fecha Clave:' : 'Data-Chave:'}</strong> ${lang === 'es' 
+            ? 'El <strong>15 de mayo de 1964</strong> fue el día de la Emancipación Político-Administrativa. El Distrito de Balneário de Camboriú fue elevado a la categoría de Municipio (ciudad), separándose definitivamente de la ciudad madre.'
+            : 'O <strong>15 de maio de 1964</strong> foi o dia da Emancipação Político-Administrativa. O Distrito de Balneário de Camboriú foi elevado à categoria de Município (cidade), separando-se definitivamente da cidade-mãe.'
+          }</p>
+          
+          <p><strong>${lang === 'es' ? 'Primer Nombre Oficial:' : 'Primeiro Nome Oficial:'}</strong> ${lang === 'es' 
+            ? 'Inicialmente, el municipio se llamó simplemente <em>Balneário Camboriú</em>.'
+            : 'Inicialmente, o município chamou-se simplesmente <em>Balneário Camboriú</em>.'
+          }</p>
+        </div>
+      </div>
+
+      <!-- 4. Era de la Verticalización -->
+      <div class="tree-item history-period">
+        <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+          <i class="fa fa-chevron-right"></i>
+          <strong>📈 4. ${lang === 'es' ? 'La Era de la Verticalización y el Turismo Masivo (1960s-Actualidad)' : 'A Era da Verticalização e o Turismo de Massa (1960s-Atualidade)'}</strong>
+        </div>
+        <div class="tree-content">
+          <p>${lang === 'es' 
+            ? 'Una vez independiente, la ciudad se volcó por completo al desarrollo turístico, adoptando un modelo urbanístico que la define hasta hoy.'
+            : 'Uma vez independente, a cidade voltou-se completamente ao desenvolvimento turístico, adotando um modelo urbanístico que a define até hoje.'
+          }</p>
+          
+          <h4>🏙️ ${lang === 'es' ? 'A. La Verticalización Acelerada' : 'A. A Verticalização Acelerada'}</h4>
+          <p>${lang === 'es' 
+            ? 'A partir de finales de los años 60 y, especialmente, en las décadas de 1970 y 1980, Balneário Camboriú experimentó un "boom" inmobiliario. El alto precio del suelo costero y la demanda por alojamiento resultaron en la construcción de edificios cada vez más altos. Esta tendencia transformó su horizonte, dándole el apodo de la <strong>"Dubai Brasileña"</strong> debido a su alta concentración de rascacielos.'
+            : 'A partir do final dos anos 60 e, especialmente, nas décadas de 1970 e 1980, Balneário Camboriú experimentou um "boom" imobiliário. O alto preço do solo costeiro e a demanda por hospedagem resultaram na construção de edifícios cada vez mais altos. Esta tendência transformou seu horizonte, dando-lhe o apelido de <strong>"Dubai Brasileira"</strong> devido à sua alta concentração de arranha-céus.'
+          }</p>
+          
+          <h4>🎯 ${lang === 'es' ? 'B. Hitos del Desarrollo Turístico' : 'B. Marcos do Desenvolvimento Turístico'}</h4>
+          <ul>
+            <li><strong>${lang === 'es' ? 'Cristo Luz (1997):' : 'Cristo Luz (1997):'}</strong> ${lang === 'es' 
+              ? 'Inaugurado como un símbolo religioso y un importante mirador nocturno, consolidando la oferta de atracciones más allá de la playa.'
+              : 'Inaugurado como um símbolo religioso e um importante mirante noturno, consolidando a oferta de atrações além da praia.'
+            }</li>
+            <li><strong>${lang === 'es' ? 'Complejo Turístico de Interpraias:' : 'Complexo Turístico de Interpraias:'}</strong> ${lang === 'es' 
+              ? 'El desarrollo de la carretera que conecta la Praia Central con las playas más agrestes del sur (Laranjeiras, Taquaras, etc.), fundamental para diversificar la oferta turística.'
+              : 'O desenvolvimento da estrada que conecta a Praia Central com as praias mais agrestes do sul (Laranjeiras, Taquaras, etc.), fundamental para diversificar a oferta turística.'
+            }</li>
+          </ul>
+          
+          <h4>🌊 ${lang === 'es' ? 'C. La Megaobra del Siglo XXI' : 'C. A Megaobra do Século XXI'}</h4>
+          <p><strong>${lang === 'es' ? 'Alargamiento de la Praia Central (2021):' : 'Alargamento da Praia Central (2021):'}</strong> ${lang === 'es' 
+            ? 'Para enfrentar la erosión costera y el sombreado de la playa causado por la altura de los edificios, la ciudad ejecutó un proyecto de ingeniería de gran escala. Se amplió la franja de arena de la Praia Central, transformando su paisaje y capacidad de uso, siendo uno de los hitos urbanísticos más comentados de Brasil en la actualidad.'
+            : 'Para enfrentar a erosão costeira e o sombreamento da praia causado pela altura dos edifícios, a cidade executou um projeto de engenharia de grande escala. Ampliou-se a faixa de areia da Praia Central, transformando sua paisagem e capacidade de uso, sendo um dos marcos urbanísticos mais comentados do Brasil na atualidade.'
+          }</p>
+        </div>
+      </div>
+
+      <!-- 5. Monumentos -->
+      <div class="tree-item history-period">
+        <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+          <i class="fa fa-chevron-right"></i>
+          <strong>🏛️ 5. ${lang === 'es' ? 'Monumentos y Puntos de Memoria Histórica' : 'Monumentos e Pontos de Memória Histórica'}</strong>
+        </div>
+        <div class="tree-content">
+          <p>${lang === 'es' 
+            ? 'Aunque Balneário Camboriú es una ciudad relativamente joven y moderna, conserva puntos que recuerdan su pasado o que se han convertido en símbolos de su desarrollo.'
+            : 'Embora Balneário Camboriú seja uma cidade relativamente jovem e moderna, conserva pontos que relembram seu passado ou que se tornaram símbolos de seu desenvolvimento.'
+          }</p>
+          
+          <ul>
+            <li><strong>Passarela da Barra:</strong> ${lang === 'es' 
+              ? 'Esta moderna pasarela peatonal sobre el Río Camboriú une la Barra Sul con la Praia Central. Históricamente, la "Barra" fue la zona de desembocadura del río y su conectividad fue clave para el desarrollo comercial y turístico. La pasarela es un símbolo de la ingeniería y la unión urbana.'
+              : 'Esta moderna passarela pedestre sobre o Rio Camboriú une a Barra Sul com a Praia Central. Historicamente, a "Barra" foi a zona de desembocadura do rio e sua conectividade foi chave para o desenvolvimento comercial e turístico. A passarela é um símbolo da engenharia e da união urbana.'
+            }</li>
+            
+            <li><strong>${lang === 'es' ? 'Antiguas Residencias de Veraneo:' : 'Antigas Residências de Veraneio:'}</strong> ${lang === 'es' 
+              ? 'A pesar de la verticalización, aún se pueden encontrar algunas casas antiguas y chalets de madera, especialmente cerca del centro, que datan de las primeras décadas del siglo XX, cuando la ciudad era todavía una villa de playa. Un ejemplo notable de este estilo es la <em>Casa Linhares</em> (aunque ha sido reconstruida y modificada).'
+              : 'Apesar da verticalização, ainda se podem encontrar algumas casas antigas e chalés de madeira, especialmente perto do centro, que datam das primeiras décadas do século XX, quando a cidade era ainda uma vila de praia. Um exemplo notável deste estilo é a <em>Casa Linhares</em> (embora tenha sido reconstruída e modificada).'
+            }</li>
+            
+            <li><strong>${lang === 'es' ? 'Píer da Barra Sul:' : 'Píer da Barra Sul:'}</strong> ${lang === 'es' 
+              ? 'La existencia de un muelle ha sido históricamente importante para la pesca y el transporte fluvial/marítimo. Hoy, el Píer es una terminal turística esencial para los paseos en Barco Pirata y Catamarán, continuando la tradición marítima de la ciudad.'
+              : 'A existência de um píer tem sido historicamente importante para a pesca e o transporte fluvial/marítimo. Hoje, o Píer é um terminal turístico essencial para os passeios de Barco Pirata e Catamarã, continuando a tradição marítima da cidade.'
+            }</li>
+            
+            <li><strong>${lang === 'es' ? 'Complexo Turístico Cristo Luz:' : 'Complexo Turístico Cristo Luz:'}</strong> ${lang === 'es' 
+              ? 'Inaugurado en 1997, aunque no es un monumento de la época fundacional, es un hito moderno que se ha convertido en el principal ícono nocturno y turístico, representando el espíritu de gran desarrollo de la ciudad.'
+              : 'Inaugurado em 1997, embora não seja um monumento da época fundacional, é um marco moderno que se tornou o principal ícone noturno e turístico, representando o espírito de grande desenvolvimento da cidade.'
+            }</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 6. Referencia Bibliográfica -->
+      <div class="tree-item history-period reference">
+        <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+          <i class="fa fa-chevron-right"></i>
+          <strong>📚 6. ${lang === 'es' ? 'Referencia Bibliográfica' : 'Referência Bibliográfica'}</strong>
+        </div>
+        <div class="tree-content">
+          <div style="margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 4px solid #DAA520; border-radius: 4px;">
+            <p style="margin: 0; font-size: 14px; color: #333; line-height: 1.6;">
+              CORRÊA, Isaque de Borba. <em>História de duas cidades: Camboriú e Balneário Camboriú</em>. Camboriú, SC: I. de Borba Corrêa (${lang === 'es' ? 'Edición del Autor' : 'Edição do Autor'}), 1985.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  `;
 
   showModal(historyContent);
 }

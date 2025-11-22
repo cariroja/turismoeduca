@@ -745,6 +745,145 @@ main {
   font-style: italic;
 }
 
+/* === ESTILOS PARA HISTORIA === */
+.history-tree {
+  margin-top: 20px;
+}
+
+.history-tree .tree-item.history-period {
+  margin-bottom: 15px;
+  border: 2px solid #daa520;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.history-tree .tree-item.history-period:hover {
+  box-shadow: 0 4px 16px rgba(218, 165, 32, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Gradientes cálidos para cada período histórico */
+.history-tree .tree-item:nth-child(1) .tree-header {
+  background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%); /* Tierra/Marrón para pueblos originarios */
+  color: white;
+}
+
+.history-tree .tree-item:nth-child(2) .tree-header {
+  background: linear-gradient(135deg, #CD853F 0%, #DAA520 100%); /* Dorado/Tierra para colonización */
+  color: white;
+}
+
+.history-tree .tree-item:nth-child(3) .tree-header {
+  background: linear-gradient(135deg, #4682B4 0%, #5F9EA0 100%); /* Azul mar para balneario */
+  color: white;
+}
+
+.history-tree .tree-item:nth-child(4) .tree-header {
+  background: linear-gradient(135deg, #FF6B6B 0%, #FFA07A 100%); /* Coral vibrante para verticalización */
+  color: white;
+}
+
+.history-tree .tree-item:nth-child(5) .tree-header {
+  background: linear-gradient(135deg, #9370DB 0%, #BA55D3 100%); /* Púrpura para monumentos */
+  color: white;
+}
+
+.history-tree .tree-item:nth-child(6) .tree-header {
+  background: linear-gradient(135deg, #2F4F4F 0%, #696969 100%); /* Gris académico para referencia */
+  color: white;
+}
+
+.history-tree .tree-header {
+  cursor: pointer;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.history-tree .tree-header:hover {
+  opacity: 0.9;
+  padding-left: 25px;
+}
+
+.history-tree .tree-header i {
+  transition: transform 0.3s ease;
+  font-size: 14px;
+}
+
+.history-tree .tree-item.open .tree-header i {
+  transform: rotate(90deg);
+}
+
+.history-tree .tree-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  padding: 0 20px;
+  background: linear-gradient(to bottom, #fffdf7 0%, #fff9e6 100%);
+}
+
+.history-tree .tree-item.open .tree-content {
+  max-height: 3000px;
+  padding: 20px;
+}
+
+.history-tree .tree-content h4 {
+  color: #8B4513;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  border-left: 4px solid #DAA520;
+  padding-left: 10px;
+}
+
+.history-tree .tree-content p {
+  margin-bottom: 12px;
+  line-height: 1.7;
+  color: #333;
+  text-align: justify;
+}
+
+.history-tree .tree-content ul {
+  margin: 15px 0;
+  padding-left: 25px;
+}
+
+.history-tree .tree-content ul li {
+  margin-bottom: 12px;
+  line-height: 1.7;
+  color: #444;
+}
+
+.history-tree .tree-content strong {
+  color: #8B4513;
+}
+
+.history-tree .tree-content em {
+  color: #666;
+  font-style: italic;
+}
+
+.history-tree .tree-content table {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.history-tree .tree-content table th {
+  background-color: #DAA520;
+  color: white;
+  font-weight: bold;
+}
+
+.history-tree .tree-content table td {
+  background-color: #fffdf7;
+}
+
 /* Efecto de rebote para marcadores */
 .marker-bounce {
   animation: marker-bounce 0.7s ease;
