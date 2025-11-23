@@ -256,7 +256,7 @@
     {
       "type": "Feature",
       "id": "aventura-jurassica",
-      "geometry": { "type": "Point", "coordinates": [-48.6310, -26.9880] },
+      "geometry": { "type": "Point", "coordinates": [-48.64819, -26.98861] },
       "properties": {
         "id": "aventura-jurassica",
         "image": "imagenes/aventura-jurassica.jpg",
@@ -286,6 +286,438 @@
         "history": {
           "pt": "O Space Adventure Balneário Camboriú é um parque temático espacial que oferece experiências imersivas sobre a exploração espacial, com simuladores, exposições e atividades educativas.",
           "es": "El Space Adventure Balneário Camboriú es un parque temático espacial que ofrece experiencias inmersivas sobre la exploración espacial, con simuladores, exposiciones y actividades educativas."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "summit-bc",
+      "geometry": { "type": "Point", "coordinates": [-48.63589, -26.99447] },
+      "properties": {
+        "id": "summit-bc",
+        "image": "imagenes/summit-bc.jpg",
+        "title": { "pt": "Summit BC", "es": "Summit BC" },
+        "desc": {
+          "pt": "Uma aventura inesquecível a 120 metros de altura no mais novo ponto turístico de Balneário Camboriú. Conheça os famosos cubos de vidro suspensos.",
+          "es": "Una aventura inolvidable a 120 metros de altura en el más nuevo punto turístico de Balneário Camboriú. Conozca los famosos cubos de vidrio suspendidos."
+        },
+        "history": {
+          "pt": "O Summit BC é um ícone da verticalização de Balneário Camboriú, oferecendo uma experiência única com seus cubos de vidro suspensos a 120 metros de altura, proporcionando vistas espetaculares da cidade e do litoral.",
+          "es": "El Summit BC es un ícono de la verticalización de Balneário Camboriú, ofreciendo una experiencia única con sus cubos de vidrio suspendidos a 120 metros de altura, proporcionando vistas espectaculares de la ciudad y del litoral."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "one-tower-fg",
+      "geometry": { "type": "Point", "coordinates": [-48.61478, -27.00515] },
+      "properties": {
+        "id": "one-tower-fg",
+        "image": "imagenes/one-tower-fg.jpg",
+        "title": { "pt": "One Tower FG", "es": "One Tower FG" },
+        "desc": {
+          "pt": "Com impressionantes 290 metros de altura, este empreendimento recebeu a chancela do CTBUH (Council on Tall Buildings and Urban Habitat), uma reconhecida organização internacional que certifica arranha-céus ao redor do mundo.",
+          "es": "Con impresionantes 290 metros de altura, este emprendimiento recibió el sello del CTBUH (Council on Tall Buildings and Urban Habitat), una reconocida organización internacional que certifica rascacielos alrededor del mundo."
+        },
+        "history": {
+          "pt": "A One Tower FG é atualmente o edifício mais alto de Balneário Camboriú, certificado internacionalmente pelo CTBUH, simbolizando o crescimento vertical e a modernidade da cidade.",
+          "es": "La One Tower FG es actualmente el edificio más alto de Balneário Camboriú, certificado internacionalmente por el CTBUH, simbolizando el crecimiento vertical y la modernidad de la ciudad."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yachthouse-torres-gemeas",
+      "geometry": { "type": "Point", "coordinates": [-48.63112, -26.98923] },
+      "properties": {
+        "id": "yachthouse-torres-gemeas",
+        "image": "imagenes/yachthouse.jpg",
+        "title": { "pt": "Yachthouse Residence Club", "es": "Yachthouse Residence Club" },
+        "desc": {
+          "pt": "Complexo residencial de alto luxo composto por duas torres gêmeas de 294,1 metros de altura.",
+          "es": "Complejo residencial de alto lujo compuesto por dos torres gemelas de 294,1 metros de altura."
+        },
+        "history": {
+          "pt": "O Yachthouse Residence Club é um complexo de apartamentos de alto luxo formado por torres gêmeas. Os edifícios alcançaram 281 metros em 2020, e em 2024, com a colocação de pináculos, atingiram 294,1 metros de altura.",
+          "es": "El Yachthouse Residence Club es un complejo de departamentos de alto lujo formado por torres gemelas. Los edificios alcanzaron 281 metros en 2020, y en 2024, con la colocación de pináculos, alcanzaron 294,1 metros de altura."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "terminal-cruzeiros",
+      "geometry": { "type": "Point", "coordinates": [-48.60302, -27.00461] },
+      "properties": {
+        "id": "terminal-cruzeiros",
+        "image": "imagenes/terminal-cruzeiros.jpg",
+        "title": { "pt": "Terminal Portuário Grupo Tedesco", "es": "Terminal Portuario Grupo Tedesco" },
+        "desc": {
+          "pt": "Terminal marítimo que recebe navios de cruzeiro e grandes iates, operando tanto com viagens nacionais quanto internacionais.",
+          "es": "Terminal marítimo que recibe barcos de crucero y grandes yates, operando tanto con viajes nacionales como internacionales."
+        },
+        "history": {
+          "pt": "O Terminal Portuário Grupo Tedesco, localizado no Atracadouro Barra Sul, foi inaugurado em 2016 por iniciativa do empresário Júlio Tedesco. Visa posicionar Balneário Camboriú como importante destino de cruzeiros, operando como um aeroporto com áreas de embarque/desembarque, segurança e controles de passaporte.",
+          "es": "El Terminal Portuario Grupo Tedesco, ubicado en el Atracadero Barra Sul, fue inaugurado en 2016 por iniciativa del empresario Júlio Tedesco. Busca posicionar Balneário Camboriú como importante destino de cruceros, operando como un aeropuerto con áreas de embarque/desembarque, seguridad y controles de pasaporte."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "camelodromo",
+      "geometry": { "type": "Point", "coordinates": [-48.63388, -26.99066] },
+      "properties": {
+        "id": "camelodromo",
+        "image": "imagenes/camelodromo.jpg",
+        "title": { "pt": "Camelódromo", "es": "Camelódromo" },
+        "desc": {
+          "pt": "Centro de compras popular com artesanato e souvenirs.",
+          "es": "Centro de compras popular con artesanía y souvenirs."
+        },
+        "history": {
+          "pt": "O Camelódromo é um ponto tradicional de comércio popular em Balneário Camboriú, oferecendo artesanato local, souvenirs e produtos diversos.",
+          "es": "El Camelódromo es un punto tradicional de comercio popular en Balneário Camboriú, ofreciendo artesanía local, souvenirs y productos diversos."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "igreja-santa-ines",
+      "geometry": { "type": "Point", "coordinates": [-48.63567, -26.99123] },
+      "properties": {
+        "id": "igreja-santa-ines",
+        "image": "imagenes/igreja-santa-ines.jpg",
+        "title": { "pt": "Igreja Santa Inês", "es": "Iglesia Santa Inés" },
+        "desc": {
+          "pt": "Igreja católica histórica no centro da cidade.",
+          "es": "Iglesia católica histórica en el centro de la ciudad."
+        },
+        "history": {
+          "pt": "A Igreja Santa Inês é um dos principais templos católicos de Balneário Camboriú, sendo um marco religioso e histórico da cidade.",
+          "es": "La Iglesia Santa Inés es uno de los principales templos católicos de Balneário Camboriú, siendo un hito religioso e histórico de la ciudad."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hospital-ruth-cardoso",
+      "geometry": { "type": "Point", "coordinates": [-48.63742, -27.00616] },
+      "properties": {
+        "id": "hospital-ruth-cardoso",
+        "image": "imagenes/hospital-ruth-cardoso.jpg",
+        "title": { "pt": "Hospital Municipal Ruth Cardoso (HMRC)", "es": "Hospital Municipal Ruth Cardoso (HMRC)" },
+        "desc": {
+          "pt": "Hospital e maternidade. Endereço: Rua Angelina, s/n - Bairro dos Municípios.",
+          "es": "Hospital y maternidad. Dirección: Rua Angelina, s/n - Bairro dos Municípios."
+        },
+        "history": {
+          "pt": "O Hospital Municipal Ruth Cardoso é a principal unidade de saúde de Balneário Camboriú, oferecendo atendimento médico completo, internação e serviços de maternidade para a população e turistas.",
+          "es": "El Hospital Municipal Ruth Cardoso es la principal unidad de salud de Balneário Camboriú, ofreciendo atención médica completa, internación y servicios de maternidad para la población y turistas."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pa-hmrc",
+      "geometry": { "type": "Point", "coordinates": [-48.63688, -27.00654] },
+      "properties": {
+        "id": "pa-hmrc",
+        "image": "imagenes/pa-hmrc.jpg",
+        "title": { "pt": "Pronto Atendimento (PA) anexo ao HMRC", "es": "Pronto Atendimiento (PA) anexo al HMRC" },
+        "desc": {
+          "pt": "Pronto Atendimento 24h. Endereço: Rua Angelina, s/n - Bairro dos Municípios (mesma direção do Hospital).",
+          "es": "Pronto Atendimiento 24h. Dirección: Rua Angelina, s/n - Bairro dos Municípios (en la misma dirección del Hospital)."
+        },
+        "history": {
+          "pt": "O Pronto Atendimento anexo ao Hospital Municipal Ruth Cardoso oferece atendimento médico de emergência 24 horas para moradores e turistas.",
+          "es": "El Pronto Atendimiento anexo al Hospital Municipal Ruth Cardoso ofrece atención médica de emergencia 24 horas para residentes y turistas."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "upa-nacoes",
+      "geometry": { "type": "Point", "coordinates": [-48.63156, -26.98734] },
+      "properties": {
+        "id": "upa-nacoes",
+        "image": "imagenes/upa-nacoes.jpg",
+        "title": { "pt": "Unidade de Pronto Atendimento (UPA) Nações", "es": "Unidad de Pronto Atendimiento (UPA) Nações" },
+        "desc": {
+          "pt": "Pronto Atendimento 24h. Endereço: Rua Israel, n° 205 - Bairro das Nações.",
+          "es": "Pronto Atendimiento 24h. Dirección: Rua Israel, n° 205 - Bairro das Nações."
+        },
+        "history": {
+          "pt": "A UPA Nações oferece atendimento médico de emergência 24 horas para moradores e turistas na região central de Balneário Camboriú.",
+          "es": "La UPA Nações ofrece atención médica de emergencia 24 horas para residentes y turistas en la región central de Balneário Camboriú."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pa-barra",
+      "geometry": { "type": "Point", "coordinates": [-48.60972, -27.01570] },
+      "properties": {
+        "id": "pa-barra",
+        "image": "imagenes/pa-barra.jpg",
+        "title": { "pt": "Pronto Atendimento (PA) da Barra", "es": "Pronto Atendimiento (PA) da Barra" },
+        "desc": {
+          "pt": "Pronto Atendimento 24h. Endereço: Rua Jardim da Saudade, n° 1500 - Bairro da Barra.",
+          "es": "Pronto Atendimiento 24h. Dirección: Rua Jardim da Saudade, n° 1500 - Bairro da Barra."
+        },
+        "history": {
+          "pt": "O Pronto Atendimento da Barra oferece atendimento médico de emergência 24 horas para moradores e turistas na região da Barra Sul.",
+          "es": "El Pronto Atendimiento da Barra ofrece atención médica de emergencia 24 horas para residentes y turistas en la región de Barra Sul."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "shopping-atlantico",
+      "geometry": { "type": "Point", "coordinates": [-48.63789, -26.99567] },
+      "properties": {
+        "id": "shopping-atlantico",
+        "image": "imagenes/shopping-atlantico.jpg",
+        "title": { "pt": "Shopping Atlântico", "es": "Shopping Atlántico" },
+        "desc": {
+          "pt": "Centro comercial com lojas, restaurantes e cinema.",
+          "es": "Centro comercial con tiendas, restaurantes y cine."
+        },
+        "history": {
+          "pt": "O Shopping Atlântico é um dos principais centros comerciais de Balneário Camboriú, oferecendo opções de compras, gastronomia e entretenimento.",
+          "es": "El Shopping Atlántico es uno de los principales centros comerciales de Balneário Camboriú, ofreciendo opciones de compras, gastronomía y entretenimiento."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "balneario-shopping",
+      "geometry": { "type": "Point", "coordinates": [-48.64722, -26.99309] },
+      "properties": {
+        "id": "balneario-shopping",
+        "image": "imagenes/balneario-shopping.jpg",
+        "title": { "pt": "Balneário Shopping", "es": "Balneário Shopping" },
+        "desc": {
+          "pt": "Shopping center com comércio e serviços.",
+          "es": "Shopping center con comercio y servicios."
+        },
+        "history": {
+          "pt": "O Balneário Shopping é um centro comercial que atende a comunidade de Balneário Camboriú com lojas e serviços diversos.",
+          "es": "El Balneário Shopping es un centro comercial que atiende a la comunidad de Balneário Camboriú con tiendas y servicios diversos."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "expocentro",
+      "geometry": { "type": "Point", "coordinates": [-48.61364, -27.01387] },
+      "properties": {
+        "id": "expocentro",
+        "image": "imagenes/expocentro.jpg",
+        "title": { "pt": "Expocentro", "es": "Expocentro" },
+        "desc": {
+          "pt": "Espaço para eventos, feiras, congressos e exposições.",
+          "es": "Espacio para eventos, ferias, congresos y exposiciones."
+        },
+        "history": {
+          "pt": "O Expocentro é o principal espaço da cidade para realização de eventos, feiras, congressos, exposições e apresentações culturais, recebendo eventos locais e nacionais.",
+          "es": "El Expocentro es el principal espacio de la ciudad para realización de eventos, ferias, congresos, exposiciones y presentaciones culturales, recibiendo eventos locales y nacionales."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "parque-cyro-gevaerd",
+      "geometry": { "type": "Point", "coordinates": [-48.61510, -27.01463] },
+      "properties": {
+        "id": "parque-cyro-gevaerd",
+        "image": "imagenes/parque-cyro-gevaerd.jpg",
+        "title": { "pt": "Parque Zoobotânico Cyro Gevaerd", "es": "Parque Zoobotánico Cyro Gevaerd" },
+        "desc": {
+          "pt": "Zoológico e parque botânico com fauna e flora regional.",
+          "es": "Zoológico y parque botánico con fauna y flora regional."
+        },
+        "history": {
+          "pt": "O Parque Zoobotânico Cyro Gevaerd é um importante espaço de preservação ambiental e educação ecológica em Balneário Camboriú, abrigando animais da fauna regional e área de preservação de mata atlântica.",
+          "es": "El Parque Zoobotánico Cyro Gevaerd es un importante espacio de preservación ambiental y educación ecológica en Balneário Camboriú, albergando animales de la fauna regional y área de preservación de mata atlántica."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "aventura-pirata-cine-3d",
+      "geometry": { "type": "Point", "coordinates": [-48.61624, -27.00438] },
+      "properties": {
+        "id": "aventura-pirata-cine-3d",
+        "image": "imagenes/aventura-pirata-cine.jpg",
+        "title": { "pt": "Aventura Pirata Cine 3D", "es": "Aventura Pirata Cine 3D" },
+        "desc": {
+          "pt": "Cinema 3D com experiência imersiva de aventura pirata.",
+          "es": "Cine 3D con experiencia inmersiva de aventura pirata."
+        },
+        "history": {
+          "pt": "A Aventura Pirata Cine 3D é uma atração de entretenimento que oferece experiências cinematográficas imersivas com tecnologia 3D.",
+          "es": "La Aventura Pirata Cine 3D es una atracción de entretenimiento que ofrece experiencias cinematográficas inmersivas con tecnología 3D."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "praia-laranjeiras",
+      "geometry": { "type": "Point", "coordinates": [-48.59133, -26.99704] },
+      "properties": {
+        "id": "praia-laranjeiras",
+        "image": "imagenes/praia-laranjeiras.jpg",
+        "title": { "pt": "Praia de Laranjeiras", "es": "Playa de Laranjeiras" },
+        "desc": {
+          "pt": "Praia tranquila acessível por teleférico, trilha ou via terrestre pela Estrada Interpraias (acesso pela BR-101).",
+          "es": "Playa tranquila accesible por teleférico, sendero o vía terrestre por la Estrada Interpraias (acceso por la BR-101)."
+        },
+        "history": {
+          "pt": "A Praia de Laranjeiras é conhecida por suas águas calmas e pode ser acessada pelo teleférico do Parque Unipraias, por trilha ou pela Estrada Interpraias via BR-101, sendo ideal para famílias.",
+          "es": "La Playa de Laranjeiras es conocida por sus aguas tranquilas y se puede acceder por el teleférico del Parque Unipraias, por sendero o por la Estrada Interpraias vía BR-101, siendo ideal para familias."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "praia-taquarinhas",
+      "geometry": { "type": "Point", "coordinates": [-48.58274, -26.99796] },
+      "properties": {
+        "id": "praia-taquarinhas",
+        "image": "imagenes/praia-taquarinhas.jpg",
+        "title": { "pt": "Praia de Taquarinhas", "es": "Playa de Taquarinhas" },
+        "desc": {
+          "pt": "Praia pequena e preservada, ideal para descanso.",
+          "es": "Playa pequeña y preservada, ideal para descanso."
+        },
+        "history": {
+          "pt": "A Praia de Taquarinhas é uma pequena enseada preservada, procurada por quem busca tranquilidade e contato com a natureza.",
+          "es": "La Playa de Taquarinhas es una pequeña ensenada preservada, buscada por quienes buscan tranquilidad y contacto con la naturaleza."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "praia-taquaras",
+      "geometry": { "type": "Point", "coordinates": [-48.58051, -27.00806] },
+      "properties": {
+        "id": "praia-taquaras",
+        "image": "imagenes/praia-taquaras.jpg",
+        "title": { "pt": "Praia de Taquaras", "es": "Playa de Taquaras" },
+        "desc": {
+          "pt": "Praia selvagem com natureza exuberante.",
+          "es": "Playa salvaje con naturaleza exuberante."
+        },
+        "history": {
+          "pt": "A Praia de Taquaras é conhecida por sua beleza natural preservada e águas cristalinas, sendo um refúgio para amantes da natureza.",
+          "es": "La Playa de Taquaras es conocida por su belleza natural preservada y aguas cristalinas, siendo un refugio para amantes de la naturaleza."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "praia-pinho",
+      "geometry": { "type": "Point", "coordinates": [-48.57553, -27.01937] },
+      "properties": {
+        "id": "praia-pinho",
+        "image": "imagenes/praia-pinho.jpg",
+        "title": { "pt": "Praia do Pinho", "es": "Playa del Pinho" },
+        "desc": {
+          "pt": "Primeira praia naturista oficializada do Brasil.",
+          "es": "Primera playa naturista oficializada de Brasil."
+        },
+        "history": {
+          "pt": "A Praia do Pinho foi oficializada em 1984 como a primeira praia de naturismo do Brasil, sendo um marco histórico e cultural.",
+          "es": "La Playa del Pinho fue oficializada en 1984 como la primera playa de naturismo de Brasil, siendo un hito histórico y cultural."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "praia-estaleiro",
+      "geometry": { "type": "Point", "coordinates": [-48.58171, -27.03313] },
+      "properties": {
+        "id": "praia-estaleiro",
+        "image": "imagenes/praia-estaleiro.jpg",
+        "title": { "pt": "Praia do Estaleiro", "es": "Playa del Estaleiro" },
+        "desc": {
+          "pt": "Praia extensa com boa infraestrutura turística.",
+          "es": "Playa extensa con buena infraestructura turística."
+        },
+        "history": {
+          "pt": "A Praia do Estaleiro é uma das praias mais extensas da região, conhecida por suas ondas e infraestrutura para turistas.",
+          "es": "La Playa del Estaleiro es una de las playas más extensas de la región, conocida por sus olas e infraestructura para turistas."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "praia-estaleirinho",
+      "geometry": { "type": "Point", "coordinates": [-48.58789, -27.05026] },
+      "properties": {
+        "id": "praia-estaleirinho",
+        "image": "imagenes/praia-estaleirinho.jpg",
+        "title": { "pt": "Praia do Estaleirinho", "es": "Playa del Estaleirinho" },
+        "desc": {
+          "pt": "Praia cercada por costões rochosos e vegetação nativa.",
+          "es": "Playa rodeada de costas rocosas y vegetación nativa."
+        },
+        "history": {
+          "pt": "A Praia do Estaleirinho é conhecida por sua beleza cênica, com formações rochosas e mata atlântica preservada.",
+          "es": "La Playa del Estaleirinho es conocida por su belleza escénica, con formaciones rocosas y mata atlántica preservada."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "praia-dos-amores",
+      "geometry": { "type": "Point", "coordinates": [-48.62849, -26.95864] },
+      "properties": {
+        "id": "praia-dos-amores",
+        "image": "imagenes/praia-dos-amores.jpg",
+        "title": { "pt": "Praia dos Amores", "es": "Playa de los Amores" },
+        "desc": {
+          "pt": "Praia de mar aberto e agitado (praia de tombo), ideal para surf e kitesurf. Última praia do município em direção ao norte, limitando com Praia Brava de Itajaí.",
+          "es": "Playa de mar abierto y agitado (playa de tombo), ideal para surf y kitesurf. Última playa del municipio hacia el norte, limitando con Praia Brava de Itajaí."
+        },
+        "history": {
+          "pt": "A Praia dos Amores possui mar aberto e agitado, diferente da Praia Central que é mais tranquila por estar em uma baía. É conhecida como 'praia de tombo', ideal para surf e kitesurf. Recomenda-se cuidado ao nadar, especialmente com crianças, e sempre observar as sinalizações dos guarda-vidas. É a última praia do município de Balneário Camboriú no eixo norte.",
+          "es": "La Playa de los Amores tiene mar abierto y agitado, diferente de la Playa Central que es más tranquila por estar en una bahía. Es conocida como 'playa de tombo', ideal para surf y kitesurf. Se recomienda tener cuidado al nadar, especialmente con niños, y siempre observar las señales de los guardavidas. Es la última playa del municipio de Balneário Camboriú en el eje norte."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "morro-do-boi",
+      "geometry": { "type": "Point", "coordinates": [-48.59854, -27.0390] },
+      "properties": {
+        "id": "morro-do-boi",
+        "image": "imagenes/morro-do-boi.jpg",
+        "title": { "pt": "Morro do Boi", "es": "Cerro del Buey" },
+        "desc": {
+          "pt": "Mirante natural com vistas espetaculares. Ponto onde a BR-101 atravessa a formação montanhosa, abrigando importante obra de infraestrutura.",
+          "es": "Mirador natural con vistas espectaculares. Punto donde la BR-101 atraviesa la formación montañosa, albergando importante obra de infraestructura."
+        },
+        "history": {
+          "pt": "O Morro do Boi é conhecido por ser o ponto onde a rodovia BR-101 atravessa a formação montanhosa, oferecendo vistas espetaculares das praias selvagens da região e abrigando uma importante obra de infraestrutura rodoviária.",
+          "es": "El Cerro del Buey es conocido por ser el punto donde la carretera BR-101 atraviesa la formación montañosa, ofreciendo vistas espectaculares de las playas salvajes de la región y albergando una importante obra de infraestructura vial."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "speed-way",
+      "geometry": { "type": "Point", "coordinates": [-48.60356, -27.03378] },
+      "properties": {
+        "id": "speed-way",
+        "image": "imagenes/speed-way.jpg",
+        "title": { "pt": "Speed Way", "es": "Speed Way" },
+        "desc": {
+          "pt": "Pista de kart e atividades de velocidade.",
+          "es": "Pista de kart y actividades de velocidad."
+        },
+        "history": {
+          "pt": "O Speed Way é um complexo de entretenimento com pista de kart e outras atividades relacionadas à velocidade e adrenalina.",
+          "es": "El Speed Way es un complejo de entretenimiento con pista de kart y otras actividades relacionadas a la velocidad y adrenalina."
         }
       }
     }
