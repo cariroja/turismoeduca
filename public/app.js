@@ -14,6 +14,7 @@
   const welcomeLangSelect = document.getElementById("welcomeLangSelect");
   const btnQuiz = document.getElementById("btnQuiz");
   const btnHistoria = document.getElementById("btnHistoria");
+  const btnVocabulario = document.getElementById("btnVocabulario");
   const btnActividades = document.getElementById("btnActividades");
   const btnPerfil = document.getElementById("btnPerfil");
   const btnLogout = document.getElementById("btnLogout");
@@ -54,8 +55,10 @@
       enter: "Entrar",
       skip: "Entrar sem perfil",
       infoDefault: "Marque um marcador para ver informação bilíngue.",
+      searchPlaceholder: "Buscar ponto (ex. Cristo)",
       btnQuiz: "Quiz",
       btnHistoria: "História",
+      btnVocabulario: "Vocabulário",
       btnActividades: "Atividades",
       btnPerfil: "Ver Perfil",// Corregido
       btnLogout: "Sair",//Añadido
@@ -89,8 +92,10 @@
       enter: "Entrar",
       skip: "Entrar sin perfil",
       infoDefault: "Marca un marcador para ver información bilingüe.",
+      searchPlaceholder: "Buscar punto (ej. Cristo)",
       btnQuiz: "Quiz",
       btnHistoria: "Historia",
+      btnVocabulario: "Vocabulario",
       btnActividades: "Actividades",
       btnPerfil: "Ver Perfil",// Corregido
       btnLogout: "Salir",//Añadido  
@@ -154,10 +159,14 @@
     if (skipBtn) skipBtn.textContent = t.skip;
     const infoEl = document.getElementById("info");
     if (infoEl) infoEl.textContent = t.infoDefault;
+    
+    // Placeholder del buscador
+    if (poiSearch) poiSearch.placeholder = t.searchPlaceholder;
 
     // botones de la barra de herramientas (toolbar)
     if (btnQuiz) btnQuiz.textContent = t.btnQuiz;
     if (btnHistoria) btnHistoria.textContent = t.btnHistoria;
+    if (btnVocabulario) btnVocabulario.textContent = t.btnVocabulario;
     if (btnActividades) btnActividades.textContent = t.btnActividades;
     if (btnPerfil) btnPerfil.textContent = t.btnPerfil;
     if (btnLogout) btnLogout.textContent = t.btnLogout; // Asegurada la traducción de "Salir"!
@@ -1181,6 +1190,619 @@ function showCityHistory() {
   showModal(historyContent);
 }
 
+function showVocabulario() {
+  const lang = (langSelect && langSelect.value) || "pt";
+  const title = lang === 'es' ? 'Vocabulario Bilingüe' : 'Vocabulário Bilíngue';
+  
+  // Datos de vocabulario organizados por categorías
+  const vocabularyData = {
+    turismo: {
+      title: { es: '🏖️ Turismo y Playas', pt: '🏖️ Turismo e Praias' },
+      words: [
+        { es: 'Playa', pt: 'Praia' },
+        { es: 'Arena', pt: 'Areia' },
+        { es: 'Ola', pt: 'Onda' },
+        { es: 'Sombrilla', pt: 'Guarda-sol' },
+        { es: 'Salvavidas', pt: 'Salva-vidas' },
+        { es: 'Silla', pt: 'Cadeira' }
+      ]
+    },
+    ciudad: {
+      title: { es: '🏙️ Ciudad y Transporte', pt: '🏙️ Cidade e Transporte' },
+      words: [
+        { es: 'Calle', pt: 'Rua' },
+        { es: 'Avenida', pt: 'Avenida' },
+        { es: 'Autobús', pt: 'Ônibus' },
+        { es: 'Taxi', pt: 'Táxi' },
+        { es: 'Coche/Auto', pt: 'Carro' },
+        { es: 'Pasarela', pt: 'Passarela' },
+        { es: 'Terminal de autobuses', pt: 'Rodoviária' },
+        { es: 'Aeropuerto', pt: 'Aeroporto' },
+        { es: 'Gasolinera', pt: 'Posto de gasolina' }
+      ]
+    },
+    gastronomia: {
+      title: { es: '🍽️ Gastronomía y Mesa', pt: '🍽️ Gastronomia e Mesa' },
+      words: [
+        { es: 'Restaurante', pt: 'Restaurante' },
+        { es: 'Comida', pt: 'Comida' },
+        { es: 'Pescado', pt: 'Peixe' },
+        { es: 'Camarón', pt: 'Camarão' },
+        { es: 'Postre', pt: 'Sobremesa' },
+        { es: 'Cuchara', pt: 'Colher' },
+        { es: 'Tenedor', pt: 'Garfo' },
+        { es: 'Cuchillo', pt: 'Faca' },
+        { es: 'Taza', pt: 'Xícara' },
+        { es: 'Té', pt: 'Chá' },
+        { es: 'Café', pt: 'Café' },
+        { es: 'Leche', pt: 'Leite' },
+        { es: 'Azúcar', pt: 'Açúcar' }
+      ]
+    },
+    atracciones: {
+      title: { es: '🎡 Atracciones', pt: '🎡 Atrações' },
+      words: [
+        { es: 'Rueda gigante', pt: 'Roda gigante' },
+        { es: 'Teleférico', pt: 'Bondinho' },
+        { es: 'Museo', pt: 'Museu' },
+        { es: 'Mirador', pt: 'Mirante' },
+        { es: 'Parque', pt: 'Parque' }
+      ]
+    },
+    servicios: {
+      title: { es: '🏥 Servicios Públicos', pt: '🏥 Serviços Públicos' },
+      words: [
+        { es: 'Centro de salud', pt: 'Posto de saúde' },
+        { es: 'Hospital', pt: 'Hospital' },
+        { es: 'Farmacia', pt: 'Farmácia' },
+        { es: 'Policía', pt: 'Polícia' }
+      ]
+    },
+    juegosRopa: {
+      title: { es: '🎮 Juegos y Ropa', pt: '🎮 Jogos e Roupas' },
+      words: [
+        { es: 'Jugar', pt: 'Jogar' },
+        { es: 'Juegos', pt: 'Jogos' },
+        { es: 'Hamaca', pt: 'Balanço' },
+        { es: 'Tobogán', pt: 'Escorregador' },
+        { es: 'Pelota', pt: 'Bola' },
+        { es: 'Muñeca', pt: 'Boneca' },
+        { es: 'Peluche', pt: 'Pelúcia' },
+        { es: 'Pantalón', pt: 'Calça' },
+        { es: 'Pollera/Falda', pt: 'Saia' },
+        { es: 'Campera', pt: 'Jaqueta' },
+        { es: 'Remera', pt: 'Camiseta' },
+        { es: 'Musculosa', pt: 'Regata' }
+      ]
+    },
+    descripcion: {
+      title: { es: '📏 Descripción y Ubicación', pt: '📏 Descrição e Localização' },
+      words: [
+        { es: 'Lejos', pt: 'Longe' },
+        { es: 'Cerca', pt: 'Perto' },
+        { es: 'Largo', pt: 'Comprido' },
+        { es: 'Ancho', pt: 'Largo' },
+        { es: 'Estirado', pt: 'Esticado' },
+        { es: 'Rubia', pt: 'Loira' },
+        { es: 'Morocha', pt: 'Morena' },
+        { es: 'Pelirroja', pt: 'Ruiva' }
+      ]
+    },
+    tiempo: {
+      title: { es: '📅 Días de la Semana', pt: '📅 Dias da Semana' },
+      words: [
+        { es: 'Lunes', pt: 'Segunda-feira' },
+        { es: 'Martes', pt: 'Terça-feira' },
+        { es: 'Miércoles', pt: 'Quarta-feira' },
+        { es: 'Jueves', pt: 'Quinta-feira' },
+        { es: 'Viernes', pt: 'Sexta-feira' },
+        { es: 'Sábado', pt: 'Sábado' },
+        { es: 'Domingo', pt: 'Domingo' }
+      ]
+    },
+    meses: {
+      title: { es: '🗓️ Meses del Año', pt: '🗓️ Meses do Ano' },
+      words: [
+        { es: 'Enero', pt: 'Janeiro' },
+        { es: 'Febrero', pt: 'Fevereiro' },
+        { es: 'Marzo', pt: 'Março' },
+        { es: 'Abril', pt: 'Abril' },
+        { es: 'Mayo', pt: 'Maio' },
+        { es: 'Junio', pt: 'Junho' },
+        { es: 'Julio', pt: 'Julho' },
+        { es: 'Agosto', pt: 'Agosto' },
+        { es: 'Septiembre', pt: 'Setembro' },
+        { es: 'Octubre', pt: 'Outubro' },
+        { es: 'Noviembre', pt: 'Novembro' },
+        { es: 'Diciembre', pt: 'Dezembro' }
+      ]
+    },
+    estaciones: {
+      title: { es: '🌦️ Estaciones del Año', pt: '🌦️ Estações do Ano' },
+      words: [
+        { es: 'Primavera', pt: 'Primavera' },
+        { es: 'Verano', pt: 'Verão' },
+        { es: 'Otoño', pt: 'Outono' },
+        { es: 'Invierno', pt: 'Inverno' }
+      ]
+    },
+    colores: {
+      title: { es: '🎨 Colores', pt: '🎨 Cores' },
+      words: [
+        { es: 'Rojo', pt: 'Vermelho' },
+        { es: 'Azul', pt: 'Azul' },
+        { es: 'Verde', pt: 'Verde' },
+        { es: 'Amarillo', pt: 'Amarelo' },
+        { es: 'Naranja', pt: 'Laranja' },
+        { es: 'Violeta', pt: 'Violeta' },
+        { es: 'Rosa', pt: 'Rosa' },
+        { es: 'Negro', pt: 'Preto' },
+        { es: 'Blanco', pt: 'Branco' },
+        { es: 'Gris', pt: 'Cinza' },
+        { es: 'Marrón', pt: 'Marrom' }
+      ]
+    },
+    familia: {
+      title: { es: '👨‍👩‍👧‍👦 Familia', pt: '👨‍👩‍👧‍👦 Família' },
+      words: [
+        { es: 'Mamá', pt: 'Mãe' },
+        { es: 'Papá', pt: 'Pai' },
+        { es: 'Hijo', pt: 'Filho' },
+        { es: 'Hija', pt: 'Filha' },
+        { es: 'Hermano', pt: 'Irmão' },
+        { es: 'Hermana', pt: 'Irmã' },
+        { es: 'Abuelo', pt: 'Avô' },
+        { es: 'Abuela', pt: 'Avó' },
+        { es: 'Tío', pt: 'Tio' },
+        { es: 'Tía', pt: 'Tia' },
+        { es: 'Primo', pt: 'Primo' },
+        { es: 'Prima', pt: 'Prima' }
+      ]
+    },
+    animales: {
+      title: { es: '🐾 Animales', pt: '🐾 Animais' },
+      words: [
+        { es: 'Perro', pt: 'Cachorro' },
+        { es: 'Gato', pt: 'Gato' },
+        { es: 'Pájaro', pt: 'Pássaro' },
+        { es: 'Pez', pt: 'Peixe' },
+        { es: 'Caballo', pt: 'Cavalo' },
+        { es: 'Vaca', pt: 'Vaca' },
+        { es: 'Cerdo', pt: 'Porco' },
+        { es: 'Gallina', pt: 'Galinha' },
+        { es: 'Conejo', pt: 'Coelho' },
+        { es: 'Tortuga', pt: 'Tartaruga' },
+        { es: 'Mariposa', pt: 'Borboleta' }
+      ]
+    },
+    numeros: {
+      title: { es: '🔢 Números', pt: '🔢 Números' },
+      words: [
+        { es: 'Uno', pt: 'Um' },
+        { es: 'Dos', pt: 'Dois' },
+        { es: 'Tres', pt: 'Três' },
+        { es: 'Cuatro', pt: 'Quatro' },
+        { es: 'Cinco', pt: 'Cinco' },
+        { es: 'Seis', pt: 'Seis' },
+        { es: 'Siete', pt: 'Sete' },
+        { es: 'Ocho', pt: 'Oito' },
+        { es: 'Nueve', pt: 'Nove' },
+        { es: 'Diez', pt: 'Dez' },
+        { es: 'Veinte', pt: 'Vinte' },
+        { es: 'Cien', pt: 'Cem' },
+        { es: 'Mil', pt: 'Mil' }
+      ]
+    }
+  };
+
+  let vocabContent = `
+    <h2>${title}</h2>
+    <p style="text-align: center; color: #666; margin: 20px 0;">
+      ${lang === 'es' 
+        ? 'Haz clic en las tarjetas para ver la traducción' 
+        : 'Clique nos cartões para ver a tradução'}
+    </p>
+    
+    <div style="text-align: center; margin: 20px 0;">
+      <button onclick="startVocabTest()" class="test-button">
+        ${lang === 'es' ? '📝 Hacer Test de Vocabulario' : '📝 Fazer Teste de Vocabulário'}
+      </button>
+    </div>
+    
+    <div class="vocab-container">
+  `;
+
+  // Generar HTML para cada categoría
+  Object.keys(vocabularyData).forEach(category => {
+    const cat = vocabularyData[category];
+    vocabContent += `
+      <div class="vocab-category">
+        <h3>${cat.title[lang]}</h3>
+        <div class="flashcards-grid">
+    `;
+    
+    // Generar cada flashcard de manera simple
+    cat.words.forEach((word, index) => {
+      const frontLang = lang === 'es' ? word.es : word.pt;
+      const backLang = lang === 'es' ? word.pt : word.es;
+      
+      vocabContent += `
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+          <div class="flashcard-inner">
+            <div class="flashcard-front">
+              <span>${frontLang}</span>
+            </div>
+            <div class="flashcard-back">
+              <span>${backLang}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+    
+    vocabContent += `
+        </div>
+      </div>
+    `;
+  });
+
+  vocabContent += `</div>`;
+  
+  showModal(vocabContent);
+}
+
+// Función para iniciar el test de vocabulario
+window.startVocabTest = function() {
+  const lang = (langSelect && langSelect.value) || "pt";
+  
+  // Recopilar todas las palabras del vocabulario
+  const vocabularyData = getVocabularyData();
+  const allWords = [];
+  
+  Object.keys(vocabularyData).forEach(category => {
+    vocabularyData[category].words.forEach(word => {
+      allWords.push(word);
+    });
+  });
+  
+  // Seleccionar 10 palabras aleatorias para el test
+  const shuffled = allWords.sort(() => 0.5 - Math.random());
+  const testWords = shuffled.slice(0, Math.min(10, allWords.length));
+  
+  // Inicializar variables del test
+  window.currentQuestion = 0;
+  window.correctAnswers = 0;
+  window.testQuestions = testWords.map(word => {
+    // Generar 3 opciones incorrectas aleatorias
+    const wrongOptions = allWords
+      .filter(w => w.pt !== word.pt)
+      .sort(() => 0.5 - Math.random())
+      .slice(0, 3)
+      .map(w => lang === 'es' ? w.pt : w.es);
+    
+    // Agregar la respuesta correcta
+    const correctAnswer = lang === 'es' ? word.pt : word.es;
+    const options = [...wrongOptions, correctAnswer].sort(() => 0.5 - Math.random());
+    
+    return {
+      question: lang === 'es' ? word.es : word.pt,
+      correct: correctAnswer,
+      options: options
+    };
+  });
+  
+  showTestQuestion();
+};
+
+// Función para mostrar cada pregunta del test
+function showTestQuestion() {
+  const lang = (langSelect && langSelect.value) || "pt";
+  const question = window.testQuestions[window.currentQuestion];
+  const questionNum = window.currentQuestion + 1;
+  const total = window.testQuestions.length;
+  
+  const testContent = `
+    <h2>${lang === 'es' ? 'Test de Vocabulario' : 'Teste de Vocabulário'}</h2>
+    
+    <div class="test-progress">
+      ${lang === 'es' ? 'Pregunta' : 'Pergunta'} ${questionNum} ${lang === 'es' ? 'de' : 'de'} ${total}
+    </div>
+    
+    <div class="test-question">
+      <h3>${lang === 'es' ? '¿Cómo se dice en portugués?' : 'Como se diz em espanhol?'}</h3>
+      <div class="test-word">${question.question}</div>
+    </div>
+    
+    <div class="test-options">
+      ${question.options.map((option, index) => `
+        <button class="test-option" onclick="checkAnswer('${option.replace(/'/g, "\\'")}', '${question.correct.replace(/'/g, "\\'")}')">
+          ${option}
+        </button>
+      `).join('')}
+    </div>
+  `;
+  
+  showModal(testContent);
+}
+
+// Función para verificar la respuesta
+window.checkAnswer = function(selected, correct) {
+  const lang = (langSelect && langSelect.value) || "pt";
+  const isCorrect = selected === correct;
+  
+  if (isCorrect) {
+    window.correctAnswers++;
+  }
+  
+  // Mostrar feedback visual
+  const buttons = document.querySelectorAll('.test-option');
+  buttons.forEach(btn => {
+    btn.disabled = true;
+    if (btn.textContent.trim() === correct) {
+      btn.classList.add('correct');
+    } else if (btn.textContent.trim() === selected && !isCorrect) {
+      btn.classList.add('incorrect');
+    }
+  });
+  
+  // Avanzar a la siguiente pregunta después de 1.5 segundos
+  setTimeout(() => {
+    window.currentQuestion++;
+    if (window.currentQuestion < window.testQuestions.length) {
+      showTestQuestion();
+    } else {
+      showTestResults();
+    }
+  }, 1500);
+};
+
+// Función para mostrar resultados del test
+function showTestResults() {
+  const lang = (langSelect && langSelect.value) || "pt";
+  const score = window.correctAnswers;
+  const total = window.testQuestions.length;
+  const percentage = Math.round((score / total) * 100);
+  
+  // Determinar medalla y nivel según el desempeño real
+  let medal = '🥉';
+  let level = lang === 'es' ? 'Principiante' : 'Principiante';
+  let message = lang === 'es' ? '¡Sigue practicando!' : 'Continue praticando!';
+  
+  if (percentage >= 80) {
+    medal = '🥇';
+    level = lang === 'es' ? 'Experto' : 'Especialista';
+    message = lang === 'es' ? '¡Excelente trabajo!' : 'Excelente trabalho!';
+  } else if (percentage >= 60) {
+    medal = '🥈';
+    level = lang === 'es' ? 'Intermedio' : 'Intermediário';
+    message = lang === 'es' ? '¡Muy bien!' : 'Muito bem!';
+  }
+  
+  // Guardar el mejor resultado en localStorage
+  const bestScore = localStorage.getItem('vocabBestScore') || 0;
+  if (percentage > bestScore) {
+    localStorage.setItem('vocabBestScore', percentage);
+  }
+  
+  const resultsContent = `
+    <h2>${lang === 'es' ? 'Resultados del Test' : 'Resultados do Teste'}</h2>
+    
+    <div class="test-results">
+      <div class="result-medal">${medal}</div>
+      <div class="result-level">${level}</div>
+      <div class="result-score">${score}/${total} ${lang === 'es' ? 'correctas' : 'corretas'}</div>
+      <div class="result-percentage">${percentage}%</div>
+      <div class="result-message">${message}</div>
+      
+      ${percentage > bestScore ? `
+        <div class="new-record">
+          🎉 ${lang === 'es' ? '¡Nuevo récord personal!' : 'Novo recorde pessoal!'} 🎉
+        </div>
+      ` : ''}
+      
+      <div class="result-actions">
+        <button onclick="startVocabTest()" class="test-button">
+          ${lang === 'es' ? '🔄 Repetir Test' : '🔄 Repetir Teste'}
+        </button>
+        <button onclick="showVocabulario()" class="test-button">
+          ${lang === 'es' ? '📚 Volver al Vocabulario' : '📚 Voltar ao Vocabulário'}
+        </button>
+      </div>
+    </div>
+  `;
+  
+  showModal(resultsContent);
+}
+
+// Función auxiliar para obtener los datos de vocabulario
+function getVocabularyData() {
+  return {
+    turismo: {
+      words: [
+        { es: 'Playa', pt: 'Praia' },
+        { es: 'Arena', pt: 'Areia' },
+        { es: 'Ola', pt: 'Onda' },
+        { es: 'Sombrilla', pt: 'Guarda-sol' },
+        { es: 'Salvavidas', pt: 'Salva-vidas' },
+        { es: 'Silla', pt: 'Cadeira' }
+      ]
+    },
+    ciudad: {
+      words: [
+        { es: 'Calle', pt: 'Rua' },
+        { es: 'Avenida', pt: 'Avenida' },
+        { es: 'Autobús', pt: 'Ônibus' },
+        { es: 'Taxi', pt: 'Táxi' },
+        { es: 'Coche/Auto', pt: 'Carro' },
+        { es: 'Pasarela', pt: 'Passarela' },
+        { es: 'Terminal de autobuses', pt: 'Rodoviária' },
+        { es: 'Aeropuerto', pt: 'Aeroporto' },
+        { es: 'Gasolinera', pt: 'Posto de gasolina' }
+      ]
+    },
+    gastronomia: {
+      words: [
+        { es: 'Restaurante', pt: 'Restaurante' },
+        { es: 'Comida', pt: 'Comida' },
+        { es: 'Pescado', pt: 'Peixe' },
+        { es: 'Camarón', pt: 'Camarão' },
+        { es: 'Postre', pt: 'Sobremesa' },
+        { es: 'Cuchara', pt: 'Colher' },
+        { es: 'Tenedor', pt: 'Garfo' },
+        { es: 'Cuchillo', pt: 'Faca' },
+        { es: 'Taza', pt: 'Xícara' },
+        { es: 'Té', pt: 'Chá' },
+        { es: 'Café', pt: 'Café' },
+        { es: 'Leche', pt: 'Leite' },
+        { es: 'Azúcar', pt: 'Açúcar' }
+      ]
+    },
+    atracciones: {
+      words: [
+        { es: 'Rueda gigante', pt: 'Roda gigante' },
+        { es: 'Teleférico', pt: 'Bondinho' },
+        { es: 'Museo', pt: 'Museu' },
+        { es: 'Mirador', pt: 'Mirante' },
+        { es: 'Parque', pt: 'Parque' }
+      ]
+    },
+    servicios: {
+      words: [
+        { es: 'Centro de salud', pt: 'Posto de saúde' },
+        { es: 'Hospital', pt: 'Hospital' },
+        { es: 'Farmacia', pt: 'Farmácia' },
+        { es: 'Policía', pt: 'Polícia' }
+      ]
+    },
+    juegosRopa: {
+      words: [
+        { es: 'Jugar', pt: 'Jogar' },
+        { es: 'Juegos', pt: 'Jogos' },
+        { es: 'Hamaca', pt: 'Balanço' },
+        { es: 'Tobogán', pt: 'Escorregador' },
+        { es: 'Pelota', pt: 'Bola' },
+        { es: 'Muñeca', pt: 'Boneca' },
+        { es: 'Peluche', pt: 'Pelúcia' },
+        { es: 'Pantalón', pt: 'Calça' },
+        { es: 'Pollera/Falda', pt: 'Saia' },
+        { es: 'Campera', pt: 'Jaqueta' },
+        { es: 'Remera', pt: 'Camiseta' },
+        { es: 'Musculosa', pt: 'Regata' }
+      ]
+    },
+    descripcion: {
+      words: [
+        { es: 'Lejos', pt: 'Longe' },
+        { es: 'Cerca', pt: 'Perto' },
+        { es: 'Largo', pt: 'Comprido' },
+        { es: 'Ancho', pt: 'Largo' },
+        { es: 'Estirado', pt: 'Esticado' },
+        { es: 'Rubia', pt: 'Loira' },
+        { es: 'Morocha', pt: 'Morena' },
+        { es: 'Pelirroja', pt: 'Ruiva' }
+      ]
+    },
+    tiempo: {
+      words: [
+        { es: 'Lunes', pt: 'Segunda-feira' },
+        { es: 'Martes', pt: 'Terça-feira' },
+        { es: 'Miércoles', pt: 'Quarta-feira' },
+        { es: 'Jueves', pt: 'Quinta-feira' },
+        { es: 'Viernes', pt: 'Sexta-feira' },
+        { es: 'Sábado', pt: 'Sábado' },
+        { es: 'Domingo', pt: 'Domingo' }
+      ]
+    },
+    meses: {
+      words: [
+        { es: 'Enero', pt: 'Janeiro' },
+        { es: 'Febrero', pt: 'Fevereiro' },
+        { es: 'Marzo', pt: 'Março' },
+        { es: 'Abril', pt: 'Abril' },
+        { es: 'Mayo', pt: 'Maio' },
+        { es: 'Junio', pt: 'Junho' },
+        { es: 'Julio', pt: 'Julho' },
+        { es: 'Agosto', pt: 'Agosto' },
+        { es: 'Septiembre', pt: 'Setembro' },
+        { es: 'Octubre', pt: 'Outubro' },
+        { es: 'Noviembre', pt: 'Novembro' },
+        { es: 'Diciembre', pt: 'Dezembro' }
+      ]
+    },
+    estaciones: {
+      words: [
+        { es: 'Primavera', pt: 'Primavera' },
+        { es: 'Verano', pt: 'Verão' },
+        { es: 'Otoño', pt: 'Outono' },
+        { es: 'Invierno', pt: 'Inverno' }
+      ]
+    },
+    colores: {
+      words: [
+        { es: 'Rojo', pt: 'Vermelho' },
+        { es: 'Azul', pt: 'Azul' },
+        { es: 'Verde', pt: 'Verde' },
+        { es: 'Amarillo', pt: 'Amarelo' },
+        { es: 'Naranja', pt: 'Laranja' },
+        { es: 'Violeta', pt: 'Violeta' },
+        { es: 'Rosa', pt: 'Rosa' },
+        { es: 'Negro', pt: 'Preto' },
+        { es: 'Blanco', pt: 'Branco' },
+        { es: 'Gris', pt: 'Cinza' },
+        { es: 'Marrón', pt: 'Marrom' }
+      ]
+    },
+    familia: {
+      words: [
+        { es: 'Mamá', pt: 'Mãe' },
+        { es: 'Papá', pt: 'Pai' },
+        { es: 'Hijo', pt: 'Filho' },
+        { es: 'Hija', pt: 'Filha' },
+        { es: 'Hermano', pt: 'Irmão' },
+        { es: 'Hermana', pt: 'Irmã' },
+        { es: 'Abuelo', pt: 'Avô' },
+        { es: 'Abuela', pt: 'Avó' },
+        { es: 'Tío', pt: 'Tio' },
+        { es: 'Tía', pt: 'Tia' },
+        { es: 'Primo', pt: 'Primo' },
+        { es: 'Prima', pt: 'Prima' }
+      ]
+    },
+    animales: {
+      words: [
+        { es: 'Perro', pt: 'Cachorro' },
+        { es: 'Gato', pt: 'Gato' },
+        { es: 'Pájaro', pt: 'Pássaro' },
+        { es: 'Pez', pt: 'Peixe' },
+        { es: 'Caballo', pt: 'Cavalo' },
+        { es: 'Vaca', pt: 'Vaca' },
+        { es: 'Cerdo', pt: 'Porco' },
+        { es: 'Gallina', pt: 'Galinha' },
+        { es: 'Conejo', pt: 'Coelho' },
+        { es: 'Tortuga', pt: 'Tartaruga' },
+        { es: 'Mariposa', pt: 'Borboleta' }
+      ]
+    },
+    numeros: {
+      words: [
+        { es: 'Uno', pt: 'Um' },
+        { es: 'Dos', pt: 'Dois' },
+        { es: 'Tres', pt: 'Três' },
+        { es: 'Cuatro', pt: 'Quatro' },
+        { es: 'Cinco', pt: 'Cinco' },
+        { es: 'Seis', pt: 'Seis' },
+        { es: 'Siete', pt: 'Sete' },
+        { es: 'Ocho', pt: 'Oito' },
+        { es: 'Nueve', pt: 'Nove' },
+        { es: 'Diez', pt: 'Dez' },
+        { es: 'Veinte', pt: 'Vinte' },
+        { es: 'Cien', pt: 'Cem' },
+        { es: 'Mil', pt: 'Mil' }
+      ]
+    }
+  };
+}
+
 // --- Conexión de Botones (Event Listeners) ---
 
 // La variable langSelect ya está definida al inicio de app.js (const langSelect = document.getElementById("langSelect");)
@@ -1191,6 +1813,9 @@ if (btnQuiz) {
 }
 if (btnHistoria) {
   btnHistoria.addEventListener("click", showCityHistory);
+}
+if (btnVocabulario) {
+  btnVocabulario.addEventListener("click", showVocabulario);
 }
 if (btnActividades) {
   btnActividades.addEventListener("click", showActivities);
