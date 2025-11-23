@@ -94,7 +94,7 @@
     {
       "type": "Feature",
       "id": "morro-do-careca",
-      "geometry": { "type": "Point", "coordinates": [-48.62635, -26.96262] },
+      "geometry": { "type": "Point", "coordinates": [-48.62698, -26.96323] },
       "properties": {
         "id": "morro-do-careca",
         "image": "imagenes/morro-do-careca.jpg",
@@ -106,6 +106,186 @@
         "history": {
           "pt": "Elevação de 100 metros entre Balneário Camboriú e Itajaí, conhecido pelo topo de grama (daí o nome 'Careca'). Foi um ponto tradicional de voo livre (parapente). (Nota: Há planos e obras em andamento para um novo complexo turístico com passarela de vidro e teleférico, renovando o atrativo).",
           "es": "Elevación de 100 metros entre Balneário Camboriú e Itajaí, famoso por su cima cubierta de hierba (de ahí el nombre 'Calvo'). Fue un punto tradicional para el vuelo libre (parapente). (Nota: Hay planes y obras en curso para un nuevo complejo turístico con pasarela de vidrio y teleférico, renovando el atractivo)."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "barco-pirata",
+      "geometry": { "type": "Point", "coordinates": [-48.60364, -27.00584] },
+      "properties": {
+        "id": "barco-pirata",
+        "image": "imagenes/barco-pirata.jpg",
+        "title": { "pt": "Barco Pirata", "es": "Barco Pirata" },
+        "desc": {
+          "pt": "Passeio temático de barco pirata pela costa.",
+          "es": "Paseo temático en barco pirata por la costa."
+        },
+        "history": {
+          "pt": "O Barco Pirata é uma das atrações turísticas mais populares de Balneário Camboriú, oferecendo passeios temáticos pela costa com entretenimento para toda a família.",
+          "es": "El Barco Pirata es una de las atracciones turísticas más populares de Balneário Camboriú, ofreciendo paseos temáticos por la costa con entretenimiento para toda la familia."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "oceanic-aquarium",
+      "geometry": { "type": "Point", "coordinates": [-48.61660, -27.00561] },
+      "properties": {
+        "id": "oceanic-aquarium",
+        "image": "imagenes/oceanic-aquarium.jpg",
+        "title": { "pt": "Oceanic Aquarium", "es": "Oceanic Aquarium" },
+        "desc": {
+          "pt": "Aquário com vida marinha diversificada e experiências interativas.",
+          "es": "Acuario con vida marina diversificada y experiencias interactivas."
+        },
+        "history": {
+          "pt": "O Oceanic Aquarium é um dos maiores aquários temáticos da América Latina, inaugurado para educar e entreter visitantes sobre a biodiversidade marinha.",
+          "es": "El Oceanic Aquarium es uno de los acuarios temáticos más grandes de América Latina, inaugurado para educar y entretener a los visitantes sobre la biodiversidad marina."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fg-big-wheel",
+      "geometry": { "type": "Point", "coordinates": [-48.63171, -26.97144] },
+      "properties": {
+        "id": "fg-big-wheel",
+        "image": "imagenes/fg-big-wheel.jpg",
+        "title": { "pt": "FG Big Wheel", "es": "FG Big Wheel" },
+        "desc": {
+          "pt": "Roda gigante com vista panorâmica da cidade e do mar.",
+          "es": "Rueda gigante con vista panorámica de la ciudad y del mar."
+        },
+        "history": {
+          "pt": "A FG Big Wheel é uma das maiores rodas gigantes da América do Sul, oferecendo vistas espetaculares de Balneário Camboriú e região.",
+          "es": "La FG Big Wheel es una de las ruedas gigantes más grandes de América del Sur, ofreciendo vistas espectaculares de Balneário Camboriú y la región."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pier-barra-sul",
+      "geometry": { "type": "Point", "coordinates": [-48.60506, -27.00117] },
+      "properties": {
+        "id": "pier-barra-sul",
+        "image": "imagenes/pier-barra-sul.jpg",
+        "title": { "pt": "Píer da Barra Sul", "es": "Muelle de Barra Sul" },
+        "desc": {
+          "pt": "Píer turístico.",
+          "es": "Muelle turístico."
+        },
+        "history": {
+          "pt": "Píer localizado na Barra Sul.",
+          "es": "Muelle ubicado en Barra Sul."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "passarela-barra",
+      "geometry": { "type": "Point", "coordinates": [-48.60455, -27.00672] },
+      "properties": {
+        "id": "passarela-barra",
+        "image": "imagenes/passarela-barra.jpg",
+        "title": { "pt": "Passarela da Barra", "es": "Pasarela da Barra" },
+        "desc": {
+          "pt": "Passarela conectando o Bairro da Barra com a zona sul da cidade.",
+          "es": "Pasarela conectando el Barrio da Barra con la zona sur de la ciudad."
+        },
+        "history": {
+          "pt": "Passarela que facilita o acesso entre o Bairro da Barra e a região sul de Balneário Camboriú.",
+          "es": "Pasarela que facilita el acceso entre el Barrio da Barra y la región sur de Balneário Camboriú."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "classic-car-show",
+      "geometry": { "type": "Point", "coordinates": [-48.60523, -27.00622] },
+      "properties": {
+        "id": "classic-car-show",
+        "image": "imagenes/classic-car-show.jpg",
+        "title": { "pt": "Classic Car Show", "es": "Classic Car Show" },
+        "desc": {
+          "pt": "Museu de carros clássicos e antigos.",
+          "es": "Museo de autos clásicos y antiguos."
+        },
+        "history": {
+          "pt": "O Classic Car Show apresenta uma coleção impressionante de veículos clássicos e históricos, atraindo entusiastas e turistas interessados em automobilismo.",
+          "es": "El Classic Car Show presenta una colección impresionante de vehículos clásicos e históricos, atrayendo entusiastas y turistas interesados en automovilismo."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pier-norte",
+      "geometry": { "type": "Point", "coordinates": [-48.63075, -26.97349] },
+      "properties": {
+        "id": "pier-norte",
+        "image": "imagenes/pier-norte.jpg",
+        "title": { "pt": "Píer Norte", "es": "Muelle Norte" },
+        "desc": {
+          "pt": "Píer no extremo norte da praia central.",
+          "es": "Muelle en el extremo norte de la playa central."
+        },
+        "history": {
+          "pt": "O Píer Norte é um ponto de pesca e lazer no extremo norte da Praia Central, popular entre moradores e turistas para caminhadas e contemplação do mar.",
+          "es": "El Muelle Norte es un punto de pesca y ocio en el extremo norte de la Playa Central, popular entre residentes y turistas para caminatas y contemplación del mar."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "praia-buraco",
+      "geometry": { "type": "Point", "coordinates": [-48.62785, -26.96723] },
+      "properties": {
+        "id": "praia-buraco",
+        "image": "imagenes/praia-buraco.jpg",
+        "title": { "pt": "Praia do Buraco", "es": "Playa del Agujero" },
+        "desc": {
+          "pt": "Praia conhecida por suas ondas fortes, frequentada por surfistas.",
+          "es": "Playa conocida por sus olas fuertes, frecuentada por surfistas."
+        },
+        "history": {
+          "pt": "A Praia do Buraco é conhecida por suas ondas e beleza natural, sendo um ponto popular para surfistas e amantes de praias mais selvagens.",
+          "es": "La Playa del Agujero es conocida por sus olas y belleza natural, siendo un punto popular para surfistas y amantes de playas más salvajes."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "aventura-jurassica",
+      "geometry": { "type": "Point", "coordinates": [-48.6310, -26.9880] },
+      "properties": {
+        "id": "aventura-jurassica",
+        "image": "imagenes/aventura-jurassica.jpg",
+        "title": { "pt": "Aventura Jurássica", "es": "Aventura Jurásica" },
+        "desc": {
+          "pt": "Parque temático com réplicas de dinossauros em tamanho real.",
+          "es": "Parque temático con réplicas de dinosaurios en tamaño real."
+        },
+        "history": {
+          "pt": "A Aventura Jurássica é uma atração educativa e de entretenimento que recria a era dos dinossauros com réplicas animatrônicas e cenários imersivos.",
+          "es": "La Aventura Jurásica es una atracción educativa y de entretenimiento que recrea la era de los dinosaurios con réplicas animatrónicas y escenarios inmersivos."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "parque-nasa",
+      "geometry": { "type": "Point", "coordinates": [-48.64993, -26.99372] },
+      "properties": {
+        "id": "parque-nasa",
+        "image": "imagenes/parque-nasa.jpg",
+        "title": { "pt": "Space Adventure - Parque NASA", "es": "Space Adventure - Parque NASA" },
+        "desc": {
+          "pt": "Parque temático espacial com simuladores e exposições interativas.",
+          "es": "Parque temático espacial con simuladores y exposiciones interactivas."
+        },
+        "history": {
+          "pt": "O Space Adventure Balneário Camboriú é um parque temático espacial que oferece experiências imersivas sobre a exploração espacial, com simuladores, exposições e atividades educativas.",
+          "es": "El Space Adventure Balneário Camboriú es un parque temático espacial que ofrece experiencias inmersivas sobre la exploración espacial, con simuladores, exposiciones y actividades educativas."
         }
       }
     }

@@ -354,7 +354,7 @@
     closeModal();
   });
 
-  const map = L.map("map").setView([-27.02, -48.642], 13); // Balneário Camboriú approx
+  const map = L.map("map").setView([-26.9850, -48.6354], 13); // Balneário Camboriú - Playa Central
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: "© OpenStreetMap contributors",
   }).addTo(map);
