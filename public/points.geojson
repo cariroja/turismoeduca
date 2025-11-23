@@ -292,7 +292,7 @@
     {
       "type": "Feature",
       "id": "summit-bc",
-      "geometry": { "type": "Point", "coordinates": [-48.63589, -26.99447] },
+      "geometry": { "type": "Point", "coordinates": [-48.62933, -26.99125] },
       "properties": {
         "id": "summit-bc",
         "image": "imagenes/summit-bc.jpg",
@@ -328,7 +328,7 @@
     {
       "type": "Feature",
       "id": "yachthouse-torres-gemeas",
-      "geometry": { "type": "Point", "coordinates": [-48.63112, -26.98923] },
+      "geometry": { "type": "Point", "coordinates": [-48.60710, -27.00748] },
       "properties": {
         "id": "yachthouse-torres-gemeas",
         "image": "imagenes/yachthouse.jpg",
@@ -382,7 +382,7 @@
     {
       "type": "Feature",
       "id": "igreja-santa-ines",
-      "geometry": { "type": "Point", "coordinates": [-48.63567, -26.99123] },
+      "geometry": { "type": "Point", "coordinates": [-48.63441, -26.99089] },
       "properties": {
         "id": "igreja-santa-ines",
         "image": "imagenes/igreja-santa-ines.jpg",
@@ -436,7 +436,7 @@
     {
       "type": "Feature",
       "id": "upa-nacoes",
-      "geometry": { "type": "Point", "coordinates": [-48.63156, -26.98734] },
+      "geometry": { "type": "Point", "coordinates": [-48.64250, -26.98255] },
       "properties": {
         "id": "upa-nacoes",
         "image": "imagenes/upa-nacoes.jpg",
@@ -472,7 +472,7 @@
     {
       "type": "Feature",
       "id": "shopping-atlantico",
-      "geometry": { "type": "Point", "coordinates": [-48.63789, -26.99567] },
+      "geometry": { "type": "Point", "coordinates": [-48.63512, -26.98588] },
       "properties": {
         "id": "shopping-atlantico",
         "image": "imagenes/shopping-atlantico.jpg",
