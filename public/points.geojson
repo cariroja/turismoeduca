@@ -115,7 +115,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.60364, -27.00584] },
       "properties": {
         "id": "barco-pirata",
-        "image": "imagenes/barco-pirata.jpg",
+        "image": "imagenes/barco-pirata.webp",
         "title": { "pt": "Barco Pirata", "es": "Barco Pirata" },
         "desc": {
           "pt": "Passeio temático de barco pirata pela costa.",
@@ -133,7 +133,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.61660, -27.00561] },
       "properties": {
         "id": "oceanic-aquarium",
-        "image": "imagenes/oceanic-aquarium.jpg",
+        "image": "imagenes/oceanic-aquarium.jpeg",
         "title": { "pt": "Oceanic Aquarium", "es": "Oceanic Aquarium" },
         "desc": {
           "pt": "Aquário com vida marinha diversificada e experiências interativas.",
@@ -151,7 +151,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.63171, -26.97144] },
       "properties": {
         "id": "fg-big-wheel",
-        "image": "imagenes/fg-big-wheel.jpg",
+        "image": "imagenes/fg-big-wheel.jpeg",
         "title": { "pt": "FG Big Wheel", "es": "FG Big Wheel" },
         "desc": {
           "pt": "Roda gigante com vista panorâmica da cidade e do mar.",
@@ -169,7 +169,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.60506, -27.00117] },
       "properties": {
         "id": "pier-barra-sul",
-        "image": "imagenes/pier-barra-sul.jpg",
+        "image": "imagenes/pier-barra-sul.webp",
         "title": { "pt": "Píer da Barra Sul", "es": "Muelle de Barra Sul" },
         "desc": {
           "pt": "Píer turístico.",
@@ -187,7 +187,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.60455, -27.00672] },
       "properties": {
         "id": "passarela-barra",
-        "image": "imagenes/passarela-barra.jpg",
+        "image": "imagenes/passarela-barra.jpeg",
         "title": { "pt": "Passarela da Barra", "es": "Pasarela da Barra" },
         "desc": {
           "pt": "Passarela conectando o Bairro da Barra com a zona sul da cidade.",
@@ -205,7 +205,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.60523, -27.00622] },
       "properties": {
         "id": "classic-car-show",
-        "image": "imagenes/classic-car-show.jpg",
+        "image": "imagenes/classic-car-show.jpeg",
         "title": { "pt": "Classic Car Show", "es": "Classic Car Show" },
         "desc": {
           "pt": "Museu de carros clássicos e antigos.",
@@ -223,7 +223,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.63075, -26.97349] },
       "properties": {
         "id": "pier-norte",
-        "image": "imagenes/pier-norte.jpg",
+        "image": "imagenes/pier-norte.jpeg",
         "title": { "pt": "Píer Norte", "es": "Muelle Norte" },
         "desc": {
           "pt": "Píer no extremo norte da praia central.",
@@ -241,7 +241,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.62785, -26.96723] },
       "properties": {
         "id": "praia-buraco",
-        "image": "imagenes/praia-buraco.jpg",
+        "image": "imagenes/praia-buraco.jpeg",
         "title": { "pt": "Praia do Buraco", "es": "Playa del Agujero" },
         "desc": {
           "pt": "Praia conhecida por suas ondas fortes, frequentada por surfistas.",
@@ -259,7 +259,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.64819, -26.98861] },
       "properties": {
         "id": "aventura-jurassica",
-        "image": "imagenes/aventura-jurassica.jpg",
+        "image": "imagenes/aventura-jurassica.png",
         "title": { "pt": "Aventura Jurássica", "es": "Aventura Jurásica" },
         "desc": {
           "pt": "Parque temático com réplicas de dinossauros em tamanho real.",
@@ -277,7 +277,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.64993, -26.99372] },
       "properties": {
         "id": "parque-nasa",
-        "image": "imagenes/parque-nasa.jpg",
+        "image": "imagenes/parque-nasa.jpeg",
         "title": { "pt": "Space Adventure - Parque NASA", "es": "Space Adventure - Parque NASA" },
         "desc": {
           "pt": "Parque temático espacial com simuladores e exposições interativas.",
@@ -295,7 +295,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.62933, -26.99125] },
       "properties": {
         "id": "summit-bc",
-        "image": "imagenes/summit-bc.jpg",
+        "image": "imagenes/summit-bc.jpeg",
         "title": { "pt": "Summit BC", "es": "Summit BC" },
         "desc": {
           "pt": "Uma aventura inesquecível a 120 metros de altura no mais novo ponto turístico de Balneário Camboriú. Conheça os famosos cubos de vidro suspensos.",
@@ -313,7 +313,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.61478, -27.00515] },
       "properties": {
         "id": "one-tower-fg",
-        "image": "imagenes/one-tower-fg.jpg",
+        "image": "imagenes/one-tower-fg.jpeg",
         "title": { "pt": "One Tower FG", "es": "One Tower FG" },
         "desc": {
           "pt": "Com impressionantes 290 metros de altura, este empreendimento recebeu a chancela do CTBUH (Council on Tall Buildings and Urban Habitat), uma reconhecida organização internacional que certifica arranha-céus ao redor do mundo.",
@@ -331,7 +331,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.60710, -27.00748] },
       "properties": {
         "id": "yachthouse-torres-gemeas",
-        "image": "imagenes/yachthouse.jpg",
+        "image": "imagenes/yachthouse.jpeg",
         "title": { "pt": "Yachthouse Residence Club", "es": "Yachthouse Residence Club" },
         "desc": {
           "pt": "Complexo residencial de alto luxo composto por duas torres gêmeas de 294,1 metros de altura.",
@@ -349,7 +349,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.60302, -27.00461] },
       "properties": {
         "id": "terminal-cruzeiros",
-        "image": "imagenes/terminal-cruzeiros.jpg",
+        "image": "imagenes/terminal-cruzeiros.webp",
         "title": { "pt": "Terminal Portuário Grupo Tedesco", "es": "Terminal Portuario Grupo Tedesco" },
         "desc": {
           "pt": "Terminal marítimo que recebe navios de cruzeiro e grandes iates, operando tanto com viagens nacionais quanto internacionais.",
@@ -385,7 +385,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.63441, -26.99089] },
       "properties": {
         "id": "igreja-santa-ines",
-        "image": "imagenes/igreja-santa-ines.jpg",
+        "image": "imagenes/igreja-santa-ines.jpeg",
         "title": { "pt": "Igreja Santa Inês", "es": "Iglesia Santa Inés" },
         "desc": {
           "pt": "Igreja católica histórica no centro da cidade.",
@@ -403,7 +403,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.63742, -27.00616] },
       "properties": {
         "id": "hospital-ruth-cardoso",
-        "image": "imagenes/hospital-ruth-cardoso.jpg",
+        "image": "imagenes/hospital-ruth-cardoso.jpeg",
         "title": { "pt": "Hospital Municipal Ruth Cardoso (HMRC)", "es": "Hospital Municipal Ruth Cardoso (HMRC)" },
         "desc": {
           "pt": "Hospital e maternidade. Endereço: Rua Angelina, s/n - Bairro dos Municípios.",
@@ -421,7 +421,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.63688, -27.00654] },
       "properties": {
         "id": "pa-hmrc",
-        "image": "imagenes/pa-hmrc.jpg",
+        "image": "imagenes/pa-hmrc.jpeg",
         "title": { "pt": "Pronto Atendimento (PA) anexo ao HMRC", "es": "Pronto Atendimiento (PA) anexo al HMRC" },
         "desc": {
           "pt": "Pronto Atendimento 24h. Endereço: Rua Angelina, s/n - Bairro dos Municípios (mesma direção do Hospital).",
@@ -439,7 +439,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.64250, -26.98255] },
       "properties": {
         "id": "upa-nacoes",
-        "image": "imagenes/upa-nacoes.jpg",
+        "image": "imagenes/upa-nacoes.jpeg",
         "title": { "pt": "Unidade de Pronto Atendimento (UPA) Nações", "es": "Unidad de Pronto Atendimiento (UPA) Nações" },
         "desc": {
           "pt": "Pronto Atendimento 24h. Endereço: Rua Israel, n° 205 - Bairro das Nações.",
@@ -457,7 +457,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.60972, -27.01570] },
       "properties": {
         "id": "pa-barra",
-        "image": "imagenes/pa-barra.jpg",
+        "image": "imagenes/pa-barra.webp",
         "title": { "pt": "Pronto Atendimento (PA) da Barra", "es": "Pronto Atendimiento (PA) da Barra" },
         "desc": {
           "pt": "Pronto Atendimento 24h. Endereço: Rua Jardim da Saudade, n° 1500 - Bairro da Barra.",
@@ -475,7 +475,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.63512, -26.98588] },
       "properties": {
         "id": "shopping-atlantico",
-        "image": "imagenes/shopping-atlantico.jpg",
+        "image": "imagenes/shopping-atlantico.webp",
         "title": { "pt": "Shopping Atlântico", "es": "Shopping Atlántico" },
         "desc": {
           "pt": "Centro comercial com lojas, restaurantes e cinema.",
@@ -493,7 +493,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.64722, -26.99309] },
       "properties": {
         "id": "balneario-shopping",
-        "image": "imagenes/balneario-shopping.jpg",
+        "image": "imagenes/balneario-shopping.jpeg",
         "title": { "pt": "Balneário Shopping", "es": "Balneário Shopping" },
         "desc": {
           "pt": "Shopping center com comércio e serviços.",
@@ -511,7 +511,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.61364, -27.01387] },
       "properties": {
         "id": "expocentro",
-        "image": "imagenes/expocentro.jpg",
+        "image": "imagenes/expocentro.jpeg",
         "title": { "pt": "Expocentro", "es": "Expocentro" },
         "desc": {
           "pt": "Espaço para eventos, feiras, congressos e exposições.",
@@ -529,7 +529,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.61510, -27.01463] },
       "properties": {
         "id": "parque-cyro-gevaerd",
-        "image": "imagenes/parque-cyro-gevaerd.jpg",
+        "image": "imagenes/parque-cyro-gevaerd.png",
         "title": { "pt": "Parque Zoobotânico Cyro Gevaerd", "es": "Parque Zoobotánico Cyro Gevaerd" },
         "desc": {
           "pt": "Zoológico e parque botânico com fauna e flora regional.",
@@ -547,7 +547,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.61624, -27.00438] },
       "properties": {
         "id": "aventura-pirata-cine-3d",
-        "image": "imagenes/aventura-pirata-cine.jpg",
+        "image": "imagenes/aventura-pirata-cine.webp",
         "title": { "pt": "Aventura Pirata Cine 3D", "es": "Aventura Pirata Cine 3D" },
         "desc": {
           "pt": "Cinema 3D com experiência imersiva de aventura pirata.",
@@ -565,7 +565,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.59133, -26.99704] },
       "properties": {
         "id": "praia-laranjeiras",
-        "image": "imagenes/praia-laranjeiras.jpg",
+        "image": "imagenes/praia-laranjeiras.jpeg",
         "title": { "pt": "Praia de Laranjeiras", "es": "Playa de Laranjeiras" },
         "desc": {
           "pt": "Praia tranquila acessível por teleférico, trilha ou via terrestre pela Estrada Interpraias (acesso pela BR-101).",
@@ -583,7 +583,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.58274, -26.99796] },
       "properties": {
         "id": "praia-taquarinhas",
-        "image": "imagenes/praia-taquarinhas.jpg",
+        "image": "imagenes/praia-taquarinhas.jpeg",
         "title": { "pt": "Praia de Taquarinhas", "es": "Playa de Taquarinhas" },
         "desc": {
           "pt": "Praia pequena e preservada, ideal para descanso.",
@@ -601,7 +601,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.58051, -27.00806] },
       "properties": {
         "id": "praia-taquaras",
-        "image": "imagenes/praia-taquaras.jpg",
+        "image": "imagenes/praia-taquaras.jpeg",
         "title": { "pt": "Praia de Taquaras", "es": "Playa de Taquaras" },
         "desc": {
           "pt": "Praia selvagem com natureza exuberante.",
@@ -619,7 +619,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.57553, -27.01937] },
       "properties": {
         "id": "praia-pinho",
-        "image": "imagenes/praia-pinho.jpg",
+        "image": "imagenes/praia-pinho.webp",
         "title": { "pt": "Praia do Pinho", "es": "Playa del Pinho" },
         "desc": {
           "pt": "Primeira praia naturista oficializada do Brasil.",
@@ -637,7 +637,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.58171, -27.03313] },
       "properties": {
         "id": "praia-estaleiro",
-        "image": "imagenes/praia-estaleiro.jpg",
+        "image": "imagenes/praia-estaleiro.jpeg",
         "title": { "pt": "Praia do Estaleiro", "es": "Playa del Estaleiro" },
         "desc": {
           "pt": "Praia extensa com boa infraestrutura turística.",
@@ -655,7 +655,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.58789, -27.05026] },
       "properties": {
         "id": "praia-estaleirinho",
-        "image": "imagenes/praia-estaleirinho.jpg",
+        "image": "imagenes/praia-estaleirinho.jpeg",
         "title": { "pt": "Praia do Estaleirinho", "es": "Playa del Estaleirinho" },
         "desc": {
           "pt": "Praia cercada por costões rochosos e vegetação nativa.",
@@ -673,7 +673,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.62849, -26.95864] },
       "properties": {
         "id": "praia-dos-amores",
-        "image": "imagenes/praia-dos-amores.jpg",
+        "image": "imagenes/praia-dos-amores.jpeg",
         "title": { "pt": "Praia dos Amores", "es": "Playa de los Amores" },
         "desc": {
           "pt": "Praia de mar aberto e agitado (praia de tombo), ideal para surf e kitesurf. Última praia do município em direção ao norte, limitando com Praia Brava de Itajaí.",
@@ -691,7 +691,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.59854, -27.0390] },
       "properties": {
         "id": "morro-do-boi",
-        "image": "imagenes/morro-do-boi.jpg",
+        "image": "imagenes/morro-do-boi.webp",
         "title": { "pt": "Morro do Boi", "es": "Cerro del Buey" },
         "desc": {
           "pt": "Mirante natural com vistas espetaculares. Ponto onde a BR-101 atravessa a formação montanhosa, abrigando importante obra de infraestrutura.",
@@ -709,7 +709,7 @@
       "geometry": { "type": "Point", "coordinates": [-48.60356, -27.03378] },
       "properties": {
         "id": "speed-way",
-        "image": "imagenes/speed-way.jpg",
+        "image": "imagenes/speed-way.webp",
         "title": { "pt": "Speed Way", "es": "Speed Way" },
         "desc": {
           "pt": "Pista de kart e atividades de velocidade.",
