@@ -579,16 +579,18 @@
         // CONTENIDO DEL POPUP CON INFORMACIÓN DEL PUNTO
         // ============================================
         // Generar contenido HTML del popup con imagen, título y descripción
-        const imageHtml = p.image ? `<img src="${p.image}" alt="${p.title.pt}" style="width:100%;height:auto;margin-bottom:8px;"/>` : '';
-        const popupContent = `<div>${imageHtml}<strong>${p.title.pt}</strong><br>${
-          p.desc.pt
-        }<br><a href="#" class="history-link" data-id="${
-          p.id
-        }">Ver historia</a><div style="margin-top:8px;font-size:0.9em">Coords: ${useLat.toFixed(
-          5
-        )}, ${useLng.toFixed(5)} <button class="fix-coords btn" data-id="${
-          p.id
-        }">Corregir posición</button></div></div>`;
+          const lang = langSelect.value || "pt";
+          const fixBtnText = lang === "es" ? "Corregir posición" : "Corrigir posição";
+          const imageHtml = p.image ? `<img src="${p.image}" alt="${p.title[lang] || p.title.pt}" style="width:100%;height:auto;margin-bottom:8px;"/>` : '';
+          const fixBtnHtml = `<button class="fix-coords btn" data-id="${p.id}">${fixBtnText}</button>`;
+          const popupContent = `<div>${imageHtml}<strong>${p.title[lang] || p.title.pt}</strong><br>${
+            p.desc[lang] || p.desc.pt
+          }<br><a href="#" class="history-link" data-id="${
+            p.id
+          }">Ver historia</a><div style="margin-top:8px;font-size:0.9em">Coords: ${useLat.toFixed(
+            5
+          )}, ${useLng.toFixed(5)} ${fixBtnHtml}
+          </div></div>`;
         marker.bindPopup(popupContent);
 
         // ============================================
@@ -605,18 +607,19 @@
         // Event handler: actualizar contenido del popup según idioma actual
         marker.on("popupopen", (e) => {
           const langNow = langSelect.value || "pt";
+          const fixBtnTextNow = langNow === "es" ? "Corregir posición" : "Corrigir posição";
           const titleNow = p.title[langNow] || p.title.pt;
           const descNow = p.desc[langNow] || p.desc.pt;
           const curLat = overrides[p.id] ? overrides[p.id].lat : p.lat;
           const curLng = overrides[p.id] ? overrides[p.id].lng : p.lng;
           const imageHtmlNow = p.image ? `<img src="${p.image}" alt="${titleNow}" style="width:100%;height:auto;margin-bottom:8px;"/>` : '';
+          const fixBtnHtmlNow = `<button class="fix-coords btn" data-id="${p.id}">${fixBtnTextNow}</button>`;
           const contentNow = `<div>${imageHtmlNow}<strong>${titleNow}</strong><br>${descNow}<br><a href="#" class="history-link" data-id="${
             p.id
           }">Ver historia</a><div style="margin-top:8px;font-size:0.9em">Coords: ${curLat.toFixed(
             5
-          )}, ${curLng.toFixed(5)} <button class="fix-coords btn" data-id="${
-            p.id
-          }">Corregir posición</button></div></div>`;
+          )}, ${curLng.toFixed(5)} ${fixBtnHtmlNow}
+          </div></div>`;
           try {
             e.popup.setContent(contentNow);
           } catch (err) {}
@@ -644,6 +647,7 @@
                 info.textContent =
                   "Arrastra el marcador al lugar correcto y suéltalo. Luego se guardará localmente.";
                 marker.once("dragend", (de) => {
+                                    // Solo mostrar el botón 'Corregir posición' si el usuario es 'cariroja'
                   const nl = de.target.getLatLng();
                   overrides[p.id] = { lat: nl.lat, lng: nl.lng };
                   localStorage.setItem(
@@ -656,16 +660,17 @@
                   try {
                     if (marker.dragging) marker.dragging.disable();
                   } catch (err) {}
-                  const imageHtmlUpdated = p.image ? `<img src="${p.image}" alt="${titleNow}" style="width:100%;height:auto;margin-bottom:8px;"/>` : '';
+                  const fixBtnTextUpdated = langNow === "es" ? "Corregir posición" : "Corrigir posição";
+                  const imageHtmlUpdated = p.image ? `<img src=\"${p.image}\" alt=\"${titleNow}\" style=\"width:100%;height:auto;margin-bottom:8px;\"/>` : '';
+                  const fixBtnHtmlUpdated = `<button class=\"fix-coords btn\" data-id=\"${p.id}\">${fixBtnTextUpdated}</button>`;
                   const updated = `<div>${imageHtmlUpdated}<strong>${titleNow}</strong><br>${descNow}<br><a href=\"#\" class=\"history-link\" data-id=\"${
                     p.id
                   }\">Ver historia</a><div style=\"margin-top:8px;font-size:0.9em\">Coords: ${nl.lat.toFixed(
                     5
                   )}, ${nl.lng.toFixed(
                     5
-                  )} <button class=\"fix-coords btn\" data-id=\"${
-                    p.id
-                  }\">Corregir posición</button></div></div>`;
+                  )} ${fixBtnHtmlUpdated}
+                  </div></div>`;
                   try {
                     e.popup.setContent(updated);
                   } catch (err) {}
@@ -1298,7 +1303,8 @@ function showCityHistory() {
         <div class="tree-content">
           <div style="margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 4px solid #DAA520; border-radius: 4px;">
             <p style="margin: 0; font-size: 14px; color: #333; line-height: 1.6;">
-              CORRÊA, Isaque de Borba. <em>História de duas cidades: Camboriú e Balneário Camboriú</em>. Camboriú, SC: I. de Borba Corrêa (${lang === 'es' ? 'Edición del Autor' : 'Edição do Autor'}), 1985.
+              CORRÊA, Isaque de Borba. <em>História de duas cidades: Camboriú e Balneário Camboriú</em>. Camboriú, SC: I. de Borba Corrêa (${lang === 'es' ? 'Edición del Autor' : 'Edição do Autor'}), 1985.<br>
+              SCHLICKMANN, Mariana. Do Arraial do Bonsucesso a Balneário Camboriú: más de 50 años de historia. Balneário Camboriú: Fundação Cultural de Balneário Camboriú, 2016. 82 p. E-book. <a href="http://www.culturabc.com.br/wp-content/uploads/2016/12/ebook.pdf" target="_blank">Disponible aquí</a>. Acceso en: 26 nov. 2025.
             </p>
           </div>
         </div>
