@@ -601,7 +601,7 @@
           const lang = langSelect.value;
           const title = p.title[lang] || p.title.pt;
           const desc = p.desc[lang] || p.desc.pt;
-          info.textContent = title + " — " + desc;
+          info.innerHTML = title + " — " + desc;
         });
 
         // Event handler: actualizar contenido del popup según idioma actual
@@ -921,7 +921,10 @@ function showActivities() {
           <strong>3. ${lang === 'es' ? 'Catamarán a Portobelo' : 'Catamarã do Barco Pirata'}</strong>
         </div>
         <div class="tree-content">
-          <p><em>${lang === 'es' ? '(en desarrollo)' : '(em desenvolvimento)'}</em></p>
+          <p>${lang === 'es'
+            ? 'En 2025, la Costa Esmeralda sumó un nuevo atractivo para impulsar el turismo náutico y la integración regional. El Grupo Barco Pirata realizó el primer paseo de su moderno catamarán turístico, que ya opera la ruta Balneário Camboriú – Isla João da Cunha (Porto Belo). El trayecto, que parte de Barra Sul, se completa en solo 40 minutos, destacando el confort, la seguridad y el excelente desempeño de la embarcación.\nEl viaje inaugural contó con autoridades de navegación y turismo, prensa y representantes del sector. Los socios del Grupo Barco Pirata recibieron a los invitados y presentaron la propuesta de la nueva operación.\nCon capacidad para 165 pasajeros, el catamarán ofrece dos salidas diarias — a las 8:30 y 10:30 — hacia la Isla João da Cunha, donde los visitantes disfrutan de gastronomía local, comercios, senderos, deportes náuticos y uno de los paisajes más preservados de la región. Además, el Grupo Barco Pirata lanzó una experiencia combinada: paseo en catamarán con embarque en el Trapiche do Porto dos Piratas y visita al Parque Unipraias, conectando con Laranjeiras. Esta propuesta integra y fortalece el flujo turístico entre Balneário Camboriú y Porto Belo.'
+            : 'Em 2025, a Costa Esmeralda ganhou um novo atrativo para impulsionar o turismo náutico e ampliar a integração regional. O Grupo Barco Pirata realizou o primeiro passeio do seu moderno catamarã turístico, que já opera a rota Balneário Camboriú – Ilha João da Cunha (Porto Belo). O trajeto, com saída da Barra Sul, é realizado em apenas 40 minutos, destacando o conforto, a segurança e o excelente desempenho da embarcação.\nO passeio inaugural contou com autoridades da navegação e do turismo, imprensa e representantes do setor. Os sócios do Grupo Barco Pirata receberam os convidados e apresentaram a proposta da nova operação.\nCom capacidade para 165 passageiros, o catamarã oferece duas saídas diárias — às 8h30 e 10h30 — com destino à Ilha João da Cunha, onde os visitantes desfrutam de gastronomia local, comércio, trilhas, esportes náuticos e um dos cenários mais preservados da região. Além disso, o Grupo Barco Pirata lançou uma experiência combinada: passeio de catamarã com embarque no Trapiche do Porto dos Piratas e visita ao Parque Unipraias, com conexão em Laranjeiras. A proposta integra e fortalece ainda mais o fluxo turístico entre Balneário Camboriú e Porto Belo.'}
+          </p>
         </div>
       </div>
 
