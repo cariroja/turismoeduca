@@ -16,6 +16,15 @@ body {
   display: flex;
   flex-direction: column;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.overlay {
+  max-height: 100dvh;
+  height: 100%;
+  width: 100vw;
+  touch-action: none; /* para gestos */
+}
+.panel {
+  max-height: 90dvh;
+}
   height: 100vh;
 }
 header {
@@ -462,6 +471,9 @@ main {
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  .panel {
+    max-height: 96dvh;
+  }
   z-index: 1100;
   transition: opacity 300ms ease, visibility 300ms;
   overflow-y: auto;

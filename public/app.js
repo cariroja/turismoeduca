@@ -45,16 +45,53 @@
   function showModal(html) {
     modalContent.innerHTML = html;
     modal.setAttribute("aria-hidden", "false");
+    // Habilitar gesto de cerrar deslizando
+    enableModalSwipeToClose();
   }
-  
+
   // Cerrar modal y limpiar contenido
   function closeModal() {
     modal.setAttribute("aria-hidden", "true");
     modalContent.innerHTML = "";
+    disableModalSwipeToClose();
   }
-  
+
   // Event listener para botón de cerrar modal
   modalClose.addEventListener("click", closeModal);
+
+  // --- Gesto para cerrar modal deslizando hacia abajo ---
+  let startY = null;
+  function onOverlayTouchStart(e) {
+    if (e.touches && e.touches.length === 1) {
+      startY = e.touches[0].clientY;
+    }
+  }
+  function onOverlayTouchMove(e) {
+    if (startY !== null && e.touches && e.touches.length === 1) {
+      const currentY = e.touches[0].clientY;
+      if (currentY - startY > 80) { // 80px de umbral
+        closeModal();
+        startY = null;
+      }
+    }
+  }
+  function onOverlayTouchEnd() {
+    startY = null;
+  }
+  function enableModalSwipeToClose() {
+    if (modal) {
+      modal.addEventListener('touchstart', onOverlayTouchStart);
+      modal.addEventListener('touchmove', onOverlayTouchMove);
+      modal.addEventListener('touchend', onOverlayTouchEnd);
+    }
+  }
+  function disableModalSwipeToClose() {
+    if (modal) {
+      modal.removeEventListener('touchstart', onOverlayTouchStart);
+      modal.removeEventListener('touchmove', onOverlayTouchMove);
+      modal.removeEventListener('touchend', onOverlayTouchEnd);
+    }
+  }
 
   // ============================================
   // SISTEMA DE INTERNACIONALIZACIÓN (i18n)
