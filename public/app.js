@@ -305,7 +305,7 @@
         (T[lang] || T.es).quizText
       }</p>`
     );
-    info.textContent = (T[lang] || T.es).quizText;
+    info.innerHTML = (T[lang] || T.es).quizText;
   });
   btnHistoria.addEventListener("click", () => {
     const lang = (langSelect && langSelect.value) || "es";
@@ -314,7 +314,7 @@
         (T[lang] || T.es).historiaText
       }</p>`
     );
-    info.textContent = (T[lang] || T.es).historiaText;
+    info.innerHTML = (T[lang] || T.es).historiaText;
   });
   btnActividades.addEventListener("click", () => {
     const lang = (langSelect && langSelect.value) || "es";
@@ -323,7 +323,7 @@
         (T[lang] || T.es).actividadesText
       }</p>`
     );
-    info.textContent = (T[lang] || T.es).actividadesText;
+    info.innerHTML = (T[lang] || T.es).actividadesText;
   });
   // ============================================
   // BOTÓN DE PERFIL DE USUARIO
@@ -444,7 +444,7 @@
   langSelect.addEventListener("change", () => {
     const lang = langSelect.value || "es";
     applyTranslations(lang);  // Actualizar todos los textos de la interfaz
-    info.textContent = (T[lang] || T.es).infoDefault;  // Actualizar texto informativo
+    info.innerHTML = (T[lang] || T.es).infoDefault;  // Actualizar texto informativo
     // Re-renderizar encabezado para mostrar nombre/rol en el idioma seleccionado
     renderUser();
   });
@@ -601,7 +601,10 @@
           const lang = langSelect.value;
           const title = p.title[lang] || p.title.pt;
           const desc = p.desc[lang] || p.desc.pt;
-          info.innerHTML = title + " — " + desc;
+          // Mostrar solo la primera línea de la descripción (hasta el primer salto de línea o <br>)
+          let descShort = desc.split(/<br|\n|\./)[0];
+          if (!descShort.trim()) descShort = desc;
+          info.innerHTML = `<strong>${title}</strong> — ${descShort.trim()}`;
         });
 
         // Event handler: actualizar contenido del popup según idioma actual
@@ -644,7 +647,7 @@
                 ev.preventDefault();
                 if (marker.dragging) marker.dragging.enable();
                 else marker.options.draggable = true;
-                info.textContent =
+                info.innerHTML =
                   "Arrastra el marcador al lugar correcto y suéltalo. Luego se guardará localmente.";
                 marker.once("dragend", (de) => {
                                     // Solo mostrar el botón 'Corregir posición' si el usuario es 'cariroja'
@@ -674,7 +677,7 @@
                   try {
                     e.popup.setContent(updated);
                   } catch (err) {}
-                  info.textContent = "Posición guardada localmente.";
+                  info.innerHTML = "Posición guardada localmente.";
                 });
               });
             }
@@ -693,7 +696,7 @@
         fetchLegacy()
           .then((points) => processPoints(points))
           .catch((e) => {
-            info.textContent = "Error cargando puntos: " + e.message;
+            info.innerHTML = "Error cargando puntos: " + e.message;
           });
       });
   }
@@ -753,7 +756,7 @@
     const lang = (langSelect && langSelect.value) || "es";
     const title = found.title[lang] || found.title.pt;
     const desc = found.desc[lang] || found.desc.pt;
-    info.textContent = title + " — " + desc;
+    info.innerHTML = title + " — " + desc;
   }
 
   // Wire search UI
