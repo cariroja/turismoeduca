@@ -118,8 +118,8 @@
         "image": "imagenes/barco-pirata.webp",
         "title": { "pt": "Barco Pirata", "es": "Barco Pirata" },
         "desc": {
-          "pt": "Passeio temático de barco pirata pela costa.",
-          "es": "Paseo temático en barco pirata por la costa."
+          "pt": "Passeio temático de barco pirata pela costa.<br><strong>Horário de atendimento:</strong> Todos os dias das 9h às 17h.<br><strong>Endereço:</strong> Av. Normando Tedesco, N° 6020 - Barra Sul, Balneário Camboriú - SC",
+          "es": "Paseo temático en barco pirata por la costa.<br><strong>Horario de atención:</strong> Todos los días de 9h a 17h.<br><strong>Dirección:</strong> Av. Normando Tedesco, N° 6020 - Barra Sul, Balneário Camboriú - SC"
         },
         "history": {
           "pt": "O Barco Pirata é uma das atrações turísticas mais populares de Balneário Camboriú, oferecendo passeios temáticos pela costa com entretenimento para toda a família.",
