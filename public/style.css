@@ -16,15 +16,6 @@ body {
   display: flex;
   flex-direction: column;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-.overlay {
-  max-height: 100dvh;
-  height: 100%;
-  width: 100vw;
-  touch-action: none; /* para gestos */
-}
-.panel {
-  max-height: 90dvh;
-}
   height: 100vh;
 }
 header {
@@ -344,6 +335,7 @@ main {
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.45);
+  touch-action: none; /* para gestos */
   z-index: 1000;
 }
 .overlay[aria-hidden="true"] {
@@ -463,10 +455,7 @@ main {
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  .panel {
-    max-height: 96dvh;
-  }
-  z-index: 1100;
+  z-index: 1300;
   transition: opacity 300ms ease, visibility 300ms;
   overflow-y: auto;
 }
@@ -555,12 +544,16 @@ main {
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   padding: 24px;
   border-radius: 12px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
+  transition: box-shadow 0.3s;
+  cursor: default;
+}
+.feature-card:focus-visible {
+  outline: 3px solid #667eea;
+  outline-offset: 3px;
 }
 .feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transform: none;
+  box-shadow: none;
 }
 .feature-card:nth-child(1) {
   background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);

@@ -297,9 +297,31 @@
   // ============================================
   // INICIALIZACIÓN: VERIFICAR USUARIO
   // ============================================
-  // Si no hay usuario, mostrar el overlay de bienvenida
-  if (!getUser()) welcome.setAttribute("aria-hidden", "false");
-  else welcome.setAttribute("aria-hidden", "true");
+  // Si no hay usuario, NO mostrar bienvenida encima del splash.
+  // La pantalla de bienvenida (con la "manito") aparece después de cerrar el splash.
+  (function initWelcomeVisibility() {
+    try {
+      const hasUser = !!getUser();
+      if (hasUser) {
+        welcome && welcome.setAttribute("aria-hidden", "true");
+        return;
+      }
+
+      let seenSplash = false;
+      try {
+        seenSplash = sessionStorage.getItem('seenSplash') === '1';
+      } catch (e) {}
+
+      const splashHidden = !splash || splash.getAttribute('aria-hidden') === 'true';
+      const shouldShowWelcome = seenSplash || splashHidden;
+      welcome && welcome.setAttribute("aria-hidden", shouldShowWelcome ? "false" : "true");
+    } catch (e) {
+      // fallback seguro: no bloquear la app
+      try {
+        welcome && welcome.setAttribute("aria-hidden", "true");
+      } catch (err) {}
+    }
+  })();
 
   // ============================================
   // MANEJADORES DE SPLASH SCREEN (PANTALLA DE BIENVENIDA INICIAL)
@@ -312,6 +334,13 @@
       try {
         sessionStorage.setItem('seenSplash', '1');
       } catch (e) {}
+
+      // Si todavía no hay usuario, mostrar bienvenida ahora (en vez de encima del splash)
+      try {
+        if (!getUser()) {
+          welcome && welcome.setAttribute("aria-hidden", "false");
+        }
+      } catch (err) {}
     } catch (e) {}
   }
   
