@@ -60,31 +60,58 @@
   modalClose.addEventListener("click", closeModal);
 
   // --- Gesto para cerrar modal deslizando hacia abajo ---
+  // CORREGIDO: Solo cerrar si el contenido está en la parte superior (scrollTop === 0)
+  // para evitar que se cierre cuando el usuario hace scroll hacia arriba dentro del contenido
   let startY = null;
+  let touchStartedOnContent = false;
+  
   function onOverlayTouchStart(e) {
     if (e.touches && e.touches.length === 1) {
       startY = e.touches[0].clientY;
+      // Verificar si el toque empezó dentro del panel con contenido scrolleable
+      const panel = modal.querySelector('.panel');
+      touchStartedOnContent = panel && panel.contains(e.target);
     }
   }
+  
   function onOverlayTouchMove(e) {
     if (startY !== null && e.touches && e.touches.length === 1) {
       const currentY = e.touches[0].clientY;
-      if (currentY - startY > 80) { // 80px de umbral
+      const deltaY = currentY - startY;
+      
+      // Solo cerrar si:
+      // 1. El usuario desliza hacia abajo (deltaY > 80)
+      // 2. Y el panel está en la parte superior del scroll (scrollTop <= 0)
+      // 3. O el toque no empezó en el contenido (tocó el overlay/fondo)
+      const panel = modal.querySelector('.panel');
+      const panelScrollTop = panel ? panel.scrollTop : 0;
+      
+      if (deltaY > 80) {
+        // Si el panel tiene scroll y no está en el top, permitir scroll normal
+        if (touchStartedOnContent && panelScrollTop > 5) {
+          // No cerrar, el usuario está haciendo scroll dentro del contenido
+          return;
+        }
+        // Cerrar el modal
         closeModal();
         startY = null;
       }
     }
   }
+  
   function onOverlayTouchEnd() {
     startY = null;
+    touchStartedOnContent = false;
   }
+  
   function enableModalSwipeToClose() {
     if (modal) {
-      modal.addEventListener('touchstart', onOverlayTouchStart);
-      modal.addEventListener('touchmove', onOverlayTouchMove);
-      modal.addEventListener('touchend', onOverlayTouchEnd);
+      modal.addEventListener('touchstart', onOverlayTouchStart, { passive: true });
+      modal.addEventListener('touchmove', onOverlayTouchMove, { passive: true });
+      modal.addEventListener('touchend', onOverlayTouchEnd, { passive: true });
     }
   }
+  
   function disableModalSwipeToClose() {
     if (modal) {
       modal.removeEventListener('touchstart', onOverlayTouchStart);
