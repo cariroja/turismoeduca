@@ -885,24 +885,80 @@ function showQuiz() {
   const lang = (langSelect && langSelect.value) || "pt";
   const quizTitle = lang === 'es' ? 'Quiz de Turismo y Cultura' : 'Quiz de Turismo e Cultura';
   
-  // Contenido del Quiz: 2 preguntas (fácil de ampliar)
+  // Quiz con 10 preguntas sobre Balneário Camboriú
   const quizContent = `
     <h2>${quizTitle}</h2>
-    <p>${lang === 'es' ? '¡Pon a prueba tus conocimientos sobre la región!' : 'Teste seus conhecimentos sobre a região!'}</p>
+    <p>${lang === 'es' ? '¡Pon a prueba tus conocimientos sobre Balneário Camboriú! (10 preguntas)' : 'Teste seus conhecimentos sobre Balneário Camboriú! (10 perguntas)'}</p>
 
     <form id="quizForm">
       
-      <h3>1. ${lang === 'es' ? '¿Qué atrae al Parque Unipraias el título de ser el único teleférico del mundo de su tipo?' : 'O que faz o Parque Unipraias ser o único teleférico do mundo do seu tipo?'}</h3>
+      <h3>1. ${lang === 'es' ? '¿Qué hace único al teleférico del Parque Unipraias en el mundo?' : 'O que torna o teleférico do Parque Unipraias único no mundo?'}</h3>
       <label><input type="radio" name="q1" value="a"> ${lang === 'es' ? 'Interconecta 3 playas' : 'Interliga 3 praias'}</label><br>
-      <label><input type="radio" name="q1" value="b"> ${lang === 'es' ? 'Es el único que sube un morro' : 'É o único que sobe um morro'}</label><br>
-      <label><input type="radio" name="q1" value="c"> ${lang === 'es' ? 'Interconecta dos playas (Barra Sul y Laranjeiras)' : 'Interliga duas praias (Barra Sul e Laranjeiras)'}</label><br>
+      <label><input type="radio" name="q1" value="b"> ${lang === 'es' ? 'Es el más alto del mundo' : 'É o mais alto do mundo'}</label><br>
+      <label><input type="radio" name="q1" value="c"> ${lang === 'es' ? 'Conecta dos playas (Barra Sul y Laranjeiras)' : 'Conecta duas praias (Barra Sul e Laranjeiras)'}</label><br>
       
       <br>
       
-      <h3>2. ${lang === 'es' ? 'El programa "Parque Escola" se enfoca en la conservación de...' : 'O programa "Parque Escola" se foca na conservação da...'}</h3>
+      <h3>2. ${lang === 'es' ? '¿Qué bioma protege el programa "Parque Escola"?' : 'Qual bioma o programa "Parque Escola" protege?'}</h3>
       <label><input type="radio" name="q2" value="a"> ${lang === 'es' ? 'La Fauna marina' : 'A Fauna marinha'}</label><br>
-      <label><input type="radio" name="q2" value="b"> ${lang === 'es' ? 'La Mata Atlântica' : 'A Mata Atlântica'}</label><br>
-      <label><input type="radio" name="q2" value="c"> ${lang === 'es' ? 'Las dunas de arena' : 'As dunas de areia'}</label><br>
+      <label><input type="radio" name="q2" value="b"> ${lang === 'es' ? 'La Mata Atlántica' : 'A Mata Atlântica'}</label><br>
+      <label><input type="radio" name="q2" value="c"> ${lang === 'es' ? 'El Cerrado' : 'O Cerrado'}</label><br>
+
+      <br>
+      
+      <h3>3. ${lang === 'es' ? '¿Desde qué año opera el Barco Pirata?' : 'Desde que ano o Barco Pirata opera?'}</h3>
+      <label><input type="radio" name="q3" value="a"> ${lang === 'es' ? '1973' : '1973'}</label><br>
+      <label><input type="radio" name="q3" value="b"> ${lang === 'es' ? '1983' : '1983'}</label><br>
+      <label><input type="radio" name="q3" value="c"> ${lang === 'es' ? '1993' : '1993'}</label><br>
+
+      <br>
+      
+      <h3>4. ${lang === 'es' ? '¿Cuántos pasajeros puede llevar el barco pirata más grande?' : 'Quantos passageiros o maior barco pirata pode transportar?'}</h3>
+      <label><input type="radio" name="q4" value="a"> ${lang === 'es' ? 'Más de 300' : 'Mais de 300'}</label><br>
+      <label><input type="radio" name="q4" value="b"> ${lang === 'es' ? 'Más de 600' : 'Mais de 600'}</label><br>
+      <label><input type="radio" name="q4" value="c"> ${lang === 'es' ? 'Más de 1000' : 'Mais de 1000'}</label><br>
+
+      <br>
+      
+      <h3>5. ${lang === 'es' ? '¿Qué atracción del Parque Unipraias es un trineo de montaña de 710m?' : 'Qual atração do Parque Unipraias é um trenó de montanha de 710m?'}</h3>
+      <label><input type="radio" name="q5" value="a"> ${lang === 'es' ? 'ZipRider' : 'ZipRider'}</label><br>
+      <label><input type="radio" name="q5" value="b"> ${lang === 'es' ? 'Youhooo!' : 'Youhooo!'}</label><br>
+      <label><input type="radio" name="q5" value="c"> ${lang === 'es' ? 'Fantástica Floresta' : 'Fantástica Floresta'}</label><br>
+
+      <br>
+      
+      <h3>6. ${lang === 'es' ? '¿A cuántos metros sobre el nivel del mar llega la Super Gyro Tower?' : 'A quantos metros acima do nível do mar chega a Super Gyro Tower?'}</h3>
+      <label><input type="radio" name="q6" value="a"> ${lang === 'es' ? 'Casi 100 metros' : 'Quase 100 metros'}</label><br>
+      <label><input type="radio" name="q6" value="b"> ${lang === 'es' ? 'Casi 200 metros' : 'Quase 200 metros'}</label><br>
+      <label><input type="radio" name="q6" value="c"> ${lang === 'es' ? 'Casi 300 metros' : 'Quase 300 metros'}</label><br>
+
+      <br>
+      
+      <h3>7. ${lang === 'es' ? '¿Hacia dónde va el nuevo catamarán del Grupo Barco Pirata?' : 'Para onde vai o novo catamarã do Grupo Barco Pirata?'}</h3>
+      <label><input type="radio" name="q7" value="a"> ${lang === 'es' ? 'Isla das Cabras' : 'Ilha das Cabras'}</label><br>
+      <label><input type="radio" name="q7" value="b"> ${lang === 'es' ? 'Isla João da Cunha (Porto Belo)' : 'Ilha João da Cunha (Porto Belo)'}</label><br>
+      <label><input type="radio" name="q7" value="c"> ${lang === 'es' ? 'Florianópolis' : 'Florianópolis'}</label><br>
+
+      <br>
+      
+      <h3>8. ${lang === 'es' ? '¿Qué es el ZipRider?' : 'O que é o ZipRider?'}</h3>
+      <label><input type="radio" name="q8" value="a"> ${lang === 'es' ? 'Un trineo de montaña' : 'Um trenó de montanha'}</label><br>
+      <label><input type="radio" name="q8" value="b"> ${lang === 'es' ? 'Una mega tirolesa' : 'Uma mega tirolesa'}</label><br>
+      <label><input type="radio" name="q8" value="c"> ${lang === 'es' ? 'Un tren suspendido' : 'Um trem suspenso'}</label><br>
+
+      <br>
+      
+      <h3>9. ${lang === 'es' ? '¿Cuántas estaciones tiene el Bondinho Aéreo?' : 'Quantas estações tem o Bondinho Aéreo?'}</h3>
+      <label><input type="radio" name="q9" value="a"> ${lang === 'es' ? '2 estaciones' : '2 estações'}</label><br>
+      <label><input type="radio" name="q9" value="b"> ${lang === 'es' ? '3 estaciones' : '3 estações'}</label><br>
+      <label><input type="radio" name="q9" value="c"> ${lang === 'es' ? '4 estaciones' : '4 estações'}</label><br>
+
+      <br>
+      
+      <h3>10. ${lang === 'es' ? '¿Qué isla se puede ver durante el paseo del Barco Pirata?' : 'Qual ilha pode ser vista durante o passeio do Barco Pirata?'}</h3>
+      <label><input type="radio" name="q10" value="a"> ${lang === 'es' ? 'Isla das Cabras' : 'Ilha das Cabras'}</label><br>
+      <label><input type="radio" name="q10" value="b"> ${lang === 'es' ? 'Isla de Santa Catarina' : 'Ilha de Santa Catarina'}</label><br>
+      <label><input type="radio" name="q10" value="c"> ${lang === 'es' ? 'Isla do Mel' : 'Ilha do Mel'}</label><br>
 
       <br>
       
@@ -920,27 +976,67 @@ function showQuiz() {
     quizForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const resultDiv = document.getElementById("quizResult");
-      const q1 = document.querySelector('input[name="q1"]:checked');
-      const q2 = document.querySelector('input[name="q2"]:checked');
       
+      // Respuestas correctas
+      const correctAnswers = {
+        q1: 'c',  // Conecta dos playas
+        q2: 'b',  // Mata Atlántica
+        q3: 'b',  // 1983
+        q4: 'b',  // Más de 600
+        q5: 'b',  // Youhooo!
+        q6: 'c',  // Casi 300 metros
+        q7: 'b',  // Isla João da Cunha
+        q8: 'b',  // Mega tirolesa
+        q9: 'b',  // 3 estaciones
+        q10: 'a'  // Isla das Cabras
+      };
+      
+      let score = 0;
       let feedback = [];
       
-      // Respuestas Correctas: Q1: c, Q2: b
+      // Verificar cada respuesta
+      for (let i = 1; i <= 10; i++) {
+        const answer = document.querySelector(`input[name="q${i}"]:checked`);
+        const isCorrect = answer && answer.value === correctAnswers[`q${i}`];
+        
+        if (isCorrect) {
+          score++;
+          feedback.push(`<span style="color: green;">✓ ${lang === 'es' ? 'Pregunta' : 'Pergunta'} ${i}: ${lang === 'es' ? 'Correcta' : 'Correta'}</span>`);
+        } else {
+          feedback.push(`<span style="color: red;">✗ ${lang === 'es' ? 'Pregunta' : 'Pergunta'} ${i}: ${lang === 'es' ? 'Incorrecta' : 'Incorreta'}</span>`);
+        }
+      }
       
-      if (q1 && q1.value === 'c') {
-        feedback.push(lang === 'es' ? 'Pregunta 1: Correcta (Conecta dos playas).' : 'Pergunta 1: Correta (Conecta duas praias).');
+      // Determinar mensaje según la nota
+      let emoji, message;
+      if (score === 10) {
+        emoji = '🏆';
+        message = lang === 'es' ? '¡Excelente! ¡Eres un experto!' : 'Excelente! Você é um especialista!';
+      } else if (score >= 8) {
+        emoji = '🌟';
+        message = lang === 'es' ? '¡Muy bien! ¡Casi perfecto!' : 'Muito bem! Quase perfeito!';
+      } else if (score >= 6) {
+        emoji = '👍';
+        message = lang === 'es' ? '¡Bien! Puedes mejorar.' : 'Bom! Você pode melhorar.';
+      } else if (score >= 4) {
+        emoji = '📚';
+        message = lang === 'es' ? 'Sigue estudiando la región.' : 'Continue estudando a região.';
       } else {
-        feedback.push(lang === 'es' ? 'Pregunta 1: Incorrecta.' : 'Pergunta 1: Incorreta.');
+        emoji = '💪';
+        message = lang === 'es' ? '¡Ánimo! Visita los puntos del mapa para aprender más.' : 'Ânimo! Visite os pontos do mapa para aprender mais.';
       }
-
-      if (q2 && q2.value === 'b') {
-        feedback.push(lang === 'es' ? 'Pregunta 2: Correcta (La Mata Atlântica).' : 'Pergunta 2: Correta (A Mata Atlântica).');
-      } else {
-        feedback.push(lang === 'es' ? 'Pregunta 2: Incorrecta.' : 'Pergunta 2: Incorreta.');
-      }
-
-      // Muestra solo el feedback (sin score)
-      resultDiv.innerHTML = `<p>${lang === 'es' ? 'Resultados de tu intento:' : 'Resultados da sua tentativa:'}</p><ul><li>${feedback.join('</li><li>')}</li></ul>`;
+      
+      resultDiv.innerHTML = `
+        <div style="text-align: center; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; color: white; margin-bottom: 15px;">
+          <div style="font-size: 3rem;">${emoji}</div>
+          <div style="font-size: 2rem; font-weight: bold;">${lang === 'es' ? 'Tu nota:' : 'Sua nota:'} ${score}/10</div>
+          <div style="font-size: 1.1rem; margin-top: 5px;">${message}</div>
+        </div>
+        <details>
+          <summary style="cursor: pointer; font-weight: bold;">${lang === 'es' ? 'Ver detalle de respuestas' : 'Ver detalhe das respostas'}</summary>
+          <ul style="list-style: none; padding-left: 0; margin-top: 10px;">${feedback.map(f => `<li>${f}</li>`).join('')}</ul>
+        </details>
+      `;
     });
   }
 }
