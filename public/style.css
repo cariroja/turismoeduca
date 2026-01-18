@@ -28,6 +28,11 @@ html {
   touch-action: pan-y;
 }
 
+/* Ocultar botón de corregir posición y coordenadas */
+.fix-coords {
+  display: none !important;
+}
+
 /* En móviles, hacer el popup más grande y scrolleable */
 @media (max-width: 600px) {
   .leaflet-popup-content-wrapper {
