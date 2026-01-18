@@ -60,48 +60,45 @@
   modalClose.addEventListener("click", closeModal);
 
   // --- Gesto para cerrar modal deslizando hacia abajo ---
-  // CORREGIDO: Solo cerrar si el contenido está en la parte superior (scrollTop === 0)
-  // para evitar que se cierre cuando el usuario hace scroll hacia arriba dentro del contenido
+  // CORREGIDO v2: Deshabilitar completamente el gesto cuando se toca el contenido scrolleable
+  // para evitar conflictos con el scroll normal del usuario
   let startY = null;
-  let touchStartedOnContent = false;
+  let canCloseBySwipe = false;
   
   function onOverlayTouchStart(e) {
     if (e.touches && e.touches.length === 1) {
       startY = e.touches[0].clientY;
-      // Verificar si el toque empezó dentro del panel con contenido scrolleable
+      
+      // Solo permitir cerrar con swipe si se toca el fondo oscuro (overlay), 
+      // NO si se toca el panel con contenido
       const panel = modal.querySelector('.panel');
-      touchStartedOnContent = panel && panel.contains(e.target);
+      const touchedPanel = panel && panel.contains(e.target);
+      
+      // Si tocó el panel, NO permitir cerrar con swipe (el usuario quiere hacer scroll)
+      // Solo permitir cerrar si tocó el fondo oscuro del overlay
+      canCloseBySwipe = !touchedPanel;
     }
   }
   
   function onOverlayTouchMove(e) {
+    // Solo intentar cerrar si se permite (tocó fuera del panel)
+    if (!canCloseBySwipe) return;
+    
     if (startY !== null && e.touches && e.touches.length === 1) {
       const currentY = e.touches[0].clientY;
       const deltaY = currentY - startY;
       
-      // Solo cerrar si:
-      // 1. El usuario desliza hacia abajo (deltaY > 80)
-      // 2. Y el panel está en la parte superior del scroll (scrollTop <= 0)
-      // 3. O el toque no empezó en el contenido (tocó el overlay/fondo)
-      const panel = modal.querySelector('.panel');
-      const panelScrollTop = panel ? panel.scrollTop : 0;
-      
       if (deltaY > 80) {
-        // Si el panel tiene scroll y no está en el top, permitir scroll normal
-        if (touchStartedOnContent && panelScrollTop > 5) {
-          // No cerrar, el usuario está haciendo scroll dentro del contenido
-          return;
-        }
-        // Cerrar el modal
         closeModal();
         startY = null;
+        canCloseBySwipe = false;
       }
     }
   }
   
   function onOverlayTouchEnd() {
     startY = null;
-    touchStartedOnContent = false;
+    canCloseBySwipe = false;
   }
   
   function enableModalSwipeToClose() {
