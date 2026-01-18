@@ -335,7 +335,7 @@ main {
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.45);
-  touch-action: none; /* para gestos */
+  touch-action: none; /* para gestos en el fondo */
   z-index: 1000;
 }
 .overlay[aria-hidden="true"] {
@@ -350,6 +350,8 @@ main {
   max-height: 90vh;
   overflow-y: auto;
   animation: slideUp 0.4s ease-out;
+  touch-action: pan-y; /* Permitir scroll vertical dentro del panel */
+  -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
 }
 
 .panel-icon {
