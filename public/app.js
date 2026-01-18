@@ -1622,6 +1622,200 @@ function showVocabulario() {
         { es: 'Cien', pt: 'Cem' },
         { es: 'Mil', pt: 'Mil' }
       ]
+    },
+    frasesUtiles: {
+      title: { es: '🗣️ Frases Útiles', pt: '🗣️ Frases Úteis' },
+      words: [
+        { es: '¿Dónde está...?', pt: 'Onde fica...?' },
+        { es: '¿Cuánto cuesta?', pt: 'Quanto custa?' },
+        { es: 'Por favor', pt: 'Por favor' },
+        { es: 'Gracias', pt: 'Obrigado/a' },
+        { es: 'De nada', pt: 'De nada' },
+        { es: 'Disculpe', pt: 'Com licença' },
+        { es: 'Buenos días', pt: 'Bom dia' },
+        { es: 'Buenas tardes', pt: 'Boa tarde' },
+        { es: 'Buenas noches', pt: 'Boa noite' },
+        { es: 'Hola', pt: 'Olá' },
+        { es: 'Chau/Adiós', pt: 'Tchau' },
+        { es: '¿Cómo estás?', pt: 'Como vai?' },
+        { es: 'Muy bien', pt: 'Muito bem' },
+        { es: 'No entiendo', pt: 'Não entendo' },
+        { es: '¿Puede repetir?', pt: 'Pode repetir?' },
+        { es: 'Necesito ayuda', pt: 'Preciso de ajuda' },
+        { es: '¿Habla español?', pt: 'Fala espanhol?' }
+      ]
+    },
+    alojamiento: {
+      title: { es: '🏨 Alojamiento', pt: '🏨 Hospedagem' },
+      words: [
+        { es: 'Hotel', pt: 'Hotel' },
+        { es: 'Posada', pt: 'Pousada' },
+        { es: 'Habitación', pt: 'Quarto' },
+        { es: 'Recepción', pt: 'Recepção' },
+        { es: 'Llave', pt: 'Chave' },
+        { es: 'Cama', pt: 'Cama' },
+        { es: 'Almohada', pt: 'Travesseiro' },
+        { es: 'Sábana', pt: 'Lençol' },
+        { es: 'Toalla', pt: 'Toalha' },
+        { es: 'Baño', pt: 'Banheiro' },
+        { es: 'Ducha', pt: 'Chuveiro' },
+        { es: 'Aire acondicionado', pt: 'Ar condicionado' },
+        { es: 'Desayuno', pt: 'Café da manhã' },
+        { es: 'Reserva', pt: 'Reserva' },
+        { es: 'Check-in', pt: 'Check-in' },
+        { es: 'Check-out', pt: 'Check-out' }
+      ]
+    },
+    compras: {
+      title: { es: '💰 Compras y Dinero', pt: '💰 Compras e Dinheiro' },
+      words: [
+        { es: 'Precio', pt: 'Preço' },
+        { es: 'Caro', pt: 'Caro' },
+        { es: 'Barato', pt: 'Barato' },
+        { es: 'Descuento', pt: 'Desconto' },
+        { es: 'Oferta', pt: 'Oferta' },
+        { es: 'Cambio', pt: 'Troco' },
+        { es: 'Tarjeta', pt: 'Cartão' },
+        { es: 'Efectivo', pt: 'Dinheiro' },
+        { es: 'Bolsa', pt: 'Sacola' },
+        { es: 'Recibo', pt: 'Recibo' },
+        { es: 'Tienda', pt: 'Loja' },
+        { es: 'Mercado', pt: 'Mercado' },
+        { es: 'Supermercado', pt: 'Supermercado' },
+        { es: 'Centro comercial', pt: 'Shopping' },
+        { es: 'Cajero', pt: 'Caixa' }
+      ]
+    },
+    naturaleza: {
+      title: { es: '🌿 Naturaleza', pt: '🌿 Natureza' },
+      words: [
+        { es: 'Montaña', pt: 'Montanha' },
+        { es: 'Cerro', pt: 'Morro' },
+        { es: 'Río', pt: 'Rio' },
+        { es: 'Cascada', pt: 'Cachoeira' },
+        { es: 'Lago', pt: 'Lago' },
+        { es: 'Bosque', pt: 'Floresta' },
+        { es: 'Selva', pt: 'Selva' },
+        { es: 'Árbol', pt: 'Árvore' },
+        { es: 'Flor', pt: 'Flor' },
+        { es: 'Hoja', pt: 'Folha' },
+        { es: 'Piedra', pt: 'Pedra' },
+        { es: 'Tierra', pt: 'Terra' },
+        { es: 'Cielo', pt: 'Céu' },
+        { es: 'Estrella', pt: 'Estrela' },
+        { es: 'Luna', pt: 'Lua' },
+        { es: 'Sol', pt: 'Sol' }
+      ]
+    },
+    clima: {
+      title: { es: '⛅ Clima', pt: '⛅ Clima' },
+      words: [
+        { es: 'Lluvia', pt: 'Chuva' },
+        { es: 'Llover', pt: 'Chover' },
+        { es: 'Nube', pt: 'Nuvem' },
+        { es: 'Nublado', pt: 'Nublado' },
+        { es: 'Soleado', pt: 'Ensolarado' },
+        { es: 'Viento', pt: 'Vento' },
+        { es: 'Tormenta', pt: 'Tempestade' },
+        { es: 'Rayo', pt: 'Raio' },
+        { es: 'Trueno', pt: 'Trovão' },
+        { es: 'Calor', pt: 'Calor' },
+        { es: 'Frío', pt: 'Frio' },
+        { es: 'Húmedo', pt: 'Úmido' },
+        { es: 'Temperatura', pt: 'Temperatura' },
+        { es: 'Pronóstico', pt: 'Previsão' }
+      ]
+    },
+    frutas: {
+      title: { es: '🍎 Frutas y Verduras', pt: '🍎 Frutas e Verduras' },
+      words: [
+        { es: 'Manzana', pt: 'Maçã' },
+        { es: 'Banana', pt: 'Banana' },
+        { es: 'Naranja', pt: 'Laranja' },
+        { es: 'Limón', pt: 'Limão' },
+        { es: 'Frutilla', pt: 'Morango' },
+        { es: 'Uva', pt: 'Uva' },
+        { es: 'Sandía', pt: 'Melancia' },
+        { es: 'Melón', pt: 'Melão' },
+        { es: 'Ananá/Piña', pt: 'Abacaxi' },
+        { es: 'Mango', pt: 'Manga' },
+        { es: 'Durazno', pt: 'Pêssego' },
+        { es: 'Lechuga', pt: 'Alface' },
+        { es: 'Tomate', pt: 'Tomate' },
+        { es: 'Cebolla', pt: 'Cebola' },
+        { es: 'Zanahoria', pt: 'Cenoura' },
+        { es: 'Papa', pt: 'Batata' }
+      ]
+    },
+    emociones: {
+      title: { es: '😊 Emociones y Estados', pt: '😊 Emoções e Estados' },
+      words: [
+        { es: 'Feliz', pt: 'Feliz' },
+        { es: 'Triste', pt: 'Triste' },
+        { es: 'Enojado', pt: 'Bravo' },
+        { es: 'Cansado', pt: 'Cansado' },
+        { es: 'Hambriento', pt: 'Com fome' },
+        { es: 'Sediento', pt: 'Com sede' },
+        { es: 'Enfermo', pt: 'Doente' },
+        { es: 'Sano', pt: 'Saudável' },
+        { es: 'Nervioso', pt: 'Nervoso' },
+        { es: 'Tranquilo', pt: 'Tranquilo' },
+        { es: 'Emocionado', pt: 'Animado' },
+        { es: 'Aburrido', pt: 'Entediado' },
+        { es: 'Sorprendido', pt: 'Surpreso' },
+        { es: 'Preocupado', pt: 'Preocupado' },
+        { es: 'Contento', pt: 'Contente' }
+      ]
+    },
+    direcciones: {
+      title: { es: '🧭 Direcciones', pt: '🧭 Direções' },
+      words: [
+        { es: 'Derecha', pt: 'Direita' },
+        { es: 'Izquierda', pt: 'Esquerda' },
+        { es: 'Recto/Derecho', pt: 'Reto/Em frente' },
+        { es: 'Esquina', pt: 'Esquina' },
+        { es: 'Cruzar', pt: 'Atravessar' },
+        { es: 'Doblar/Girar', pt: 'Virar' },
+        { es: 'Subir', pt: 'Subir' },
+        { es: 'Bajar', pt: 'Descer' },
+        { es: 'Norte', pt: 'Norte' },
+        { es: 'Sur', pt: 'Sul' },
+        { es: 'Este', pt: 'Leste' },
+        { es: 'Oeste', pt: 'Oeste' },
+        { es: 'Adelante', pt: 'Em frente' },
+        { es: 'Atrás', pt: 'Atrás' },
+        { es: 'Al lado de', pt: 'Ao lado de' },
+        { es: 'Enfrente de', pt: 'Em frente de' }
+      ]
+    },
+    cuerpo: {
+      title: { es: '🦴 Partes del Cuerpo', pt: '🦴 Partes do Corpo' },
+      words: [
+        { es: 'Cabeza', pt: 'Cabeça' },
+        { es: 'Cara', pt: 'Rosto' },
+        { es: 'Ojo', pt: 'Olho' },
+        { es: 'Oreja', pt: 'Orelha' },
+        { es: 'Nariz', pt: 'Nariz' },
+        { es: 'Boca', pt: 'Boca' },
+        { es: 'Diente', pt: 'Dente' },
+        { es: 'Lengua', pt: 'Língua' },
+        { es: 'Cuello', pt: 'Pescoço' },
+        { es: 'Hombro', pt: 'Ombro' },
+        { es: 'Brazo', pt: 'Braço' },
+        { es: 'Codo', pt: 'Cotovelo' },
+        { es: 'Mano', pt: 'Mão' },
+        { es: 'Dedo', pt: 'Dedo' },
+        { es: 'Uña', pt: 'Unha' },
+        { es: 'Pecho', pt: 'Peito' },
+        { es: 'Espalda', pt: 'Costas' },
+        { es: 'Barriga/Panza', pt: 'Barriga' },
+        { es: 'Pierna', pt: 'Perna' },
+        { es: 'Rodilla', pt: 'Joelho' },
+        { es: 'Pie', pt: 'Pé' },
+        { es: 'Tobillo', pt: 'Tornozelo' },
+        { es: 'Corazón', pt: 'Coração' },
+        { es: 'Pelo/Cabello', pt: 'Cabelo' }
+      ]
     }
   };
 
@@ -2028,6 +2222,191 @@ function getVocabularyData() {
         { es: 'Veinte', pt: 'Vinte' },
         { es: 'Cien', pt: 'Cem' },
         { es: 'Mil', pt: 'Mil' }
+      ]
+    },
+    frasesUtiles: {
+      words: [
+        { es: '¿Dónde está...?', pt: 'Onde fica...?' },
+        { es: '¿Cuánto cuesta?', pt: 'Quanto custa?' },
+        { es: 'Por favor', pt: 'Por favor' },
+        { es: 'Gracias', pt: 'Obrigado/a' },
+        { es: 'De nada', pt: 'De nada' },
+        { es: 'Disculpe', pt: 'Com licença' },
+        { es: 'Buenos días', pt: 'Bom dia' },
+        { es: 'Buenas tardes', pt: 'Boa tarde' },
+        { es: 'Buenas noches', pt: 'Boa noite' },
+        { es: 'Hola', pt: 'Olá' },
+        { es: 'Chau/Adiós', pt: 'Tchau' },
+        { es: '¿Cómo estás?', pt: 'Como vai?' },
+        { es: 'Muy bien', pt: 'Muito bem' },
+        { es: 'No entiendo', pt: 'Não entendo' },
+        { es: '¿Puede repetir?', pt: 'Pode repetir?' },
+        { es: 'Necesito ayuda', pt: 'Preciso de ajuda' },
+        { es: '¿Habla español?', pt: 'Fala espanhol?' }
+      ]
+    },
+    alojamiento: {
+      words: [
+        { es: 'Hotel', pt: 'Hotel' },
+        { es: 'Posada', pt: 'Pousada' },
+        { es: 'Habitación', pt: 'Quarto' },
+        { es: 'Recepción', pt: 'Recepção' },
+        { es: 'Llave', pt: 'Chave' },
+        { es: 'Cama', pt: 'Cama' },
+        { es: 'Almohada', pt: 'Travesseiro' },
+        { es: 'Sábana', pt: 'Lençol' },
+        { es: 'Toalla', pt: 'Toalha' },
+        { es: 'Baño', pt: 'Banheiro' },
+        { es: 'Ducha', pt: 'Chuveiro' },
+        { es: 'Aire acondicionado', pt: 'Ar condicionado' },
+        { es: 'Desayuno', pt: 'Café da manhã' },
+        { es: 'Reserva', pt: 'Reserva' },
+        { es: 'Check-in', pt: 'Check-in' },
+        { es: 'Check-out', pt: 'Check-out' }
+      ]
+    },
+    compras: {
+      words: [
+        { es: 'Precio', pt: 'Preço' },
+        { es: 'Caro', pt: 'Caro' },
+        { es: 'Barato', pt: 'Barato' },
+        { es: 'Descuento', pt: 'Desconto' },
+        { es: 'Oferta', pt: 'Oferta' },
+        { es: 'Cambio', pt: 'Troco' },
+        { es: 'Tarjeta', pt: 'Cartão' },
+        { es: 'Efectivo', pt: 'Dinheiro' },
+        { es: 'Bolsa', pt: 'Sacola' },
+        { es: 'Recibo', pt: 'Recibo' },
+        { es: 'Tienda', pt: 'Loja' },
+        { es: 'Mercado', pt: 'Mercado' },
+        { es: 'Supermercado', pt: 'Supermercado' },
+        { es: 'Centro comercial', pt: 'Shopping' },
+        { es: 'Cajero', pt: 'Caixa' }
+      ]
+    },
+    naturaleza: {
+      words: [
+        { es: 'Montaña', pt: 'Montanha' },
+        { es: 'Cerro', pt: 'Morro' },
+        { es: 'Río', pt: 'Rio' },
+        { es: 'Cascada', pt: 'Cachoeira' },
+        { es: 'Lago', pt: 'Lago' },
+        { es: 'Bosque', pt: 'Floresta' },
+        { es: 'Selva', pt: 'Selva' },
+        { es: 'Árbol', pt: 'Árvore' },
+        { es: 'Flor', pt: 'Flor' },
+        { es: 'Hoja', pt: 'Folha' },
+        { es: 'Piedra', pt: 'Pedra' },
+        { es: 'Tierra', pt: 'Terra' },
+        { es: 'Cielo', pt: 'Céu' },
+        { es: 'Estrella', pt: 'Estrela' },
+        { es: 'Luna', pt: 'Lua' },
+        { es: 'Sol', pt: 'Sol' }
+      ]
+    },
+    clima: {
+      words: [
+        { es: 'Lluvia', pt: 'Chuva' },
+        { es: 'Llover', pt: 'Chover' },
+        { es: 'Nube', pt: 'Nuvem' },
+        { es: 'Nublado', pt: 'Nublado' },
+        { es: 'Soleado', pt: 'Ensolarado' },
+        { es: 'Viento', pt: 'Vento' },
+        { es: 'Tormenta', pt: 'Tempestade' },
+        { es: 'Rayo', pt: 'Raio' },
+        { es: 'Trueno', pt: 'Trovão' },
+        { es: 'Calor', pt: 'Calor' },
+        { es: 'Frío', pt: 'Frio' },
+        { es: 'Húmedo', pt: 'Úmido' },
+        { es: 'Temperatura', pt: 'Temperatura' },
+        { es: 'Pronóstico', pt: 'Previsão' }
+      ]
+    },
+    frutas: {
+      words: [
+        { es: 'Manzana', pt: 'Maçã' },
+        { es: 'Banana', pt: 'Banana' },
+        { es: 'Naranja', pt: 'Laranja' },
+        { es: 'Limón', pt: 'Limão' },
+        { es: 'Frutilla', pt: 'Morango' },
+        { es: 'Uva', pt: 'Uva' },
+        { es: 'Sandía', pt: 'Melancia' },
+        { es: 'Melón', pt: 'Melão' },
+        { es: 'Ananá/Piña', pt: 'Abacaxi' },
+        { es: 'Mango', pt: 'Manga' },
+        { es: 'Durazno', pt: 'Pêssego' },
+        { es: 'Lechuga', pt: 'Alface' },
+        { es: 'Tomate', pt: 'Tomate' },
+        { es: 'Cebolla', pt: 'Cebola' },
+        { es: 'Zanahoria', pt: 'Cenoura' },
+        { es: 'Papa', pt: 'Batata' }
+      ]
+    },
+    emociones: {
+      words: [
+        { es: 'Feliz', pt: 'Feliz' },
+        { es: 'Triste', pt: 'Triste' },
+        { es: 'Enojado', pt: 'Bravo' },
+        { es: 'Cansado', pt: 'Cansado' },
+        { es: 'Hambriento', pt: 'Com fome' },
+        { es: 'Sediento', pt: 'Com sede' },
+        { es: 'Enfermo', pt: 'Doente' },
+        { es: 'Sano', pt: 'Saudável' },
+        { es: 'Nervioso', pt: 'Nervoso' },
+        { es: 'Tranquilo', pt: 'Tranquilo' },
+        { es: 'Emocionado', pt: 'Animado' },
+        { es: 'Aburrido', pt: 'Entediado' },
+        { es: 'Sorprendido', pt: 'Surpreso' },
+        { es: 'Preocupado', pt: 'Preocupado' },
+        { es: 'Contento', pt: 'Contente' }
+      ]
+    },
+    direcciones: {
+      words: [
+        { es: 'Derecha', pt: 'Direita' },
+        { es: 'Izquierda', pt: 'Esquerda' },
+        { es: 'Recto/Derecho', pt: 'Reto/Em frente' },
+        { es: 'Esquina', pt: 'Esquina' },
+        { es: 'Cruzar', pt: 'Atravessar' },
+        { es: 'Doblar/Girar', pt: 'Virar' },
+        { es: 'Subir', pt: 'Subir' },
+        { es: 'Bajar', pt: 'Descer' },
+        { es: 'Norte', pt: 'Norte' },
+        { es: 'Sur', pt: 'Sul' },
+        { es: 'Este', pt: 'Leste' },
+        { es: 'Oeste', pt: 'Oeste' },
+        { es: 'Adelante', pt: 'Em frente' },
+        { es: 'Atrás', pt: 'Atrás' },
+        { es: 'Al lado de', pt: 'Ao lado de' },
+        { es: 'Enfrente de', pt: 'Em frente de' }
+      ]
+    },
+    cuerpo: {
+      words: [
+        { es: 'Cabeza', pt: 'Cabeça' },
+        { es: 'Cara', pt: 'Rosto' },
+        { es: 'Ojo', pt: 'Olho' },
+        { es: 'Oreja', pt: 'Orelha' },
+        { es: 'Nariz', pt: 'Nariz' },
+        { es: 'Boca', pt: 'Boca' },
+        { es: 'Diente', pt: 'Dente' },
+        { es: 'Lengua', pt: 'Língua' },
+        { es: 'Cuello', pt: 'Pescoço' },
+        { es: 'Hombro', pt: 'Ombro' },
+        { es: 'Brazo', pt: 'Braço' },
+        { es: 'Codo', pt: 'Cotovelo' },
+        { es: 'Mano', pt: 'Mão' },
+        { es: 'Dedo', pt: 'Dedo' },
+        { es: 'Uña', pt: 'Unha' },
+        { es: 'Pecho', pt: 'Peito' },
+        { es: 'Espalda', pt: 'Costas' },
+        { es: 'Barriga/Panza', pt: 'Barriga' },
+        { es: 'Pierna', pt: 'Perna' },
+        { es: 'Rodilla', pt: 'Joelho' },
+        { es: 'Pie', pt: 'Pé' },
+        { es: 'Tobillo', pt: 'Tornozelo' },
+        { es: 'Corazón', pt: 'Coração' },
+        { es: 'Pelo/Cabello', pt: 'Cabelo' }
       ]
     }
   };
