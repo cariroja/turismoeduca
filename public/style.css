@@ -12,6 +12,35 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ============================================
+   ESTILOS PARA POPUPS DE LEAFLET EN MÓVILES
+   ============================================ */
+/* Hacer los popups de Leaflet scrolleables */
+.leaflet-popup-content-wrapper {
+  max-height: 60vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+}
+
+.leaflet-popup-content {
+  margin: 12px;
+  touch-action: pan-y;
+}
+
+/* En móviles, hacer el popup más grande y scrolleable */
+@media (max-width: 600px) {
+  .leaflet-popup-content-wrapper {
+    max-height: 50vh;
+    max-width: 85vw !important;
+  }
+  
+  .leaflet-popup-content {
+    width: auto !important;
+    max-width: 100%;
+  }
+}
+
 body {
   display: flex;
   flex-direction: column;
