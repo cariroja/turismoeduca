@@ -2553,4 +2553,8 @@ if (btnVocabulario) {
 if (btnActividades) {
   btnActividades.addEventListener("click", showActivities);
 }
+
+// Exponer funciones al scope global para los onclick en el HTML dinámico
+window.showVocabulario = showVocabulario;
+
 })();
