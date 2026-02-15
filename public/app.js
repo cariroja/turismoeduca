@@ -1530,7 +1530,15 @@ function showVocabulario() {
         { es: 'Ola', pt: 'Onda' },
         { es: 'Sombrilla', pt: 'Guarda-sol' },
         { es: 'Salvavidas', pt: 'Salva-vidas' },
-        { es: 'Silla', pt: 'Cadeira' }
+        { es: 'Silla', pt: 'Cadeira' },
+        { es: '¿Se puede nadar aquí?', pt: 'Pode nadar aqui?' },
+        { es: '¿Es peligrosa la corriente?', pt: 'A corrente é perigosa?' },
+        { es: '¿Hay medusas?', pt: 'Tem água-viva?' },
+        { es: '¿Alquilan sombrillas?', pt: 'Alugam guarda-sol?' },
+        { es: 'Protector solar', pt: 'Protetor solar' },
+        { es: 'Tabla de surf', pt: 'Prancha de surf' },
+        { es: 'Mar tranquilo', pt: 'Mar calmo' },
+        { es: 'Mar agitado', pt: 'Mar agitado' }
       ]
     },
     ciudad: {
@@ -1544,7 +1552,13 @@ function showVocabulario() {
         { es: 'Pasarela', pt: 'Passarela' },
         { es: 'Terminal de autobuses', pt: 'Rodoviária' },
         { es: 'Aeropuerto', pt: 'Aeroporto' },
-        { es: 'Gasolinera', pt: 'Posto de gasolina' }
+        { es: 'Gasolinera', pt: 'Posto de gasolina' },
+        { es: '¿Cómo llego a...?', pt: 'Como chego em...?' },
+        { es: '¿Cuánto demora?', pt: 'Quanto tempo demora?' },
+        { es: '¿Hay transporte público?', pt: 'Tem transporte público?' },
+        { es: '¿Puede llamar un Uber?', pt: 'Pode chamar um Uber?' },
+        { es: 'Pare aquí, por favor', pt: 'Pare aqui, por favor' },
+        { es: '¿Cuánto sale el pasaje?', pt: 'Quanto é a passagem?' }
       ]
     },
     gastronomia: {
@@ -1582,6 +1596,32 @@ function showVocabulario() {
         { es: 'Hospital', pt: 'Hospital' },
         { es: 'Farmacia', pt: 'Farmácia' },
         { es: 'Policía', pt: 'Polícia' }
+      ]
+    },
+    emergencias: {
+      title: { es: '🆘 Emergencias y Salud', pt: '🆘 Emergências e Saúde' },
+      words: [
+        { es: 'Necesito un médico', pt: 'Preciso de um médico' },
+        { es: 'Me siento mal', pt: 'Estou passando mal' },
+        { es: '¿Hay una farmacia cerca?', pt: 'Tem uma farmácia por perto?' },
+        { es: 'Soy alérgico/a a...', pt: 'Sou alérgico/a a...' },
+        { es: 'Llame a una ambulancia', pt: 'Chame uma ambulância' },
+        { es: 'Me robaron', pt: 'Fui assaltado/a' },
+        { es: '¿Dónde queda la comisaría?', pt: 'Onde fica a delegacia?' },
+        { es: 'Perdí mi pasaporte', pt: 'Perdi meu passaporte' }
+      ]
+    },
+    fotografiaTurismo: {
+      title: { es: '📸 Fotografía y Turismo', pt: '📸 Fotografia e Turismo' },
+      words: [
+        { es: '¿Puede tomar una foto?', pt: 'Pode tirar uma foto?' },
+        { es: '¿Puedo tomar fotos aquí?', pt: 'Posso tirar fotos aqui?' },
+        { es: '¿Cuál es el horario de visita?', pt: 'Qual é o horário de visitação?' },
+        { es: '¿Hay guía en español?', pt: 'Tem guia em espanhol?' },
+        { es: '¿Cuánto cuesta la entrada?', pt: 'Quanto custa a entrada?' },
+        { es: '¿Hay descuento para niños?', pt: 'Tem desconto para crianças?' },
+        { es: '¿A qué hora es la excursión?', pt: 'Que horas é o passeio?' },
+        { es: 'Quiero reservar un tour', pt: 'Quero reservar um passeio' }
       ]
     },
     juegosRopa: {
@@ -1738,7 +1778,17 @@ function showVocabulario() {
         { es: 'No entiendo', pt: 'Não entendo' },
         { es: '¿Puede repetir?', pt: 'Pode repetir?' },
         { es: 'Necesito ayuda', pt: 'Preciso de ajuda' },
-        { es: '¿Habla español?', pt: 'Fala espanhol?' }
+        { es: '¿Habla español?', pt: 'Fala espanhol?' },
+        { es: '¿Tiene menú en español?', pt: 'Tem cardápio em espanhol?' },
+        { es: '¿Acepta tarjeta?', pt: 'Aceita cartão?' },
+        { es: '¿Tiene WiFi?', pt: 'Tem WiFi?' },
+        { es: '¿Cuál es la contraseña?', pt: 'Qual é a senha?' },
+        { es: '¿A qué hora abre/cierra?', pt: 'Que horas abre/fecha?' },
+        { es: '¿Tiene mesa disponible?', pt: 'Tem mesa disponível?' },
+        { es: 'Soy vegetariano/a', pt: 'Sou vegetariano/a' },
+        { es: 'Sin sal, por favor', pt: 'Sem sal, por favor' },
+        { es: 'La cuenta, por favor', pt: 'A conta, por favor' },
+        { es: '¿Está incluida la propina?', pt: 'A gorjeta está incluída?' }
       ]
     },
     alojamiento: {
@@ -2144,7 +2194,15 @@ function getVocabularyData() {
         { es: 'Ola', pt: 'Onda' },
         { es: 'Sombrilla', pt: 'Guarda-sol' },
         { es: 'Salvavidas', pt: 'Salva-vidas' },
-        { es: 'Silla', pt: 'Cadeira' }
+        { es: 'Silla', pt: 'Cadeira' },
+        { es: '¿Se puede nadar aquí?', pt: 'Pode nadar aqui?' },
+        { es: '¿Es peligrosa la corriente?', pt: 'A corrente é perigosa?' },
+        { es: '¿Hay medusas?', pt: 'Tem água-viva?' },
+        { es: '¿Alquilan sombrillas?', pt: 'Alugam guarda-sol?' },
+        { es: 'Protector solar', pt: 'Protetor solar' },
+        { es: 'Tabla de surf', pt: 'Prancha de surf' },
+        { es: 'Mar tranquilo', pt: 'Mar calmo' },
+        { es: 'Mar agitado', pt: 'Mar agitado' }
       ]
     },
     ciudad: {
@@ -2157,7 +2215,13 @@ function getVocabularyData() {
         { es: 'Pasarela', pt: 'Passarela' },
         { es: 'Terminal de autobuses', pt: 'Rodoviária' },
         { es: 'Aeropuerto', pt: 'Aeroporto' },
-        { es: 'Gasolinera', pt: 'Posto de gasolina' }
+        { es: 'Gasolinera', pt: 'Posto de gasolina' },
+        { es: '¿Cómo llego a...?', pt: 'Como chego em...?' },
+        { es: '¿Cuánto demora?', pt: 'Quanto tempo demora?' },
+        { es: '¿Hay transporte público?', pt: 'Tem transporte público?' },
+        { es: '¿Puede llamar un Uber?', pt: 'Pode chamar um Uber?' },
+        { es: 'Pare aquí, por favor', pt: 'Pare aqui, por favor' },
+        { es: '¿Cuánto sale el pasaje?', pt: 'Quanto é a passagem?' }
       ]
     },
     gastronomia: {
@@ -2192,6 +2256,30 @@ function getVocabularyData() {
         { es: 'Hospital', pt: 'Hospital' },
         { es: 'Farmacia', pt: 'Farmácia' },
         { es: 'Policía', pt: 'Polícia' }
+      ]
+    },
+    emergencias: {
+      words: [
+        { es: 'Necesito un médico', pt: 'Preciso de um médico' },
+        { es: 'Me siento mal', pt: 'Estou passando mal' },
+        { es: '¿Hay una farmacia cerca?', pt: 'Tem uma farmácia por perto?' },
+        { es: 'Soy alérgico/a a...', pt: 'Sou alérgico/a a...' },
+        { es: 'Llame a una ambulancia', pt: 'Chame uma ambulância' },
+        { es: 'Me robaron', pt: 'Fui assaltado/a' },
+        { es: '¿Dónde queda la comisaría?', pt: 'Onde fica a delegacia?' },
+        { es: 'Perdí mi pasaporte', pt: 'Perdi meu passaporte' }
+      ]
+    },
+    fotografiaTurismo: {
+      words: [
+        { es: '¿Puede tomar una foto?', pt: 'Pode tirar uma foto?' },
+        { es: '¿Puedo tomar fotos aquí?', pt: 'Posso tirar fotos aqui?' },
+        { es: '¿Cuál es el horario de visita?', pt: 'Qual é o horário de visitação?' },
+        { es: '¿Hay guía en español?', pt: 'Tem guia em espanhol?' },
+        { es: '¿Cuánto cuesta la entrada?', pt: 'Quanto custa a entrada?' },
+        { es: '¿Hay descuento para niños?', pt: 'Tem desconto para crianças?' },
+        { es: '¿A qué hora es la excursión?', pt: 'Que horas é o passeio?' },
+        { es: 'Quiero reservar un tour', pt: 'Quero reservar um passeio' }
       ]
     },
     juegosRopa: {
@@ -2338,7 +2426,17 @@ function getVocabularyData() {
         { es: 'No entiendo', pt: 'Não entendo' },
         { es: '¿Puede repetir?', pt: 'Pode repetir?' },
         { es: 'Necesito ayuda', pt: 'Preciso de ajuda' },
-        { es: '¿Habla español?', pt: 'Fala espanhol?' }
+        { es: '¿Habla español?', pt: 'Fala espanhol?' },
+        { es: '¿Tiene menú en español?', pt: 'Tem cardápio em espanhol?' },
+        { es: '¿Acepta tarjeta?', pt: 'Aceita cartão?' },
+        { es: '¿Tiene WiFi?', pt: 'Tem WiFi?' },
+        { es: '¿Cuál es la contraseña?', pt: 'Qual é a senha?' },
+        { es: '¿A qué hora abre/cierra?', pt: 'Que horas abre/fecha?' },
+        { es: '¿Tiene mesa disponible?', pt: 'Tem mesa disponível?' },
+        { es: 'Soy vegetariano/a', pt: 'Sou vegetariano/a' },
+        { es: 'Sin sal, por favor', pt: 'Sem sal, por favor' },
+        { es: 'La cuenta, por favor', pt: 'A conta, por favor' },
+        { es: '¿Está incluida la propina?', pt: 'A gorjeta está incluída?' }
       ]
     },
     alojamiento: {
